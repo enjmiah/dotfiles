@@ -1,0 +1,35 @@
+execute pathogen#infect()
+
+imap jj <Esc>
+imap kk <Esc>
+syntax on
+set backspace=indent,eol,start
+set complete-=i
+set copyindent
+set encoding=utf-8
+set incsearch
+set laststatus=2
+set list
+set listchars=tab:→\ ,trail:·
+set nocompatible
+set modeline
+set mouse=a
+set nrformats-=octal
+set number
+set ruler
+set shiftwidth=4
+set so=3
+set tabstop=4
+if !has('nvim') && &ttimeoutlen == -1
+	set ttimeout
+	set ttimeoutlen=100
+endif
+set title
+set wildmenu
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+let g:airline_theme='base16'
+let g:airline_powerline_fonts=1
