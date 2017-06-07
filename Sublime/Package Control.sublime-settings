@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Clang Format",
+		"CMakeEditor",
+		"Package Control",
+		"Shader Syntax (GLSL HLSL Cg)",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-pylint",
+		"Wrap Plus"
+	]
+}
