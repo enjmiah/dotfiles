@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$HOME/anaconda3/bin:$HOME/bin:/usr/local/bin:$PATH
+source $HOME/.cargo/env
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jerry/.oh-my-zsh
@@ -25,7 +26,7 @@ ZSH_THEME="amuse"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=21
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -34,7 +35,7 @@ export UPDATE_ZSH_DAYS=21
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -65,11 +66,11 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
   export EDITOR='subl'
 fi
@@ -87,12 +88,28 @@ fi
 #
 # Aliases
 alias zshconfig="subl ~/.zshrc"
-alias v="vim"
-alias ls="ls -a --color=auto"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias ls="ls -A --color=auto"
 alias rm="rm -i"
 alias cp="cp -i"
 alias ll="ls -l"
 alias data="cd /media/jerry/Data"
+noh() {
+  nohup $1 > /dev/null &
+}
+
+export OCIO=/media/jerry/Data/config/ocio
 
 # Configure ls colors
 eval "$(dircolors ~/.dircolors)";
+
+# Blur the background of Konsole windows
+# Source: https://yuenhoe.com/blog/2013/10/applying-kwin-blur-to-transparent-konsoleyakuake-windows/
+konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
+if [ -n "$konsolex" ]; then
+    for konsole in `xdotool search --class konsole`; do
+        xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
+    done
+fi
