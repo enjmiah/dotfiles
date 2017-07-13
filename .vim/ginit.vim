@@ -1,3 +1,2 @@
-colo gruvbox
-set background=dark
-Guifont Monaco for Powerline:h9
+Guifont! Roboto Mono for Powerline:h9
+set lines=30 columns=100
