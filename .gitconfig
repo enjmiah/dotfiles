@@ -1,0 +1,20 @@
+[alias]
+	ci = commit -m
+	co = checkout
+	st = status
+	br = branch
+	loneline = log -10 --pretty=oneline
+	amend = commit --amend
+	ldiff = diff HEAD~ HEAD
+	diffs = diff --staged
+	s = status -bsu
+[core]
+	editor = subl -n -w
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[difftool "vimdiff"]
+	cmd = nvim-qt -qwindowgeometry 1200x800 -- -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[include]
+	path = "~/.gitconfig.user" # contains user.name and user.email
