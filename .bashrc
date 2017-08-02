@@ -35,12 +35,29 @@ eval "$(dircolors -b /etc/DIR_COLORS)"
 # Prompt #
 ##########
 
+function __job_info() {
+    local lf='
+'
+    local lastjob="`jobs`"
+    lastjob="${lastjob//\\/\\\\}" # preserve backslash in output
+    lastjob="${lastjob%%"lf"*}"
+    lastjob="${lastjob##* }"
+    if [[ ! -z "${lastjob}" ]]; then
+        printf "(${lastjob}) "
+    fi
+    return $?
+}
+
 PS1=''
 PS1="$PS1"'\n'                    # new line
 PS1="$PS1"'\[\033[30;41m\] '      # change to red
-PS1="$PS1"'\u@\h '                # user@host<space>
-PS1="$PS1"'\[\033[31;47m\] '     # change to yellow
+PS1="$PS1"'\t '                   # time
+PS1="$PS1"'\[\033[31;46m\] '     # change to yellow
 PS1="$PS1"'\[\033[30m\]'          # font colour to black
+PS1="$PS1"'\j `__job_info`'       # number of jobs
+PS1="$PS1"'\[\033[36;47m\] '     # change to yellow
+PS1="$PS1"'\[\033[30m\]'          # font colour to black
+PS1="$PS1"'\u@\h  '              # user@host<space>
 PS1="$PS1"'\w '                   # current working directory
 PS1="$PS1"'\[\033[37;40m\]'      # change to default
 if test -z "$WINELOADERNOEXEC"; then
@@ -58,5 +75,6 @@ fi
 PS1="$PS1"'\[\033[0m\]'           # change color
 PS1="$PS1"'\n'                    # new line
 PS1="$PS1"'☰ '                    # prompt
+export PROMPT_DIRTRIM=3
 
 export PS2=" "
