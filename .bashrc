@@ -2,19 +2,21 @@
 # Aliases #
 ###########
 
+alias cp='cp -i'
+alias mv='mv -i'
 alias rm='rm -i'
-alias ls='ls -A --color=auto'
-function rip() {
-    rg -ip "$@" | less -FRX
-}
+
+alias bye='exit'
+function cd() { pushd $@ > /dev/null; }
+alias data='cd /d'
+alias l='ls'
 alias less='less -FRX'
+alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 alias python2='/c/Anaconda3/envs/py27/python.exe'
-alias bashrc='start ~/.bashrc'
+function rip() { rg -ip "$@" | less -FRX; }
 alias subl="subl -n"
 alias v='\vim'
-function vi() {
-    nvim-qt --qwindowgeometry 800x600 $@ &
-}
+function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
 alias view='vi -- -R'
 
 #########################
@@ -23,7 +25,9 @@ alias view='vi -- -R'
 
 export EDITOR='nvim-qt --qwindowgeometry 800x600'
 export PAGER=less
+export PATH="$PATH:/c/bin"
 export PYTHONDONTWRITEBYTECODE=1
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src"
 
 ####################
 # Start-up scripts #
