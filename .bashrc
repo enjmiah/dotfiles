@@ -39,7 +39,28 @@ eval "$(dircolors -b /etc/DIR_COLORS)"
 # Prompt #
 ##########
 
+function __timer_start() {
+    timer=${timer:-$SECONDS}
+}
+
+function __timer_stop() {
+    timer_show=$(($SECONDS - $timer))
+    unset timer
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND=timer_stop
+
+function __last_command_runtime() {
+    local RTNVAL="$?"
+    if [[ ${timer_show} -gt 7 ]]; then
+        printf " ${timer_show}s "
+    fi
+    return $RTNVAL
+}
+
 function __job_info() {
+    local RTNVAL="$?"
     local lf='
 '
     local lastjob="`jobs`"
@@ -47,38 +68,73 @@ function __job_info() {
     lastjob="${lastjob%%"lf"*}"
     lastjob="${lastjob##* }"
     if [[ ! -z "${lastjob}" ]]; then
-        printf "(${lastjob}) "
+        printf "\033[34;43m "
+        printf "\033[30m"
+        printf "$1 (${lastjob}) "
+        printf "\033[33;47m "
+    else
+        printf "\033[34;47m "
+    fi
+    printf '\033[30m'
+    return $RTNVAL
+}
+
+function __custom_git_ps1() {
+    local RTNVAL="$?"
+    local out="$(__git_ps1)" commithash
+    if [[ ! -z "${out}" ]]; then
+        echo "${out}" | grep "\.\.\." &> /dev/null
+        if [[ $? != 0 ]]; then
+            out="${out:2:-1}"
+            commithash="$(git rev-parse --short HEAD 2> /dev/null)"
+            if [[ ! -z "${commithash}" ]]; then
+                commithash="(${commithash})"
+                out="${out} ${commithash}"
+            fi
+        else
+            # detached HEAD state
+            out="${out:3:-2}"
+        fi
+        out=" ${out}"
+        printf "$out"
+    fi
+    return $RTNVAL
+}
+
+function __exit_status_ps1() {
+    if [[ $? == 0 ]]; then
+        printf "☰"
+    else
+        printf '\033[31m✘\033[0m'
     fi
     return $?
 }
 
 PS1=''
-PS1="$PS1"'\n'                    # new line
-PS1="$PS1"'\[\033[30;41m\] '      # change to red
-PS1="$PS1"'\t '                   # time
-PS1="$PS1"'\[\033[31;46m\] '     # change to yellow
-PS1="$PS1"'\[\033[30m\]'          # font colour to black
-PS1="$PS1"'\j `__job_info`'       # number of jobs
-PS1="$PS1"'\[\033[36;47m\] '     # change to yellow
-PS1="$PS1"'\[\033[30m\]'          # font colour to black
-PS1="$PS1"'\u@\h  '              # user@host<space>
-PS1="$PS1"'\w '                   # current working directory
-PS1="$PS1"'\[\033[37;40m\]'      # change to default
-if test -z "$WINELOADERNOEXEC"; then
+PS1="$PS1"'\n'
+PS1="$PS1"'\[\033[30;44m\] '                   # change colour
+PS1="$PS1"'\t '                                # time
+PS1="$PS1"'`__last_command_runtime`'           # show runtime of last command
+PS1="$PS1"'`__job_info \j`'                    # optional jobs count + recent
+PS1="$PS1"'\u@\h  '                           # user@host
+PS1="$PS1"'\w '                                # pwd
+PS1="$PS1"'\[\033[37;40m\] '                  # change to default
+if [[ -z "$WINELOADERNOEXEC" ]]; then
     GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
     COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
     COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
     COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
-    if test -f "$COMPLETION_PATH/git-prompt.sh"; then
+    if [[ -f "$COMPLETION_PATH/git-prompt.sh" ]]; then
         . "$COMPLETION_PATH/git-completion.bash"
         . "$COMPLETION_PATH/git-prompt.sh"
-        PS1="$PS1"'\[\033[36m\]'  # change color to cyan
-        PS1="$PS1"'`__git_ps1`'   # bash function
+        PS1="$PS1"'\[\033[36m\]'               # change colour
+        PS1="$PS1"'`__custom_git_ps1`'         # git info
     fi
 fi
-PS1="$PS1"'\[\033[0m\]'           # change color
-PS1="$PS1"'\n'                    # new line
-PS1="$PS1"'☰ '                    # prompt
+PS1="$PS1"'\[\033[0m\]'                        # change colour
+PS1="$PS1"'\n'
+PS1="$PS1"'$(__exit_status_ps1) '              # prompt
+
 export PROMPT_DIRTRIM=3
 
-export PS2=" "
+PS2=" "
