@@ -48,9 +48,6 @@ function __timer_stop() {
     unset timer
 }
 
-trap 'timer_start' DEBUG
-PROMPT_COMMAND=timer_stop
-
 function __last_command_runtime() {
     local RTNVAL="$?"
     if [[ ${timer_show} -gt 7 ]]; then
@@ -135,6 +132,8 @@ PS1="$PS1"'\[\033[0m\]'                        # change colour
 PS1="$PS1"'\n'
 PS1="$PS1"'$(__exit_status_ps1) '              # prompt
 
+trap '__timer_start' DEBUG
+PROMPT_COMMAND=__timer_stop
 export PROMPT_DIRTRIM=3
 
 PS2=" "

@@ -27,6 +27,8 @@ Notes:
 
 Create a symlink at `~/.bashrc` that points to `~/dotfiles/.bashrc`.
 
+Create a symlink at `~/.bash_profile` that points to `~/dotfiles/.bash_profile`.
+
 ### Git
 
 Move your `user.email` and `user.name` settings to `~/.gitconfig.user`.
