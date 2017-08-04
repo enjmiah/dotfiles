@@ -11,15 +11,21 @@ Notes:
 
 + `~` refers to the `%USERPROFILE%` variable on Windows.
 + Symlinks can be done on Unix with
-        ln -s pointed_to point_from
-  On Windows, the syntax is
-        mklink point_from pointed_to
-  for files and
-        mklink /d point_from pointed_to
-  for directories, and requires administrator privileges.  Note that the
-  argument order for `mklink` is reversed compared to `ln`.
+    ```sh
+    ln -s pointed_to point_from
+    ```
+    On Windows, the syntax is
+    ```batch
+    mklink point_from pointed_to
+    ```
+    for files and
+    ```batch
+    mklink /d point_from pointed_to
+    ```
+    for directories, and requires administrator privileges.  Note that the
+    argument order for `mklink` is reversed compared to `ln`.
 + For programs without a "Tested variants" section, assume the most common
-  variant.
+    variant.
 
 ### Bash
 

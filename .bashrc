@@ -1,20 +1,31 @@
+#
+# .bashrc
+#
+# Author:
+#     Jerry Yin / jerryyin.info
+#
+# License:
+#     Any copyright is dedicated to the Public Domain.
+#     http://creativecommons.org/publicdomain/zero/1.0/
+#
+
 ###########
 # Aliases #
 ###########
 
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp='cp -i' # prompt before overwriting
+alias mv='mv -i' # prompt before overwriting
+alias rm='rm -i' # prompt before overwriting
 
 alias bye='exit'
-function cd() { pushd $@ > /dev/null; }
+function cd() { pushd $@ > /dev/null; } # allows going back with `popd`
 alias data='cd /d'
 alias l='ls'
 alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 alias python2='/c/Anaconda3/envs/py27/python.exe'
-function rip() { rg -ip "$@" | less -FRX; }
-alias subl="subl -n"
+function rip() { rg -ip "$@" | less -FRX; } # ripgrep
+alias subl="subl -n" # open Sublime files in new window
 alias v='\vim'
 function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
 alias view='vi -- -R'
@@ -27,13 +38,12 @@ export EDITOR='nvim-qt --qwindowgeometry 800x600'
 export PAGER=less
 export PATH="$PATH:/c/bin"
 export PYTHONDONTWRITEBYTECODE=1
-export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src"
 
 ####################
 # Start-up scripts #
 ####################
 
-eval "$(dircolors -b /etc/DIR_COLORS)"
+eval "$(dircolors -b /etc/DIR_COLORS)" # improve ls colours
 
 ##########
 # Prompt #
@@ -61,9 +71,9 @@ function __job_info() {
     local lf='
 '
     local lastjob="`jobs`"
-    lastjob="${lastjob//\\/\\\\}" # preserve backslash in output
-    lastjob="${lastjob%%"lf"*}"
-    lastjob="${lastjob##* }"
+    lastjob="${lastjob//\\/\\\\}" # preserve backslash in output, for output such as \vim
+    lastjob="${lastjob%%"lf"*}" # keep only first line
+    lastjob="${lastjob##* }" # keep only last word
     if [[ ! -z "${lastjob}" ]]; then
         printf "\033[34;43m "
         printf "\033[30m"
@@ -111,8 +121,8 @@ PS1=''
 PS1="$PS1"'\n'
 PS1="$PS1"'\[\033[30;44m\] '                   # change colour
 PS1="$PS1"'\t '                                # time
-PS1="$PS1"'`__last_command_runtime`'           # show runtime of last command
-PS1="$PS1"'`__job_info \j`'                    # optional jobs count + recent
+PS1="$PS1"'`__last_command_runtime`'           # run time of last command
+PS1="$PS1"'`__job_info \j`'                    # jobs count (most recent) + separator
 PS1="$PS1"'\u@\h  '                           # user@host
 PS1="$PS1"'\w '                                # pwd
 PS1="$PS1"'\[\033[37;40m\] '                  # change to default
@@ -132,8 +142,10 @@ PS1="$PS1"'\[\033[0m\]'                        # change colour
 PS1="$PS1"'\n'
 PS1="$PS1"'$(__exit_status_ps1) '              # prompt
 
-trap '__timer_start' DEBUG
-PROMPT_COMMAND=__timer_stop
-export PROMPT_DIRTRIM=3
+# magic that makes automatic timing of commands work
+trap '__timer_start' DEBUG # run before executing any command
+PROMPT_COMMAND=__timer_stop # run before printing the prompt
+
+export PROMPT_DIRTRIM=3 # have \w show at most 3 directories
 
 PS2=" "
