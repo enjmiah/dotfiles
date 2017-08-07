@@ -27,6 +27,7 @@ alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 alias python2='/c/Anaconda3/envs/py27/python.exe'
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
+function noh() { nohup $1 >/dev/null 2>&1 &; }
 alias v='\vim'
 if type nvim > /dev/null && [[ "$TERM" == "cygwin" ]]; then
     function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }

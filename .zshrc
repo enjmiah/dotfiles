@@ -1,106 +1,83 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$HOME/anaconda3/bin:$HOME/bin:/usr/local/bin:$PATH
-source $HOME/.cargo/env
+#
+# .zshrc
+#
+# Based on the default oh-my-zsh zshrc.
+#
+# Author:
+#     Jerry Yin / jerryyin.info
+#
+# License:
+#     Any copyright is dedicated to the Public Domain.
+#     http://creativecommons.org/publicdomain/zero/1.0/
+#
+
+#############
+# oh-my-zsh #
+#############
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/jerry/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Powerline plugin
-# if [[ -r ~/anaconda3/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-#   source ~/anaconda3/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+# if [[ -r ~/anaconda3/lib/python3.6/site-packages/powerline_status-2.6-py3.6.egg/powerline/bindings/zsh/powerline.zsh ]]; then
+#    source ~/anaconda3/lib/python3.6/site-packages/powerline_status-2.6-py3.6.egg/powerline/bindings/zsh/powerline.zsh
 # fi
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="amuse"
+# ZSH_THEME="amuse"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=30
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Plug-in can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plug-ins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+#########################
+# Environment variables #
+#########################
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$HOME/anaconda3/bin:$HOME/bin:/usr/local/bin:$PATH
 
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
   export EDITOR='subl'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Aliases
-alias zshconfig="subl ~/.zshrc"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias ls="ls -A --color=auto"
-alias rm="rm -i"
-alias cp="cp -i"
-alias ll="ls -l"
-alias data="cd /media/jerry/Data"
-noh() {
-  nohup $1 > /dev/null &
-}
-
 export OCIO=/media/jerry/Data/config/ocio
+
+###########
+# Aliases #
+###########
+
+alias cp='cp -i' # prompt before overwriting
+alias mv='mv -i' # prompt before overwriting
+alias rm='rm -i' # prompt before overwriting
+
+alias bye='exit'
+alias data='cd /media/jerry/Data'
+function rip() { rg -ip "$@" | less -FRX; } # ripgrep
+alias l='ls'
+alias ll='ls -l --color=auto'
+alias ls='ls -A --color=auto'
+function noh() { nohup $1 >/dev/null 2>&1 &; }
+alias v='\vim'
+if type nvim > /dev/null && [[ "$TERM" == "cygwin" ]]; then
+    alias vi='nvim'
+    alias vim='nvim'
+fi # I prefer console vim on Linux, since colours are better there
+
+####################
+# Start-up scripts #
+####################
 
 # Configure ls colors
 eval "$(dircolors ~/.dircolors)";
@@ -113,3 +90,18 @@ if [ -n "$konsolex" ]; then
         xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
     done
 fi
+
+##########
+# Prompt #
+##########
+
+source "$HOME/dotfiles/prompt-utils.sh"
+
+PROMPT='
+$bg[blue]$fg[white] %* $bg[white]$fg[blue] $fg[black]%~ $reset_color$fg[white] $fg[green]$(git_prompt_info)%{$reset_color%}
+$(__exit_status_ps1) '
+
+ZSH_THEME_GIT_PROMPT_PREFIX=' '
+ZSH_THEME_GIT_PROMPT_SUFFIX=''
+ZSH_THEME_GIT_PROMPT_DIRTY='*'
+ZSH_THEME_GIT_PROMPT_CLEAN=''
