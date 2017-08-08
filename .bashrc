@@ -27,7 +27,7 @@ alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 alias python2='/c/Anaconda3/envs/py27/python.exe'
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
-function noh() { nohup $1 >/dev/null 2>&1 &; }
+function noh() { nohup $1 >/dev/null 2>&1 & }
 alias v='\vim'
 if type nvim > /dev/null && [[ "$TERM" == "cygwin" ]]; then
     function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
@@ -70,7 +70,7 @@ PS1="$PS1"'`__last_command_runtime`'           # run time of last command
 PS1="$PS1"'`__job_info \j`'                    # jobs count (most recent) + separator
 PS1="$PS1"'\u@\h  '                           # user@host
 PS1="$PS1"'\w '                                # pwd
-PS1="$PS1"'\[\033[39;49m\] '                  # change to default
+PS1="$PS1"'\[\033[37;49m\] '                  # change to default
 if [[ -z "$WINELOADERNOEXEC" ]]; then
     # git-prompt.sh wasn't pre-installed on all the machines I tested on
     if [[ -f "$HOME/dotfiles/git-prompt.sh" ]]; then
