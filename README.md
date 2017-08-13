@@ -1,7 +1,8 @@
-dotfiles
-========
+<p align="center">:rice:</p>
 
-## Set-up
+<h1 align="center">d o t f i l e s</h1>
+
+<h2 align="center">set-up</h2>
 
 Do a recursive clone of this repository to your home directory.
 
