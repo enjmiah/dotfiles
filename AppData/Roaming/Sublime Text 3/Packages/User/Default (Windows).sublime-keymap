@@ -1,0 +1,24 @@
+[
+    {
+        "keys": ["ctrl+r", "ctrl+f"],
+        "command": "clang_format",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.c++"
+            }
+        ],
+    },
+    {
+        "keys": ["ctrl+r", "ctrl+f"],
+        "command": "clang_format",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.c"
+            }
+        ],
+    },
+]
