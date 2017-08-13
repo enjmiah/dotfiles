@@ -38,6 +38,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# I don't like oh-my-zsh aliases :/
+unalias -m '*'
+
 #########################
 # Environment variables #
 #########################
@@ -89,6 +92,11 @@ if [ -n "$konsolex" ]; then
     for konsole in `xdotool search --class konsole`; do
         xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
     done
+fi
+
+# Syntax highlighting
+if [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ##########
