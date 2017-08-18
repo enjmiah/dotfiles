@@ -1,10 +1,12 @@
 execute pathogen#infect()
 
 imap jj <Esc>
-imap kk <Esc>
+noremap <Space> i <Esc>r
+
 syntax on
 set backspace=indent,eol,start
 set complete-=i
+set completeopt=longest,menuone
 set copyindent
 set encoding=utf-8
 set incsearch
@@ -16,6 +18,7 @@ set modeline
 set mouse=a
 set nrformats-=octal
 set number
+set omnifunc=syntaxcomplete#Complete
 set ruler
 set shiftwidth=4
 set so=3
