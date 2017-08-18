@@ -30,14 +30,11 @@ function __job_info() {
     local RTNVAL="$?"
     local lf='
 '
-    local lastjob="`jobs`"
-    lastjob="${lastjob//\\/\\\\}" # preserve backslash in output, for output such as \vim
-    lastjob="${lastjob%%"lf"*}" # keep only first line
-    lastjob="${lastjob##* }" # keep only last word
+    local lastjob="$(jobs)"
     if [[ ! -z "${lastjob}" ]]; then
         printf "\033[34;43m "
         printf "\033[30m"
-        printf "$1 (${lastjob}) "
+        printf "$1 "
         printf "\033[33;47m "
     else
         printf "\033[34;47m "
