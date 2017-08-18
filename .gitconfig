@@ -3,7 +3,7 @@
 	co = checkout
 	st = status
 	br = branch
-	loneline = log -10 --pretty=oneline
+	loneline = log --graph -10 --pretty=\"format:%C(auto)%h %s\"
 	amend = commit --amend
 	ldiff = diff HEAD~ HEAD
 	diffs = diff --staged
