@@ -16,6 +16,7 @@
 		"SublimeLinter",
 		"SublimeLinter-annotations",
 		"SublimeLinter-pylint",
+		"Vintageous",
 		"Wrap Plus"
 	]
 }

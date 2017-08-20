@@ -10,7 +10,7 @@
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Soft) NDC.tmTheme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Soft).tmTheme",
 	"default_line_ending": "unix",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
@@ -50,5 +50,8 @@
 	"smart_indent": true,
 	"spell_check": true,
 	"theme": "Nothing.sublime-theme",
+	"vintageous_hlsearch": true,
+	"vintageous_incsearch": true,
+	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true
 }
