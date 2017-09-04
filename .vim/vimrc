@@ -25,7 +25,7 @@ set so=3
 set tabstop=4
 if !has('nvim') && &ttimeoutlen == -1
 	set ttimeout
-	set ttimeoutlen=100
+	set ttimeoutlen=80
 endif
 set title
 set wildmenu
@@ -34,8 +34,12 @@ if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
-colo gruvbox
-set background=dark
+" I use a dark theme in Konsole but a light theme elsewhere
+if !empty($KONSOLE_PROFILE_NAME)
+    colo gruvbox
+    set background=dark
+endif
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
 let g:gruvbox_contrast_dark='soft'
+hi Normal ctermbg=NONE
