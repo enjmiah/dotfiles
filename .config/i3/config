@@ -18,6 +18,7 @@ bindsym $mod+d exec --no-startup-id krunner
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+w exec firefox
 bindsym $mod+e exec dolphin
+bindsym F3 exec xfce4-terminal --drop-down
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -27,24 +28,24 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-# bindsym $mod+h focus left
-# bindsym $mod+j focus down
-# bindsym $mod+k focus up
-# bindsym $mod+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-# bindsym $mod+Shift+h move left
-# bindsym $mod+Shift+j move down
-# bindsym $mod+Shift+k move up
-# bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Control split direction
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+Control+h split horizontal
+bindsym $mod+Control+v split vertical
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -60,7 +61,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # Focus the child container
 # bindsym $mod+d focus child
@@ -101,10 +102,10 @@ bindsym $mod+$alt+Left resize shrink width 4 px or 4 ppt
 bindsym $mod+$alt+Down resize grow height 4 px or 4 ppt
 bindsym $mod+$alt+Up resize shrink height 4 px or 4 ppt
 bindsym $mod+$alt+Right resize grow width 4 px or 4 ppt
-# bindsym $mod+$alt+h resize shrink width 4 px or 4 ppt
-# bindsym $mod+$alt+j resize grow height 4 px or 4 ppt
-# bindsym $mod+$alt+k resize shrink height 4 px or 4 ppt
-# bindsym $mod+$alt+l resize grow width 4 px or 4 ppt
+bindsym $mod+$alt+h resize shrink width 4 px or 4 ppt
+bindsym $mod+$alt+j resize grow height 4 px or 4 ppt
+bindsym $mod+$alt+k resize shrink height 4 px or 4 ppt
+bindsym $mod+$alt+l resize grow width 4 px or 4 ppt
 
 bindsym $mod+shift+x exec i3lock
 
@@ -112,15 +113,20 @@ workspace_auto_back_and_forth yes
 
 focus_follows_mouse no
 
+# Per-application overrides
+for_window [title="^About Mozilla Firefox$"] floating enable
+for_window [title="Preferences"] floating enable
+
 # Font for window titles
 font pango:Helvetica Neue, lemon 8
 
 set $transparent #00000000
+set $active #fabd2f
 set $text #e0e0e0
 
 # Window colours
 #                       border  backgr. text    indic.  child
-client.focused          #4c7899 #285577 $text #689d6a #458588
+client.focused          #4c7899 #285577 $text #689d6a $active
 client.focused_inactive #333333 #5f676a $text #32302f #32302f
 client.unfocused        #333333 #222222 $text #32302f #32302f
 client.urgent           #2f343a #900000 $text #900000 #900000
@@ -129,9 +135,9 @@ client.urgent           #2f343a #900000 $text #900000 #900000
 exec_always feh --bg-scale /home/jerry/Wallpapers/unsplash/kevin-horstmann-200894.jpg
 
 # i3-gaps stuff
-for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 22
+for_window [class="^.*"] border pixel 1
+gaps inner 12
+gaps outer 14
 smart_borders on
 
 # Plasma Integration
