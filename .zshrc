@@ -71,9 +71,10 @@ function rip() { rg -ip "$@" | less -FRX; } # ripgrep
 alias l='ls'
 alias ll='ls -l --color=auto'
 alias ls='ls -A --color=auto'
+alias logmeout='qdbus org.kde.ksmserver /KSMServer logout 0 0 0'
 function noh() { nohup $1 >/dev/null 2>&1 &; }
 alias v='\vim'
-if type nvim > /dev/null && [[ "$TERM" == "cygwin" ]]; then
+if type nvim &> /dev/null; then
     alias vi='nvim'
     alias vim='nvim'
 fi # I prefer console vim on Linux, since colours are better there
@@ -104,10 +105,13 @@ fi
 ##########
 
 source "$HOME/dotfiles/prompt-utils.sh"
+if [[ -f "$HOME/dotfiles/git-prompt.sh" ]]; then
+    . "$HOME/dotfiles/git-prompt.sh"
+fi
 
 PROMPT='
-$bg[blue]$fg[white] %* $bg[white]$fg[blue] $fg[black]%~ $reset_color$fg[white] $fg[green]$(git_prompt_info)%{$reset_color%}
-$(__exit_status_ps1) '
+%{$bg[blue]$fg[white]%} %* %{$bg[white]$fg[blue]%} %{$fg[black]%}%~ $reset_color%{$fg[white]%} %{$fg[green]%}$(__custom_git_ps1)%{$reset_color%}
+%{$(__exit_status_ps1)%G%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=' '
 ZSH_THEME_GIT_PROMPT_SUFFIX=''

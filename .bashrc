@@ -25,7 +25,9 @@ alias data='cd /d'
 alias l='ls'
 alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
-alias python2='/c/Anaconda3/envs/py27/python.exe'
+if [[ $TERM == "cygwin" ]]; then
+    alias python2='/c/Anaconda3/envs/py27/python.exe'
+fi
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
 function noh() { nohup $1 >/dev/null 2>&1 & }
 alias v='\vim'
@@ -39,9 +41,13 @@ fi # I prefer console vim on Linux, since colours are better there
 # Environment variables #
 #########################
 
-export EDITOR='nvim-qt --qwindowgeometry 800x600'
+if type nvim &> /dev/null && [[ "$TERM" == "cygwin" ]]; then
+    export EDITOR='nvim-qt --qwindowgeometry 800x600'
+fi
 export PAGER=less
-export PATH="$PATH:/c/bin"
+if [[ "$TERM" == "cygwin" ]]; then
+    export PATH="$PATH:/c/bin"
+fi
 export PYTHONDONTWRITEBYTECODE=1
 
 ####################
