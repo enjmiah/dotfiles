@@ -120,16 +120,19 @@ for_window [title="Preferences"] floating enable
 # Font for window titles
 font pango:Helvetica Neue, lemon 8
 
-set $transparent #00000000
-set $active #fabd2f
-set $text #e0e0e0
+set $bg000 #32302f
+set $fg000 #ebdbb2
+set $fgylw #fabd2f
+set $fgora #fe8019
+set $bgblu #458588
+set $fgred #fb4934
 
 # Window colours
-#                       border  backgr. text    indic.  child
-client.focused          #4c7899 #285577 $text #689d6a $active
-client.focused_inactive #333333 #5f676a $text #32302f #32302f
-client.unfocused        #333333 #222222 $text #32302f #32302f
-client.urgent           #2f343a #900000 $text #900000 #900000
+#                       border bg     text   indica ch brd
+client.focused          $bgblu $bgblu $fg000 $fgora $fgylw
+client.focused_inactive $bg000 $bg000 $fg000 $bg000 $bg000
+client.unfocused        $bg000 $bg000 $fg000 $bg000 $bg000
+client.urgent           $fgred $fgred $fg000 $fgred $bg000
 
 # Wallpaper
 exec_always feh --bg-scale /home/jerry/Wallpapers/unsplash/kevin-horstmann-200894.jpg
