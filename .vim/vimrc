@@ -3,13 +3,36 @@ execute pathogen#infect()
 imap jj <Esc>
 noremap <Space> i <Esc>r
 
+" Allow :Q and :W
+com W w
+com Q q
+
+" Visual navigation by default, unless preceded by number
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+if has('nvim')
+    " Make Esc escape Insert mode in NVIM terminal
+    tnoremap <Esc> <C-\><C-n>
+endif
+
+" Alt+Arrow to move between splits
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
+
 syntax on
 set backspace=indent,eol,start
 set complete-=i
 set completeopt=longest,menuone
 set copyindent
+set cursorline
 set encoding=utf-8
+set fillchars+=vert:\ 
+set ignorecase
 set incsearch
+set infercase
 set laststatus=2
 set list
 set listchars=tab:→\ ,trail:·
@@ -17,17 +40,20 @@ set nocompatible
 set modeline
 set mouse=a
 set nrformats-=octal
-set number
+set relativenumber
 set omnifunc=syntaxcomplete#Complete
 set ruler
 set shiftwidth=4
+set smartcase
 set so=3
 set tabstop=4
-if !has('nvim') && &ttimeoutlen == -1
-	set ttimeout
-	set ttimeoutlen=80
-endif
 set title
+if !has('nvim') && &ttimeoutlen == -1
+    set ttimeout
+    set ttimeoutlen=100
+endif
+set timeout
+set timeoutlen=200
 set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
@@ -41,5 +67,6 @@ if !empty($KONSOLE_PROFILE_NAME)
 endif
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 let g:gruvbox_contrast_dark='soft'
 hi Normal ctermbg=NONE
