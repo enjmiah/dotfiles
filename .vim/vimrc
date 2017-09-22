@@ -31,14 +31,16 @@ set cursorline
 set encoding=utf-8
 set fillchars+=vert:\ 
 set ignorecase
+set hidden
 set incsearch
 set infercase
 set laststatus=2
 set list
 set listchars=tab:→\ ,trail:·
-set nocompatible
 set modeline
 set mouse=a
+set nocompatible
+set noshowmatch
 set nrformats-=octal
 set relativenumber
 set omnifunc=syntaxcomplete#Complete
