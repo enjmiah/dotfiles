@@ -42,9 +42,22 @@ Move your `user.email` and `user.name` settings to `~/.gitconfig.user`.
 
 Create a symlink at `~/.gitconfig` that points to `~/dotfiles/.gitconfig`.
 
+### i3wm with KDE Plasma and compton
+
+Create a symlink at `~/.config/i3/config` that points to `~/dotfiles/.config/i3/config`.
+
+Create a symlink at `~/.config/compton.conf` that points to `~/dotfiles/.config/compton.conf`.
+
 ### Pylint
 
 Create a symlink at `~/.pylintrc` that points to `~/dotfiles/.pylintrc`.
+
+### Sublime Text
+
+You'll need Package Control installed.
+
+Create a symlink at `~/.config/sublime-text-3/Packages/User` that points to
+`~/dotfiles/.config/sublime-text-3/Packages/User`.
 
 ### Vim
 
