@@ -42,6 +42,7 @@ set mouse=a
 set nocompatible
 set noshowmatch
 set nrformats-=octal
+set number
 set relativenumber
 set omnifunc=syntaxcomplete#Complete
 set ruler
@@ -55,7 +56,7 @@ if !has('nvim') && &ttimeoutlen == -1
     set ttimeoutlen=100
 endif
 set timeout
-set timeoutlen=200
+set timeoutlen=300
 set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
