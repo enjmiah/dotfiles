@@ -45,7 +45,10 @@ unalias -m '*'
 # Environment variables #
 #########################
 
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$HOME/anaconda3/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="/usr/local/MATLAB/R2017a/bin:$PATH"
+export PATH="/usr/local/texlive/2016/bin/x86_64-linux:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 export LANG=en_US.UTF-8
 
