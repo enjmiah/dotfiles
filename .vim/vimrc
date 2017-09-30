@@ -28,6 +28,7 @@ set complete-=i
 set completeopt=longest,menuone
 set copyindent
 set cursorline
+set directory=~/.vim/swap
 set encoding=utf-8
 set fillchars+=vert:\ 
 set ignorecase

@@ -2,6 +2,8 @@
 .DS_Store
 Thumbs.db
 
+/.vim/swap
+
 Package Control.last-run
 Package Control.ca-list
 Package Control.ca-bundle
