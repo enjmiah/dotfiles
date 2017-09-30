@@ -52,10 +52,12 @@ bindsym $mod+f fullscreen toggle
 
 # Change container layout
 bindsym $mod+Shift+s layout tabbed
-bindsym $mod+Shift+t layout toggle split
+bindsym $mod+Shift+t floating disable, border pixel 1, layout toggle split
+
+set $float border normal 0, floating enable
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space $float
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -98,27 +100,32 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+$alt+Left resize shrink width 4 px or 4 ppt
-bindsym $mod+$alt+Down resize grow height 4 px or 4 ppt
-bindsym $mod+$alt+Up resize shrink height 4 px or 4 ppt
-bindsym $mod+$alt+Right resize grow width 4 px or 4 ppt
-bindsym $mod+$alt+h resize shrink width 4 px or 4 ppt
-bindsym $mod+$alt+j resize grow height 4 px or 4 ppt
-bindsym $mod+$alt+k resize shrink height 4 px or 4 ppt
-bindsym $mod+$alt+l resize grow width 4 px or 4 ppt
+bindsym $mod+$alt+Left resize shrink width 4 px or 1 ppt
+bindsym $mod+$alt+Down resize grow height 4 px or 1 ppt
+bindsym $mod+$alt+Up resize shrink height 4 px or 1 ppt
+bindsym $mod+$alt+Right resize grow width 4 px or 1 ppt
+bindsym $mod+$alt+h resize shrink width 4 px or 1 ppt
+bindsym $mod+$alt+j resize grow height 4 px or 1 ppt
+bindsym $mod+$alt+k resize shrink height 4 px or 1 ppt
+bindsym $mod+$alt+l resize grow width 4 px or 1 ppt
 
 bindsym $mod+shift+x exec i3lock
 
-workspace_auto_back_and_forth yes
-
 focus_follows_mouse no
 
+force_focus_wrapping no
+
 # Per-application overrides
-for_window [title="^About Mozilla Firefox$"] floating enable
-for_window [title="Preferences"] floating enable
+for_window [title="^About Mozilla Firefox$"] $float
+for_window [title="Preferences"] $float
+for_window [instance="^Mail$" class="^Thunderbird$"] $float
+for_window [instance="^feh$" class="^feh$"] $float
+for_window [instance="^gimp-2.8$"] $float
+for_window [title="^Figure [0-9]+$"] $float
 
 # Font for window titles
-font pango:Helvetica Neue, lemon 8
+font pango:Helvetica, lemon 12
+for_window [class=".*"] title_format "<span font='lemon 8'> %title</span>"
 
 set $bg000 #32302f
 set $fg000 #ebdbb2
@@ -135,12 +142,13 @@ client.unfocused        $bg000 $bg000 $fg000 $bg000 $bg000
 client.urgent           $fgred $fgred $fg000 $fgred $bg000
 
 # Wallpaper
-exec_always feh --bg-scale /home/jerry/Wallpapers/unsplash/kevin-horstmann-200894.jpg
+exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/unsplash/hu-garden.jpg"
 
 # i3-gaps stuff
-for_window [class="^.*"] border pixel 1
-gaps inner 12
-gaps outer 14
+new_window pixel 1
+new_float normal 0
+gaps inner 10
+gaps outer 8
 smart_borders on
 
 # Plasma Integration
@@ -157,6 +165,8 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
+
+no_focus [instance="plasmashell"]
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
