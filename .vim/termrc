@@ -1,0 +1,35 @@
+" execute pathogen#infect()
+
+imap jj <Esc>
+
+" Allow :Q and :W
+com W w
+com Q q
+
+" Visual navigation by default, unless preceded by number
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+if has('nvim')
+    " Make Esc escape Insert mode in NVIM terminal
+    tnoremap <Esc> <C-\><C-n>
+endif
+
+" Alt+Arrow to move between splits
+tnoremap <A-Left> <C-\><C-N><C-w>hi
+tnoremap <A-Down> <C-\><C-N><C-w>ji
+tnoremap <A-Up> <C-\><C-N><C-w>ki
+tnoremap <A-Right> <C-\><C-N><C-w>li
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
+
+set nocompatible
+set fillchars+=vert:│
+set laststatus=0
+hi VertSplit cterm=NONE ctermbg=NONE guibg=NONE
+
+" Set up terminals
+vsplit
+windo term

@@ -77,6 +77,7 @@ alias v='\vim'
 if type nvim &> /dev/null; then
     alias vi='nvim'
     alias vim='nvim'
+    alias vmux='nvim -u ~/.vim/termrc'
 fi # I prefer console vim on Linux, since colours are better there
 
 ####################
