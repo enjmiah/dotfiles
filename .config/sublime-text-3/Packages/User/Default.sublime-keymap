@@ -4,7 +4,15 @@
         "command": "_enter_normal_mode",
         "args": { "mode": "mode_insert" },
         "context": [
-            { "key": "vi_insert_mode_aware" }
-        ]
-    }
+            { "key": "vi_insert_mode_aware" },
+        ],
+    },
+    {
+        "keys": ["j", "k"],
+        "command": "_enter_normal_mode",
+        "args": { "mode": "mode_insert" },
+        "context": [
+            { "key": "vi_insert_mode_aware" },
+        ],
+    },
 ]

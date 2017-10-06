@@ -1,6 +1,7 @@
 execute pathogen#infect()
 
 imap jj <Esc>
+imap jk <Esc>
 noremap <Space> i <Esc>r
 
 " Allow :Q and :W
