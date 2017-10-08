@@ -4,7 +4,14 @@
 	"added_words":
 	[
 		"shader",
-		"Google"
+		"Google",
+		"voxel",
+		"voxels",
+		"octree",
+		"tuple",
+		"metaprogramming",
+		"accessor",
+		"volumetrics"
 	],
 	"always_prompt_for_file_reload": true,
 	"auto_complete_commit_on_tab": true,
@@ -16,11 +23,13 @@
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"drag_text": false,
 	"draw_centered": true,
+	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": false,
 	"font_face": "Roboto Mono for Powerline",
 	"font_options":
 	[
+		"no_italic"
 	],
 	"font_size": 9,
 	"highlight_line": true,
@@ -35,7 +44,7 @@
 	"indent_to_bracket": true,
 	"line_numbers": true,
 	"line_padding_bottom": 1,
-	"line_padding_top": 1,
+	"line_padding_top": 0,
 	"margin": -2,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
