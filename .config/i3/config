@@ -142,7 +142,7 @@ client.unfocused        $bg000 $bg000 $fg000 $bg000 $bg000
 client.urgent           $fgred $fgred $fg000 $fgred $bg000
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/unsplash/hu-garden.jpg"
+exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/unsplash/sanetwo-tnmc-260997.jpg"
 
 # i3-gaps stuff
 new_window pixel 1
@@ -150,6 +150,7 @@ new_float normal 0
 gaps inner 10
 gaps outer 8
 smart_borders on
+workspace 1 gaps outer 26
 
 # Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and
