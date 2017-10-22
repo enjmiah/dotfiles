@@ -2,4 +2,4 @@
 export KDEWM=/usr/bin/i3
 
 # Compositor (Animations, Shadows, Transparency)
-compton -bcCf --backend glx --vsync opengl
+compton -bC
