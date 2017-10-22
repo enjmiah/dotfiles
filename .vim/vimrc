@@ -55,10 +55,10 @@ set tabstop=4
 set title
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
-    set ttimeoutlen=100
+    set ttimeoutlen=500
 endif
 set timeout
-set timeoutlen=300
+set timeoutlen=500
 set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
