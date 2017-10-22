@@ -298,7 +298,7 @@
     {
         "class": "tabset_control",
         "attributes": ["file_medium_dark"],
-        "tint_modifier": ["background", 0, 0, 0, 0.25],
+        "tint_modifier": ["background", 0, 0, 0, 0.05],
     },
     {
         "class": "tabset_control",
