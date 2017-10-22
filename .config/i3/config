@@ -52,12 +52,10 @@ bindsym $mod+f fullscreen toggle
 
 # Change container layout
 bindsym $mod+Shift+s layout tabbed
-bindsym $mod+Shift+t floating disable, border pixel 1, layout toggle split
-
-set $float border normal 0, floating enable
+bindsym $mod+Shift+t layout toggle split
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space $float
+bindsym $mod+Shift+space floating toggle
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -116,12 +114,12 @@ focus_follows_mouse no
 force_focus_wrapping no
 
 # Per-application overrides
-for_window [title="^About Mozilla Firefox$"] $float
-for_window [title="Preferences"] $float
-for_window [instance="^Mail$" class="^Thunderbird$"] $float
-for_window [instance="^feh$" class="^feh$"] $float
-for_window [instance="^gimp-2.8$"] $float
-for_window [title="^Figure [0-9]+$"] $float
+for_window [title="^About Mozilla Firefox$"] floating enable
+for_window [title="Preferences"] floating enable
+for_window [instance="^Mail$" class="^Thunderbird$"] floating enable
+for_window [instance="^feh$" class="^feh$"] floating enable
+for_window [instance="^gimp-2.8$"] floating enable
+for_window [title="^Figure [0-9]+$"] floating enable
 
 # Font for window titles
 font pango:Helvetica, lemon 12
@@ -145,7 +143,7 @@ client.urgent           $fgred $fgred $fg000 $fgred $bg000
 exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/unsplash/sanetwo-tnmc-260997.jpg"
 
 # i3-gaps stuff
-new_window pixel 1
+new_window normal 0
 new_float normal 0
 gaps inner 10
 gaps outer 8
