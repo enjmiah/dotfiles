@@ -44,12 +44,13 @@ Create a symlink at `~/.gitconfig` that points to `~/dotfiles/.gitconfig`.
 
 ### i3wm with KDE Plasma and compton
 
+*Tested variants*: [i3-gaps](https://github.com/Airblader/i3)
+
 Create a symlink at `~/.config/plasma-workspace` that points to
 `~/dotfiles/.config/plasma-workspace`.  This will replace your window manager
 with i3, and your compositor with compton.
 
-Create a symlink at `~/.config/i3/config` that points to
-`~/dotfiles/.config/i3/config`.
+Create a symlink at `~/.config/i3` that points to `~/dotfiles/.config/i3`.
 
 Create a symlink at `~/.config/compton.conf` that points to
 `~/dotfiles/.config/compton.conf`.

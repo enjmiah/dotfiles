@@ -97,7 +97,7 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Resize window (you can also use the mouse for that)
+# Resize window
 bindsym $mod+$alt+Left resize shrink width 4 px or 1 ppt
 bindsym $mod+$alt+Down resize grow height 4 px or 1 ppt
 bindsym $mod+$alt+Up resize shrink height 4 px or 1 ppt
@@ -125,22 +125,24 @@ for_window [title="^Figure [0-9]+$"] floating enable
 font pango:Helvetica, lemon 12
 for_window [class=".*"] title_format "<span font='lemon 8'> %title</span>"
 
-set $bg000 #32302f
-set $fg000 #ebdbb2
-set $fgylw #fabd2f
-set $fgora #fe8019
-set $bgblu #458588
-set $fgred #fb4934
+set $black  #32302f
+set $foreg  #ebdbb2
+set $yellow #fabd2f
+set $orange #fe8019
+set $blue   #458588
+set $red    #fb4934
+set $white  #EFF0F1
 
 # Window colours
-#                       border bg     text   indica ch brd
-client.focused          $bgblu $bgblu $fg000 $fgora $fgylw
-client.focused_inactive $bg000 $bg000 $fg000 $bg000 $bg000
-client.unfocused        $bg000 $bg000 $fg000 $bg000 $bg000
-client.urgent           $fgred $fgred $fg000 $fgred $bg000
+#                       border bg     text   indicat child bord
+client.focused          $blue  $blue  $foreg $orange $yellow
+client.focused_inactive $white $white $black $black  $black
+client.unfocused        $white $white $black $black  $black
+client.urgent           $red   $red   $black $red    $black
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/unsplash/sanetwo-tnmc-260997.jpg"
+set $wallpaper unsplash/hu-garden.jpg
+exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/$wallpaper"
 
 # i3-gaps stuff
 new_window normal 0
