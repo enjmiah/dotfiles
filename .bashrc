@@ -31,17 +31,19 @@ fi
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
 function noh() { nohup $1 >/dev/null 2>&1 & }
 alias v='\vim'
-if type nvim &> /dev/null && [[ "$TERM" == "cygwin" ]]; then
-    function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
+if type nvim &> /dev/null; then
     alias view='vi -- -R'
-fi # I prefer console vim on Linux, since colours are better there
+fi
+if type nvim-qt &> /dev/null; then
+    function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
+fi
 
 
 #########################
 # Environment variables #
 #########################
 
-if type nvim &> /dev/null && [[ "$TERM" == "cygwin" ]]; then
+if type nvim-qt &> /dev/null; then
     export EDITOR='nvim-qt --qwindowgeometry 800x600'
 fi
 export PAGER=less
