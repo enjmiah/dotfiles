@@ -11,7 +11,14 @@
 		"tuple",
 		"metaprogramming",
 		"accessor",
-		"volumetrics"
+		"volumetrics",
+		"tridiagonal",
+		"subdiagonal",
+		"superdiagonal",
+		"Hessenberg",
+		"timestamp",
+		"metadata",
+		"versioning"
 	],
 	"always_prompt_for_file_reload": true,
 	"auto_complete_commit_on_tab": true,

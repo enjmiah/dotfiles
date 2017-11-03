@@ -33,6 +33,16 @@
 					"@todo"
 				]
 			},
+			"jshint":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
 			"pylint":
 			{
 				"@disable": false,
@@ -58,6 +68,8 @@
 		{
 			"linux":
 			[
+				"~/anaconda3/bin",
+				"/usr/local/bin"
 			],
 			"osx":
 			[
