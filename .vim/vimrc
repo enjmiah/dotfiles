@@ -2,6 +2,8 @@ execute pathogen#infect()
 
 imap jj <Esc>
 imap jk <Esc>
+
+" Allow single character insertions from normal mode
 noremap <Space> i <Esc>r
 
 " Allow :Q and :W
@@ -11,6 +13,9 @@ com Q q
 " Visual navigation by default, unless preceded by number
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" Clear the search highlight
+nnoremap <silent> <return> :noh<return>
 
 if has('nvim')
     " Make Esc escape Insert mode in NVIM terminal
