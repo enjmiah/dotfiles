@@ -31,10 +31,11 @@ function __job_info() {
     local lf='
 '
     local lastjob="$(jobs)"
+    local numjobs="$(jobs -sp | wc -l)"
     if [[ ! -z "${lastjob}" ]]; then
         printf "\033[34;43m "
         printf "\033[30m"
-        printf "$1 "
+        printf "$numjobs "
         printf "\033[33;47m "
     else
         printf "\033[34;47m "
