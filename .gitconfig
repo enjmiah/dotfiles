@@ -9,12 +9,12 @@
 	diffs = diff --staged
 	s = status -bsu
 [core]
-	editor = subl -n -w
-[diff]
-	tool = vimdiff
+	autocrlf = false
+	eol = lf
+	pager = less -FX
+[credential]
+	helper = cache --timeout 1800
 [difftool]
 	prompt = false
-[difftool "vimdiff"]
-	cmd = nvim-qt -qwindowgeometry 1200x800 -- -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
 	path = "~/.gitconfig.user" # contains user.name and user.email

@@ -55,7 +55,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
-  export EDITOR='subl'
+  export EDITOR='nvim'
 fi
 
 ###########
