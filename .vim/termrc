@@ -28,6 +28,7 @@ nnoremap <A-Right> <C-w>l
 set nocompatible
 set fillchars+=vert:│
 set laststatus=0
+set so=3
 hi VertSplit cterm=NONE ctermbg=NONE guibg=NONE
 
 " Set up terminals

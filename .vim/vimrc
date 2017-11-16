@@ -28,8 +28,12 @@ nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 
+" Disable cursorline in insert mode
+autocmd InsertEnter,InsertLeave * set cul!
+
 syntax on
 set backspace=indent,eol,start
+set clipboard=unnamedplus
 set complete-=i
 set completeopt=longest,menuone
 set copyindent
@@ -37,6 +41,7 @@ set cursorline
 set directory=~/.vim/swap
 set encoding=utf-8
 set fillchars+=vert:\ 
+set guicursor=
 set ignorecase
 set hidden
 set incsearch
