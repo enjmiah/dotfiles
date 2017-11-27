@@ -18,7 +18,9 @@ bindsym $mod+d exec --no-startup-id krunner
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+w exec firefox
 bindsym $mod+e exec dolphin
+bindsym $mod+t exec subl
 bindsym F3 exec xfce4-terminal --drop-down
+bindsym --release $mod+x exec xkill
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -28,20 +30,30 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # Move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Resize window
+bindsym $mod+$alt+Left resize shrink width    5 px or 1 ppt
+bindsym $mod+$alt+Down resize grow height     5 px or 1 ppt
+bindsym $mod+$alt+Up resize shrink height     5 px or 1 ppt
+bindsym $mod+$alt+Right resize grow width     5 px or 1 ppt
+bindsym $mod+$alt+j resize shrink width       5 px or 1 ppt
+bindsym $mod+$alt+k resize grow height        5 px or 1 ppt
+bindsym $mod+$alt+l resize shrink height      5 px or 1 ppt
+bindsym $mod+$alt+semicolon resize grow width 5 px or 1 ppt
 
 # Control split direction
 bindsym $mod+Control+h split horizontal
@@ -96,34 +108,24 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Resize window
-bindsym $mod+$alt+Left resize shrink width 4 px or 1 ppt
-bindsym $mod+$alt+Down resize grow height 4 px or 1 ppt
-bindsym $mod+$alt+Up resize shrink height 4 px or 1 ppt
-bindsym $mod+$alt+Right resize grow width 4 px or 1 ppt
-bindsym $mod+$alt+h resize shrink width 4 px or 1 ppt
-bindsym $mod+$alt+j resize grow height 4 px or 1 ppt
-bindsym $mod+$alt+k resize shrink height 4 px or 1 ppt
-bindsym $mod+$alt+l resize grow width 4 px or 1 ppt
-
+# Lock using i3lock
 bindsym $mod+shift+x exec i3lock
 
 focus_follows_mouse no
-
 force_focus_wrapping no
 
 # Per-application overrides
 for_window [title="^About Mozilla Firefox$"] floating enable
 for_window [title="Preferences"] floating enable
-for_window [instance="^Mail$" class="^Thunderbird$"] floating enable
+for_window [class="^Thunderbird$"] floating enable
 for_window [instance="^feh$" class="^feh$"] floating enable
+for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
 for_window [instance="^gimp-2.8$"] floating enable
 for_window [title="^Figure [0-9]+$"] floating enable
 
 # Font for window titles
-font pango:Helvetica, lemon 12
-for_window [class=".*"] title_format "<span font='lemon 8'> %title</span>"
+font pango:Helvetica, lemon 14
+for_window [class=".*"] title_format "<span font='lemon 8'>  %title</span>"
 
 set $black  #32302f
 set $foreg  #ebdbb2

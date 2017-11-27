@@ -17,6 +17,12 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " Clear the search highlight
 nnoremap <silent> <return> :noh<return>
 
+" Navigate with jkl; instead of hjkl
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
 if has('nvim')
     " Make Esc escape Insert mode in NVIM terminal
     tnoremap <Esc> <C-\><C-n>

@@ -1,6 +1,7 @@
 .netrwhist
 .DS_Store
 Thumbs.db
+.directory
 
 /.vim/swap
 

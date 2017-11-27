@@ -10,6 +10,7 @@
 		"GitSyntaxes",
 		"gruvbox",
 		"Julia",
+		"NeoVintageous",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
 		"Sass",
@@ -18,7 +19,7 @@
 		"SublimeLinter-annotations",
 		"SublimeLinter-jshint",
 		"SublimeLinter-pylint",
-		"Vintageous",
+		"ToggleNeoVintageous",
 		"Wrap Plus"
 	]
 }
