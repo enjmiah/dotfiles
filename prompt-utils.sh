@@ -31,7 +31,8 @@ function __job_info() {
     local lf='
 '
     local lastjob="$(jobs)"
-    local numjobs="$(jobs -sp | wc -l)"
+    # https://unix.stackexchange.com/questions/251868/jobs-wc-getting-weird-return-values
+    local numjobs="$( ( jobs -sp ) | wc -l)"
     if [[ ! -z "${lastjob}" ]]; then
         printf "\033[34;43m "
         printf "\033[30m"
