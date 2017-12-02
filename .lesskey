@@ -1,0 +1,4 @@
+#command
+j    invalid
+k    forw-line
+l    back-line
