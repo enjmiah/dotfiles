@@ -32,6 +32,8 @@ Notes:
 
 *Tested variants*: bash, Git Bash for Windows
 
+You should use a Powerline font for characters to show up properly.
+
 Create a symlink at `~/.bashrc` that points to `~/dotfiles/.bashrc`.
 
 Create a symlink at `~/.bash_profile` that points to `~/dotfiles/.bash_profile`.
@@ -83,5 +85,7 @@ In addition:
 \* `nvim` colours don't work very well in `cmd` or Git Bash on Windows.
 
 ### Zsh
+
+You should use a Powerline font for characters to show up properly.
 
 Create a symlink at `~/.zshrc` that points to `~/dotfiles/.zshrc`.

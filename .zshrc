@@ -18,13 +18,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Powerline plugin
-# if [[ -r ~/anaconda3/lib/python3.6/site-packages/powerline_status-2.6-py3.6.egg/powerline/bindings/zsh/powerline.zsh ]]; then
-#    source ~/anaconda3/lib/python3.6/site-packages/powerline_status-2.6-py3.6.egg/powerline/bindings/zsh/powerline.zsh
-# fi
-
-# ZSH_THEME="amuse"
-
 # DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=30
 
@@ -52,27 +45,26 @@ export PATH="/usr/local/bin:$PATH"
 
 export LANG=en_US.UTF-8
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='vim'
+type nvim &> /dev/null && export EDITOR='nvim'
 
 ###########
 # Aliases #
 ###########
 
-alias cp='cp -i' # prompt before overwriting
-alias mv='mv -i' # prompt before overwriting
-alias rm='rm -i' # prompt before overwriting
+# prompt before overwriting
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 alias bye='exit'
-alias data='cd /media/jerry/Data'
-function rip() { rg -ip "$@" | less -FRX; } # ripgrep
+[ -e /media/jerry/Data ] && alias data='cd /media/jerry/Data'
+type rg &> /dev/null     && function rip() { rg -ip "$@" | less -FRX; } # ripgrep
 alias l='ls'
-alias ll='ls -l --color=auto'
+alias ll='ls -hl --color=auto'
 alias ls='ls -A --color=auto'
 alias logmeout='qdbus org.kde.ksmserver /KSMServer logout 0 0 0'
+alias neofetch='neofetch --gap -1 --backend w3m --gtk2 off --gtk3 off --disable model'
 function spawn() { $@ &> /dev/null & disown }
 if type nvim &> /dev/null; then
     alias vi='nvim'

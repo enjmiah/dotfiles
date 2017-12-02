@@ -131,9 +131,10 @@ set $black  #32302f
 set $foreg  #ebdbb2
 set $yellow #fabd2f
 set $orange #fe8019
-set $blue   #458588
+set $blue   #4c6b76
 set $red    #fb4934
-set $white  #EFF0F1
+set $purp   #b16286
+set $white  #d0cebb
 
 # Window colours
 #                       border bg     text   indicat child bord
@@ -143,8 +144,8 @@ client.unfocused        $white $white $black $black  $black
 client.urgent           $red   $red   $black $red    $black
 
 # Wallpaper
-set $wallpaper unsplash/hu-garden.jpg
-exec_always --no-startup-id feh --bg-scale "/home/jerry/Wallpapers/$wallpaper"
+set $wallpaper unsplash/lisheng-grain.jpg
+exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
 
 # i3-gaps stuff
 new_window normal 0
@@ -152,7 +153,7 @@ new_float normal 0
 gaps inner 10
 gaps outer 8
 smart_borders on
-workspace 1 gaps outer 26
+workspace 1 gaps outer 25
 
 # Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and
