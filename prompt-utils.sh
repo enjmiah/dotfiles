@@ -31,12 +31,16 @@ function __job_info() {
     local lf='
 '
     local lastjob="$(jobs)"
-    # https://unix.stackexchange.com/questions/251868/jobs-wc-getting-weird-return-values
-    local numjobs="$( ( jobs -sp ) | wc -l)"
     if [[ ! -z "${lastjob}" ]]; then
         printf "\033[34;43m "
         printf "\033[30m"
-        printf "$numjobs "
+        if [[ ! -z "$1" ]]; then
+            printf "$1 "
+        elif [[ ! -z "$ZSH_VERSION" ]]; then
+            printf '%%j '
+        else
+            printf ':) ' # unknown shell, I guess
+        fi
         printf "\033[33;47m "
     else
         printf "\033[34;47m "
