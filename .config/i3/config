@@ -46,14 +46,14 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # Resize window
-bindsym $mod+$alt+Left resize shrink width    5 px or 1 ppt
-bindsym $mod+$alt+Down resize grow height     5 px or 1 ppt
-bindsym $mod+$alt+Up resize shrink height     5 px or 1 ppt
-bindsym $mod+$alt+Right resize grow width     5 px or 1 ppt
-bindsym $mod+$alt+j resize shrink width       5 px or 1 ppt
-bindsym $mod+$alt+k resize grow height        5 px or 1 ppt
-bindsym $mod+$alt+l resize shrink height      5 px or 1 ppt
-bindsym $mod+$alt+semicolon resize grow width 5 px or 1 ppt
+bindsym $mod+$alt+Left resize shrink width    8 px or 1 ppt
+bindsym $mod+$alt+Down resize grow height     8 px or 1 ppt
+bindsym $mod+$alt+Up resize shrink height     8 px or 1 ppt
+bindsym $mod+$alt+Right resize grow width     8 px or 1 ppt
+bindsym $mod+$alt+j resize shrink width       8 px or 1 ppt
+bindsym $mod+$alt+k resize grow height        8 px or 1 ppt
+bindsym $mod+$alt+l resize shrink height      8 px or 1 ppt
+bindsym $mod+$alt+semicolon resize grow width 8 px or 1 ppt
 
 # Control split direction
 bindsym $mod+Control+h split horizontal
@@ -154,6 +154,9 @@ gaps inner 10
 gaps outer 8
 smart_borders on
 workspace 1 gaps outer 25
+
+bindsym $mod+Prior gaps outer current plus 4
+bindsym $mod+Next gaps outer current minus 4
 
 # Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and
