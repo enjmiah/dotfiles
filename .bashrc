@@ -21,36 +21,22 @@ alias rm='rm -i' # prompt before overwriting
 
 alias bye='exit'
 function cd() { pushd $@ > /dev/null; } # allows going back with `popd`
-alias data='cd /d'
+[[ "$TERM" == "cygwin" ]] && alias data='cd /d'
 alias l='ls'
 alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
-if [[ $TERM == "cygwin" ]]; then
-    alias python2='/c/Anaconda3/envs/py27/python.exe'
-fi
+[[ "$TERM" == "cygwin" ]] && alias python2='/c/Anaconda3/envs/py27/python.exe'
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
 function noh() { nohup $1 >/dev/null 2>&1 & }
 alias v='\vim'
-if type nvim &> /dev/null; then
-    alias view='vi -- -R'
-fi
-if type nvim-qt &> /dev/null; then
-    function vi() { nvim-qt --qwindowgeometry 800x600 $@ & }
-fi
-
+alias view='vi -- -R'
 
 #########################
 # Environment variables #
 #########################
 
-if type nvim-qt &> /dev/null; then
-    export EDITOR='nvim-qt --qwindowgeometry 800x600'
-fi
 export PAGER=less
-if [[ "$TERM" == "cygwin" ]]; then
-    export PATH="$PATH:/c/bin"
-fi
-export PYTHONDONTWRITEBYTECODE=1
+[[ "$TERM" == "cygwin" ]] && export PATH="$PATH:/c/bin"
 
 ####################
 # Start-up scripts #
