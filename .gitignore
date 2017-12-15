@@ -4,6 +4,7 @@ Thumbs.db
 .directory
 *.exe
 
+/.vim/plug
 /.vim/swap
 
 Package Control.last-run
