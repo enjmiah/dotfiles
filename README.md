@@ -28,6 +28,10 @@ Notes:
 + For programs without a "Tested variants" section, assume the most common
     variant.
 
+### AutoHotkey
+
+Run `AutoHotkey/Keybinds.ahk`.  That's it.
+
 ### Bash
 
 *Tested variants*: bash, Git Bash for Windows
@@ -57,6 +61,11 @@ Create a symlink at `~/.config/i3` that points to `~/dotfiles/.config/i3`.
 Create a symlink at `~/.config/compton.conf` that points to
 `~/dotfiles/.config/compton.conf`.
 
+### Konsole
+
+Create a symlink at `~/.local/share/konsole` that points to
+`~/dotfiles/.local/share/konsole`.
+
 ### Pylint
 
 Create a symlink at `~/.pylintrc` that points to `~/dotfiles/.pylintrc`.
@@ -72,7 +81,8 @@ Create a symlink at `~/.config/sublime-text-3/Packages/User` that points to
 
 *Tested variants*: vim, gVim, neovim\*, neovim-qt
 
-Create a directory symlink at `~/.vim` that points to `~/dotfiles/.vim`.
+Create a directory symlink at `~/.vim` that points to `~/dotfiles/.vim`.  Then
+run `:PlugInstall` to install the plugins to `~/.vim/plug`.
 
 In addition:
 
