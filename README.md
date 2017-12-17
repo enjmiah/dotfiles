@@ -2,6 +2,14 @@
 
 <h1 align="center">d o t f i l e s</h1>
 
+![](https://assets.jerryyin.info/img/rice/2.png)
+![](https://assets.jerryyin.info/img/rice/1.png)
+
+<p align="center">wallpaper:
+<a href="http://assets.jerryyin.info/img/rice/lisheng-chang.jpg">edited</a> by
+me, original by <a href="https://unsplash.com/photos/Ek4wBjiIFAA">lisheng
+chang</a></p>
+
 <h2 align="center">set-up</h2>
 
 Do a recursive clone of this repository to your home directory.
