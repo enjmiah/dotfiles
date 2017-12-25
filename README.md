@@ -36,6 +36,12 @@ Notes:
 + For programs without a "Tested variants" section, assume the most common
     variant.
 
+### Alacritty
+
+*Tested variants*: Linux
+
+Create a symlink at `~/.config/alacritty` that points to `~/dotfiles/.config/alacritty`.
+
 ### AutoHotkey
 
 Run `AutoHotkey/Keybinds.ahk`.  That's it.
