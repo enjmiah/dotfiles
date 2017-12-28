@@ -1,14 +1,3 @@
-" Plugins
-call plug#begin('~/.vim/plug')
-Plug 'junegunn/goyo.vim'
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/vim-slash'
-Plug 'tomtom/tcomment_vim'
-Plug 'vim-syntastic/syntastic'
-call plug#end()
-
 " Escape insert mode by typing "jj" or "jk" quickly
 imap jj <Esc>
 imap jk <Esc>
@@ -33,19 +22,11 @@ noremap j h
 nnoremap <expr> k v:count ? 'j' : 'gj'
 nnoremap <expr> l v:count ? 'k' : 'gk'
 
-if has('nvim')
-    " Make Esc escape Insert mode in NVIM terminal
-    tnoremap <Esc> <C-\><C-n>
-endif
-
 " Alt+Arrow to move between splits
 nnoremap <A-Left> <C-w>h
 nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
-
-" Disable cursorline in insert mode
-autocmd InsertEnter,InsertLeave * set cul!
 
 syntax on
 set backspace=indent,eol,start
@@ -90,19 +71,3 @@ set wildmenu
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
-
-colo gruvbox
-" I use a dark theme in Konsole but a light theme elsewhere
-if !empty($KONSOLE_PROFILE_NAME) || !empty($ALACRITTY)
-    set background=dark
-endif
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts=1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:goyo_linenr=1
-let g:gruvbox_contrast_dark='soft'
-hi Normal ctermbg=NONE
