@@ -27,7 +27,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Plug-in can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plug-ins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
