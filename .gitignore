@@ -7,6 +7,8 @@ Thumbs.db
 /.vim/plug
 /.vim/swap
 
+/.config/Code/User/workspaceStorage
+
 Package Control.last-run
 Package Control.ca-list
 Package Control.ca-bundle

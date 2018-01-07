@@ -1,0 +1,70 @@
+{
+    "editor.cursorBlinking": "phase",
+    "editor.cursorStyle": "line-thin",
+    "editor.dragAndDrop": false,
+    "editor.fontFamily": "Roboto Mono",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 20,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        90
+    ],
+    "editor.scrollBeyondLastLine": false,
+    "editor.wordWrap": "on",
+    "files.hotExit": "onExitAndWindowClose",
+    "files.insertFinalNewline": true,
+    "git.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "window.restoreWindows": "all",
+    "window.zoomLevel": -1.5,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Gruvbox Dark (Medium Contrast)",
+    "workbench.editor.showIcons": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-unknown-linux-gnu",
+        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
+    },
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    },
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["h"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["l"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": [";"],
+            "after": ["l"]
+        },
+        {
+            "before": ["h"],
+            "after": []
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": false,
+}
