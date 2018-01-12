@@ -33,6 +33,8 @@
     "rust.rls": {
         "useRustfmt": true
     },
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Roboto Mono",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": ["j"],
@@ -64,7 +66,17 @@
             "after": [
                 "<Esc>"
             ]
+        },
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
     "vim.useCtrlKeys": false,
+    "vim.useSystemClipboard": true
 }
