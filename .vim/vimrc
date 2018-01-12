@@ -1,11 +1,13 @@
 " Plugins
 call plug#begin('~/.vim/plug')
-Plug 'junegunn/goyo.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/vim-slash'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-slash'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
 
@@ -32,6 +34,9 @@ noremap j h
 " Visual navigation by default, unless preceded by number
 nnoremap <expr> k v:count ? 'j' : 'gj'
 nnoremap <expr> l v:count ? 'k' : 'gk'
+
+" Have x not modify registers
+noremap x "_x
 
 if has('nvim')
     " Make Esc escape Insert mode in NVIM terminal
