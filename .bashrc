@@ -27,7 +27,7 @@ alias less='less -FRX'
 alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 [[ "$TERM" == "cygwin" ]] && alias python2='/c/Anaconda3/envs/py27/python.exe'
 function rip() { rg -ip "$@" | less -FRX; } # ripgrep
-function noh() { nohup $1 >/dev/null 2>&1 & }
+function spawn() { $@ &> /dev/null & disown; }
 alias v='\vim'
 alias view='vi -- -R'
 
