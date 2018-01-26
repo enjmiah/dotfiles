@@ -4,8 +4,8 @@ env:
 
 # Falls back to size specified by window manager if set to 0x0.
 dimensions:
-  columns: 80
-  lines: 24
+  columns: 90
+  lines: 30
 
 padding:
   x: 15
@@ -16,17 +16,18 @@ draw_bold_text_with_bright_colors: false
 
 font:
   normal:
-    family: lemon
+    family: Roboto Mono for Powerline
     # style: Regular
   bold:
-    family: lemon
+    family: Roboto Mono for Powerline
     # style: Bold
   italic:
-    family: lemon
+    family: Roboto Mono for Powerline
     # style: Italic
   size: 8.0
   offset:
-    x: -5.0
+    # x: -5.0
+    x: -7.0
     y: 0.0
   glyph_offset:
     x: 0.0
@@ -39,7 +40,8 @@ custom_cursor_colors: true
 # Colors (Gruvbox dark)
 colors:
   primary:
-    background: '0x242C30'
+    # background: '0x242C30'
+    background: '0x32302f'
     foreground: '0xE6D4A3'
   normal:
     black:   '0x242C30'
@@ -84,7 +86,7 @@ visual_bell:
   animation: EaseOutExpo
   duration: 67
 
-background_opacity: 0.95
+background_opacity: 0.97
 
 # Values for `mouse`:
 # - Middle
@@ -96,8 +98,7 @@ background_opacity: 0.95
 # - Paste
 # - PasteSelection
 # - Copy (TODO)
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+mouse_bindings: []
 
 mouse:
   double_click: { threshold: 300 }
@@ -113,8 +114,6 @@ key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
   - { key: Q,        mods: Command, action: Quit                         }
-  - { key: W,        mods: Command, action: Quit                         }
-  - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
@@ -143,28 +142,16 @@ key_bindings:
   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
+  - { key: Up,       mods: Shift,   action: ScrollUp                     }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
   - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
   - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
-  - { key: Down,     mods: Shift,   chars: "\x1b[1;2B"                   }
+  - { key: Down,     mods: Shift,   action: ScrollDown                   }
   - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
   - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
-  - { key: F1,                      chars: "\x1bOP"                      }
-  - { key: F2,                      chars: "\x1bOQ"                      }
-  - { key: F3,                      chars: "\x1bOR"                      }
-  - { key: F4,                      chars: "\x1bOS"                      }
-  - { key: F5,                      chars: "\x1b[15~"                    }
-  - { key: F6,                      chars: "\x1b[17~"                    }
-  - { key: F7,                      chars: "\x1b[18~"                    }
-  - { key: F8,                      chars: "\x1b[19~"                    }
-  - { key: F9,                      chars: "\x1b[20~"                    }
-  - { key: F10,                     chars: "\x1b[21~"                    }
-  - { key: F11,                     chars: "\x1b[23~"                    }
-  - { key: F12,                     chars: "\x1b[24~"                    }
   - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
   - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
   - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
