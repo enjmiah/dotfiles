@@ -43,6 +43,8 @@ export PATH="/usr/local/MATLAB/R2017a/bin:$PATH"
 export PATH="/usr/local/texlive/2016/bin/x86_64-linux:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
+[[ "$(cat "/proc/${PPID}/comm")" == "xfce4-terminal" ]] && export XFCE_TERMINAL=1
+
 export LANG=en_US.UTF-8
 
 export EDITOR='vim'

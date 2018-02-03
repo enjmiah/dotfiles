@@ -98,9 +98,10 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 
 colo gruvbox
-" I use a dark theme in Konsole but a light theme elsewhere
-if !empty($KONSOLE_PROFILE_NAME) || !empty($ALACRITTY)
-    set background=dark
+set background=dark
+" I use a light theme in xfce4-terminal
+if !empty($XFCE_TERMINAL)
+    set background=light
 endif
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
