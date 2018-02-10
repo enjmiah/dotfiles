@@ -17,7 +17,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
-		"SublimeLinter-jshint",
+		"SublimeLinter-eslint",
 		"SublimeLinter-pylint",
 		"ToggleNeoVintageous",
 		"Wrap Plus"
