@@ -1,13 +1,23 @@
 " Plugins
 call plug#begin('~/.vim/plug')
+Plug 'ayu-theme/ayu-vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/goyo.vim'
+    let g:goyo_linenr=1
+Plug 'junegunn/vim-slash'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+    let g:gruvbox_contrast_dark='soft'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/vim-slash'
-Plug 'junegunn/goyo.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='gruvbox'
+    let g:airline_powerline_fonts=1
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline#extensions#tabline#enabled = 1
 Plug 'vim-syntastic/syntastic'
 call plug#end()
 
@@ -99,17 +109,10 @@ endif
 
 colo gruvbox
 set background=dark
-" I use a light theme in xfce4-terminal
+" I use a light theme in drop-down terminal
 if !empty($XFCE_TERMINAL)
     set background=light
+    let ayucolor="light"
+    colo ayu
 endif
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts=1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:goyo_linenr=1
-let g:gruvbox_contrast_dark='soft'
 hi Normal ctermbg=NONE

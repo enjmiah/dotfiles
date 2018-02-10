@@ -62,6 +62,7 @@ set ruler
 set shiftwidth=4
 set smartcase
 set so=3
+set surround
 set tabstop=4
 set title
 if !has('nvim') && &ttimeoutlen == -1
