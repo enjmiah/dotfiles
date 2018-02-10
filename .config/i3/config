@@ -15,7 +15,7 @@ floating_modifier $mod
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id krunner
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 bindsym $mod+w exec firefox
 bindsym $mod+e exec dolphin
 bindsym $mod+t exec subl
@@ -120,21 +120,24 @@ for_window [title="Preferences"] floating enable
 for_window [class="^Thunderbird$"] floating enable
 for_window [instance="^feh$" class="^feh$"] floating enable
 for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
+for_window [title="^qiv"] floating enable
 for_window [instance="^gimp-2.8$"] floating enable
 for_window [title="^Figure [0-9]+$"] floating enable
+for_window [title="^R Graphics"] floating enable
+for_window [class="^Audacious$"] floating enable
 
 # Font for window titles
-font pango:Helvetica, lemon 14
-for_window [class=".*"] title_format "<span font='lemon 8'>  %title</span>"
+font pango:Helvetica, lemon 16
+for_window [title=".*"] title_format "<span font='lemon 8'>  %title</span>"
 
-set $black  #32302f
+set $black  #aaaaaa
 set $foreg  #ebdbb2
 set $yellow #fabd2f
 set $orange #fe8019
-set $blue   #4c6b76
+set $blue   #66aab3
 set $red    #fb4934
 set $purp   #b16286
-set $white  #d0cebb
+set $white  #eff0f1
 
 # Window colours
 #                       border bg     text   indicat child bord
@@ -144,7 +147,7 @@ client.unfocused        $white $white $black $black  $black
 client.urgent           $red   $red   $black $red    $black
 
 # Wallpaper
-set $wallpaper unsplash/lisheng-grain.jpg
+set $wallpaper unsplash/jenu-prasad-271630.jpg
 exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
 
 # i3-gaps stuff
@@ -153,7 +156,7 @@ new_float normal 0
 gaps inner 10
 gaps outer 8
 smart_borders on
-workspace 1 gaps outer 25
+workspace 1 gaps outer 27
 
 bindsym $mod+Prior gaps outer current plus 4
 bindsym $mod+Next gaps outer current minus 4
@@ -163,7 +166,6 @@ bindsym $mod+Next gaps outer current minus 4
 # hides everythiing)
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
-
 for_window [class="plasmashell"] floating enable, border none
 for_window [class="Plasma"] floating enable, border none
 for_window [title="plasma-desktop"] floating enable, border none
