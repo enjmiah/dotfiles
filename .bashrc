@@ -20,7 +20,7 @@ alias mv='mv -i' # prompt before overwriting
 alias rm='rm -i' # prompt before overwriting
 
 alias bye='exit'
-function cd() { pushd $@ > /dev/null; } # allows going back with `popd`
+function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`
 [[ "$TERM" == "cygwin" ]] && alias data='cd /d'
 alias l='ls'
 alias less='less -FRX'
