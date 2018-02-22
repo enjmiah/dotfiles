@@ -7,8 +7,8 @@ dimensions:
   lines: 30
 
 padding:
-  x: 15
-  y: 15
+  x: 20
+  y: 20
 
 tabspaces: 4
 draw_bold_text_with_bright_colors: false
@@ -25,7 +25,6 @@ font:
     # style: Italic
   size: 8.0
   offset:
-    # x: -5.0
     x: -7.0
     y: 0.0
   glyph_offset:
@@ -39,9 +38,11 @@ custom_cursor_colors: true
 # Colors (Gruvbox dark)
 colors:
   primary:
-    # background: '0x242C30'
-    background: '0x32302f'
+    background: '0x242C30'
     foreground: '0xE6D4A3'
+  cursor:
+    text:    '0x242C30'
+    cursor:  '0xFF2266'
   normal:
     black:   '0x242C30'
     red:     '0xF73028'
