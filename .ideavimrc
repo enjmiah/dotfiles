@@ -71,6 +71,7 @@ if !has('nvim') && &ttimeoutlen == -1
 endif
 set timeout
 set timeoutlen=500
+set visualbell
 set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
