@@ -5,8 +5,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/goyo.vim'
     let g:goyo_linenr=1
 Plug 'junegunn/vim-slash'
+Plug 'kana/vim-operator-user'
 Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='soft'
+Plug 'rhysd/vim-clang-format'
+    let g:clang_format#detect_style_file=1
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -117,3 +120,5 @@ if !empty($XFCE_TERMINAL)
     colo ayu
 endif
 hi Normal ctermbg=NONE
+
+autocmd FileType c,cpp,objc map <buffer><Leader>rf <Plug>(operator-clang-format)
