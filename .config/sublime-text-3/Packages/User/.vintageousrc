@@ -1,4 +1,5 @@
-:map <space> i<space><esc><left>r
+:noremap <space> i<space><esc><left>r
+:noremap x "_x
 :noremap ; l
 :noremap l k
 :noremap k j
