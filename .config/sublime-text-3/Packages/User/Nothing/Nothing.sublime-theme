@@ -281,8 +281,8 @@
         "layer0.opacity": 1.0,
         "content_margin": [-36, 0, 6, 0],
         "tint_index": 0,
-        "tab_height": 30,
-        "tab_width": 120,
+        "tab_height": 32,
+        "tab_width": 160,
         "tab_overlap": 0
     },
     {
@@ -293,12 +293,12 @@
     {
         "class": "tabset_control",
         "attributes": ["file_dark"],
-        "tint_modifier": [255, 255, 255, 0.15]
+        "tint_modifier": [255, 255, 255, 0.18]
     },
     {
         "class": "tabset_control",
         "attributes": ["file_medium_dark"],
-        "tint_modifier": ["background", 0, 0, 0, 0.05],
+        "tint_modifier": ["background", 0, 0, 0, 0.2],
     },
     {
         "class": "tabset_control",
