@@ -46,14 +46,14 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # Resize window
-bindsym $mod+$alt+Left resize shrink width    8 px or 1 ppt
-bindsym $mod+$alt+Down resize grow height     8 px or 1 ppt
-bindsym $mod+$alt+Up resize shrink height     8 px or 1 ppt
-bindsym $mod+$alt+Right resize grow width     8 px or 1 ppt
-bindsym $mod+$alt+j resize shrink width       8 px or 1 ppt
-bindsym $mod+$alt+k resize grow height        8 px or 1 ppt
-bindsym $mod+$alt+l resize shrink height      8 px or 1 ppt
-bindsym $mod+$alt+semicolon resize grow width 8 px or 1 ppt
+bindsym $mod+$alt+Left resize shrink width    14 px or 1 ppt
+bindsym $mod+$alt+Down resize grow height     14 px or 1 ppt
+bindsym $mod+$alt+Up resize shrink height     14 px or 1 ppt
+bindsym $mod+$alt+Right resize grow width     14 px or 1 ppt
+bindsym $mod+$alt+j resize shrink width       14 px or 1 ppt
+bindsym $mod+$alt+k resize grow height        14 px or 1 ppt
+bindsym $mod+$alt+l resize shrink height      14 px or 1 ppt
+bindsym $mod+$alt+semicolon resize grow width 14 px or 1 ppt
 
 # Control split direction
 bindsym $mod+Control+h split horizontal
@@ -120,7 +120,6 @@ for_window [title="Preferences"] floating enable
 for_window [class="^Thunderbird$"] floating enable
 for_window [instance="^feh$" class="^feh$"] floating enable
 for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
-for_window [title="^qiv"] floating enable
 for_window [instance="^gimp-2.8$"] floating enable
 for_window [title="^Figure [0-9]+$"] floating enable
 for_window [title="^R Graphics"] floating enable
@@ -128,7 +127,7 @@ for_window [class="^Audacious$"] floating enable
 
 # Font for window titles
 font pango:Helvetica, lemon 16
-for_window [title=".*"] title_format "<span font='lemon 8'>  %title</span>"
+for_window [title=".*"] title_format "<span font='Roboto 8'>   %title</span>"
 
 set $black  #aaaaaa
 set $foreg  #ebdbb2
