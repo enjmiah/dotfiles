@@ -72,6 +72,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set complete-=i
 set completeopt=longest,menuone
+set colorcolumn=80,90
 set copyindent
 set cursorline
 set directory=~/.vim/swap
@@ -98,13 +99,14 @@ set shiftwidth=4
 set smartcase
 set so=3
 set tabstop=4
-set title
+set t_vb=
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
     set ttimeoutlen=500
 endif
 set timeout
 set timeoutlen=500
+set visualbell
 set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
