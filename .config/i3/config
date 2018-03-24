@@ -20,6 +20,7 @@ bindsym $mod+w exec firefox
 bindsym $mod+e exec dolphin
 bindsym $mod+t exec subl
 bindsym F3 exec xfce4-terminal --drop-down
+bindsym F4 exec thunderbird
 bindsym --release $mod+x exec xkill
 
 # Kill focused window
@@ -122,6 +123,7 @@ for_window [instance="^feh$" class="^feh$"] floating enable
 for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
 for_window [instance="^gimp-2.8$"] floating enable
 for_window [title="^Figure [0-9]+$"] floating enable
+for_window [title="^Plot Zoom$"] floating enable
 for_window [title="^R Graphics"] floating enable
 for_window [class="^Audacious$"] floating enable
 
