@@ -30,7 +30,7 @@
 	"caret_blink_interval": 0.6,
 	"caret_extra_top": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Soft).tmTheme",
+	"color_scheme": "Packages/User/ColorSublime/gruvbox cool.tmTheme",
 	"default_line_ending": "unix",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
