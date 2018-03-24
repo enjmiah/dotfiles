@@ -39,7 +39,7 @@ unalias -m '*'
 #########################
 
 export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="/usr/local/MATLAB/R2017a/bin:$PATH"
+export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
 export PATH="/usr/local/texlive/2016/bin/x86_64-linux:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
@@ -66,7 +66,7 @@ alias l='ls'
 alias ll='ls -hl --color=auto'
 alias ls='ls -A --color=auto'
 alias logmeout='qdbus org.kde.ksmserver /KSMServer logout 0 0 0'
-alias neofetch='neofetch --gap -1 --backend w3m --gtk2 off --gtk3 off --disable model'
+alias neofetch='neofetch --gap -1 --backend w3m --xoffset 20 --yoffset 20 --gtk2 off --gtk3 off --disable model'
 function spawn() { $@ &> /dev/null & disown }
 if type nvim &> /dev/null; then
     alias vi='nvim'
