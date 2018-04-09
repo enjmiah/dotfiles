@@ -14,27 +14,28 @@
 
 ; Disable Win key as start menu. A lot of shortcuts use Win as a modifier, so
 ; it's easy to fat finger otherwise.
-~LWin Up:: return
+~LWin Up::return
+
+; Middle click with Win+S (what ASUS Smart Gesture sends when you triple tap)
+#s:: Send, {MButton}{LWin up}
 
 ; Quit window with Win+Shift+Q
-#+q::
-    Send, {alt down}{f4}{alt up}
-Return
+#+q:: Send, !{f4}
 
 ; Win+D to trigger Launchy
-#d::
-    Send, {alt down}{space}{alt up}
-Return
+#d:: Send, !{space}
 
 switchDesktopByNumber( target ) {
     Loop, 5 {
-        send ^#{left}
+        Send, ^#{left}
     }
     while( target > 0 ) {
-        sleep 2
-        send ^#{right}
+        Sleep, 1
+        Send, ^#{right}
         target--
     }
+    ; just in case
+    Send, {ctrl up}{lwin up}
 }
 
 ; Win+number to switch to desktop
