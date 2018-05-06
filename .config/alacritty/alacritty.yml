@@ -7,8 +7,8 @@ dimensions:
   lines: 30
 
 padding:
-  x: 20
-  y: 20
+  x: 16
+  y: 16
 
 tabspaces: 4
 draw_bold_text_with_bright_colors: false
@@ -23,9 +23,9 @@ font:
   italic:
     family: Roboto Mono for Powerline
     # style: Italic
-  size: 8.0
+  size: 8.5
   offset:
-    x: -7.0
+    x: -8.0
     y: 0.0
   glyph_offset:
     x: 0.0
@@ -86,7 +86,7 @@ visual_bell:
   animation: EaseOutExpo
   duration: 67
 
-background_opacity: 0.97
+background_opacity: 1.0
 
 # Values for `mouse`:
 # - Middle
