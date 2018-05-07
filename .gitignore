@@ -5,7 +5,6 @@ Thumbs.db
 *.exe
 
 /.vim/plug
-/.vim/swap
 
 /.config/Code/User/workspaceStorage
 
