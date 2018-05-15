@@ -10,7 +10,9 @@ Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='soft'
 Plug 'rhysd/vim-clang-format'
     let g:clang_format#detect_style_file=1
+Plug 'sukima/xmledit'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -78,7 +80,6 @@ set cursorline
 set directory=~/.vim/swap
 set encoding=utf-8
 set fillchars+=vert:\ 
-set guicursor=
 set ignorecase
 set hidden
 set incsearch
