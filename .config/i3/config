@@ -110,8 +110,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit i3' 'i3-msg exit'"
-# Lock using i3lock
-bindsym $mod+shift+x exec i3lock
 
 bindsym $mod+Prior gaps outer current plus 4
 bindsym $mod+Next gaps outer current minus 4
@@ -122,18 +120,17 @@ bindsym $mod+Next gaps outer current minus 4
 
 focus_follows_mouse no
 force_focus_wrapping no
-new_window normal 0
-new_float normal 0
+default_border normal 0
+default_floating_border normal 0
 gaps inner 10
 gaps outer 8
 smart_borders on
-workspace 1 gaps outer 27
 
-set $black  #aaaaaa
-set $foreg  #ebdbb2
+set $black  #bbbbbb
+set $foreg  #faefbb
 set $yellow #fabd2f
 set $orange #fe8019
-set $blue   #66aab3
+set $blue   #6d91ab
 set $red    #fb4934
 set $purp   #b16286
 set $white  #eff0f1
@@ -145,36 +142,42 @@ client.focused_inactive $white $white $black $black  $black
 client.unfocused        $white $white $black $black  $black
 client.urgent           $red   $red   $black $red    $black
 
-set $wallpaper unsplash/jenu-prasad-271630.jpg
+set $wallpaper unsplash/delfi-grain.jpg
 exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
 
 #########
 # Rules #
 #########
 
-for_window [title="^About Mozilla Firefox$"] floating enable
-for_window [title="Preferences"] floating enable
-for_window [class="^Thunderbird$"] floating enable
-for_window [instance="^feh$" class="^feh$"] floating enable
-for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
-for_window [instance="^gimp-2.8$"] floating enable
-for_window [title="^Figure [0-9]+$"] floating enable
-for_window [title="^Plot Zoom$"] floating enable
-for_window [title="^R Graphics"] floating enable
-for_window [class="^Audacious$"] floating enable
-for_window [class="^ksysguard$"] floating enable
-
-# Font for window titles
-font pango:Helvetica, lemon 16
-for_window [title=".*"] title_format "<span font='Roboto 8'>   %title</span>"
-
-# Special floating workspace
+# Float all workspaces
+for_window [workspace="1"] floating enable
+for_window [workspace="2"] floating enable
+for_window [workspace="3"] floating enable
+for_window [workspace="4"] floating enable
+for_window [workspace="5"] floating enable
+for_window [workspace="6"] floating enable
+for_window [workspace="7"] floating enable
+for_window [workspace="8"] floating enable
+for_window [workspace="9"] floating enable
 for_window [workspace="10"] floating enable
 
-# Plasma Integration
+# Font for window titles
+font pango:Roboto, lemon 12
+for_window [title=".*"] title_format "<span font='Roboto Medium 8'>   🌹  %title</span>"
 
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and
-# hides everythiing)
+# These rules are nice for a tiling-default environment
+# for_window [title="Preferences"] floating enable
+# for_window [class="^Thunderbird$"] floating enable
+for_window [instance="^feh$" class="^feh$"] floating enable, border none
+# for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
+# for_window [instance="^gimp-2.8$"] floating enable
+# for_window [title="^Figure \d+$"] floating enable
+# for_window [title="^Plot Zoom$"] floating enable
+# for_window [title="^R Graphics"] floating enable
+# for_window [class="^Audacious$"] floating enable
+# for_window [class="^ksysguard$"] floating enable
+
+# Plasma integration
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable, border none
@@ -185,4 +188,3 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
-no_focus [class="plasmashell"]
