@@ -15,21 +15,7 @@
 # Aliases #
 ###########
 
-alias cp='cp -i' # prompt before overwriting
-alias mv='mv -i' # prompt before overwriting
-alias rm='rm -i' # prompt before overwriting
-
-alias bye='exit'
-function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`
-[[ "$TERM" == "cygwin" ]] && alias data='cd /d'
-alias l='ls'
-alias less='less -FRX'
-alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
-[[ "$TERM" == "cygwin" ]] && alias python2='/c/Anaconda3/envs/py27/python.exe'
-function rip() { rg -ip "$@" | less -FRX; } # ripgrep
-function spawn() { $@ &> /dev/null & disown; }
-alias v='\vim'
-alias view='vi -- -R'
+source ~/dotfiles/aliases.sh
 
 #########################
 # Environment variables #

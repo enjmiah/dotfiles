@@ -54,24 +54,7 @@ type nvim &> /dev/null && export EDITOR='nvim'
 # Aliases #
 ###########
 
-# prompt before overwriting
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-
-alias bye='exit'
-[ -e /media/jerry/Data ] && alias data='cd /media/jerry/Data'
-type rg &> /dev/null     && function rip() { rg -ip "$@" | less -FRX; } # ripgrep
-alias l='ls'
-alias ll='ls -hl --color=auto'
-alias ls='ls -A --color=auto'
-alias logmeout='qdbus org.kde.ksmserver /KSMServer logout 0 0 0'
-function spawn() { $@ &> /dev/null & disown }
-if type nvim &> /dev/null; then
-    alias vi='nvim'
-    alias vim='nvim'
-    alias vmux='nvim -u ~/.vim/termrc'
-fi # I prefer console vim on Linux, since colours are better there
+source ~/dotfiles/aliases.sh
 
 ####################
 # Start-up scripts #
