@@ -52,8 +52,9 @@ noremap h <nop>
 nnoremap <expr> k v:count ? 'j' : 'gj'
 nnoremap <expr> l v:count ? 'k' : 'gk'
 
-" Have x not modify registers
+" Have x and c not modify registers
 noremap x "_x
+noremap c "_c
 
 if has('nvim')
     " Make Esc escape Insert mode in NVIM terminal

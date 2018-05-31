@@ -23,8 +23,9 @@ noremap h <nop>
 nnoremap <expr> k v:count ? 'j' : 'gj'
 nnoremap <expr> l v:count ? 'k' : 'gk'
 
-" Have x not modify registers
+" Have x and c not modify registers
 noremap x "_x
+noremap c "_c
 
 " Alt+Arrow to move between splits
 nnoremap <A-Left> <C-w>h
