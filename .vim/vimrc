@@ -75,7 +75,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set complete-=i
 set completeopt=longest,menuone
-set colorcolumn=80,90
+set colorcolumn=81,91
 set copyindent
 set cursorline
 set directory=~/.vim/swap
@@ -101,6 +101,7 @@ set shiftwidth=4
 set smartcase
 set so=3
 set tabstop=4
+set textwidth=80
 set t_vb=
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
