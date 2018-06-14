@@ -1,8 +1,8 @@
 [
     {
         "class": "title_bar",
-        "fg": ["background", 255, 255, 255, 0.7],
-        "bg": ["background", 0, 0, 0, 0.4]
+        "fg": ["background", 255, 255, 255, 0.6],
+        "bg": ["background", 0, 0, 0, 0.2]
     },
     {
         "class": "title_bar",
@@ -17,8 +17,8 @@
     {
         "class": "title_bar",
         "attributes": ["file_light"],
-        "fg": ["background", 0, 0, 0, 0.7],
-        "bg": ["background", 0, 0, 0, 0.1]
+        "fg": ["background", 0, 0, 0, 0.4],
+        "bg": ["background", 0, 0, 0, 0.02]
     },
     // Side Bar
     {
@@ -85,7 +85,7 @@
         "class": "tree_row",
         "attributes": ["selectable", "hover"],
         "parents": [{"class": "window", "attributes": ["file_light"]}],
-        "layer0.tint": [0, 0, 0, 0.04],
+        "layer0.tint": [0, 0, 0, 0.02],
     },
     {
         "class": "tree_row",
@@ -107,8 +107,8 @@
     },
     {
         "class": "sidebar_heading",
-        "fg": ["background", 255, 255, 255, 0.55],
-        "font.size": 13,
+        "fg": ["background", 255, 255, 255, 0.2],
+        "font.size": 12,
         "font.bold": true,
         "shadow_color": [0, 0, 0, 0.1],
         "shadow_offset": [0, 1]
@@ -116,7 +116,7 @@
     {
         "class": "sidebar_heading",
         "parents": [{"class": "window", "attributes": ["file_light"]}],
-        "fg": ["background", 0, 0, 0, 0.5],
+        "fg": ["background", 0, 0, 0, 0.1],
         "shadow_color": [255, 255, 255, 0.1],
     },
     {
@@ -309,7 +309,7 @@
         "class": "tabset_control",
         "attributes": ["file_light"],
         // "tint_index": 0,
-        "tint_modifier": [0, 0, 0, 0.04]
+        "tint_modifier": [0, 0, 0, 0.02]
     },
     {
         "class": "tab_control",
@@ -1511,13 +1511,13 @@
     {
         "class": "panel_button_control",
         "layer0.texture": "Theme - Default/common/dark/panels_button.png",
-        "layer0.opacity": { "target": 0.4, "speed": 4.0, "interpolation": "smoothstep" },
+        "layer0.opacity": { "target": 0.2, "speed": 2.0, "interpolation": "smoothstep" },
         "content_margin": [12, 11]
     },
     {
         "class": "panel_button_control",
         "attributes": ["hover"],
-        "layer0.opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+        "layer0.opacity": { "target": 0.5, "speed": 2.0, "interpolation": "smoothstep" },
     },
     {
         "class": "status_container",
@@ -1531,15 +1531,13 @@
     {
         "class": "label_control",
         "parents": [{"class": "status_bar"}],
-        "fg": ["background", 255, 255, 255, 0.7],
-        "font.size": 11,
-        "shadow_color": [0, 0, 0, 0.18],
-        "shadow_offset": [0, 1]
+        "fg": ["background", 255, 255, 255, 0.35],
+        "font.size": 10
     },
     {
         "class": "label_control",
         "parents": [{"class": "window", "attributes": ["file_light"]}, {"class": "status_bar"}],
-        "fg": ["background", 0, 0, 0, 0.7],
+        "fg": ["background", 0, 0, 0, 0.3],
         "shadow_color": [255, 255, 255, 0.18],
     },
 ]

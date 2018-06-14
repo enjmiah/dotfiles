@@ -1,7 +1,8 @@
 :noremap <space> i<space><esc><left>r
 :noremap x "_x
 :noremap ; l
-:noremap l k
-:noremap k j
+:noremap l gk
+:noremap k gj
 :noremap j h
 :unmap h
+:noremap c "_c
