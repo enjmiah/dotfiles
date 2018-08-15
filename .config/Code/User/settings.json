@@ -35,7 +35,29 @@
     },
     "vim.easymotion": true,
     "vim.easymotionMarkerFontFamily": "Roboto Mono",
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["h"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["l"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": [";"],
+            "after": ["l"]
+        },
+        {
+            "before": ["h"],
+            "after": []
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": ["j"],
             "after": ["h"]
@@ -59,24 +81,11 @@
     ],
     "vim.insertModeKeyBindings": [
         {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        },
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
         }
     ],
     "vim.useCtrlKeys": false,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "workbench.statusBar.feedback.visible": false
 }
