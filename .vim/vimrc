@@ -12,7 +12,9 @@ Plug 'rhysd/vim-clang-format'
     let g:clang_format#detect_style_file=1
 Plug 'sukima/xmledit'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -129,3 +131,4 @@ endif
 hi Normal ctermbg=NONE
 
 autocmd FileType c,cpp,objc map <buffer><Leader>rf <Plug>(operator-clang-format)
+autocmd FileType yaml setlocal indentexpr=
