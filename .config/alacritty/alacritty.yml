@@ -19,10 +19,10 @@ font:
     # style: Regular
   bold:
     family: Roboto Mono for Powerline
-    # style: Bold
+    style: Bold
   italic:
     family: Roboto Mono for Powerline
-    # style: Italic
+    style: Italic
   size: 8.5
   offset:
     x: -8.0
