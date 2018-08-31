@@ -1,7 +1,7 @@
 #
 # .zshrc
 #
-# Based on the default oh-my-zsh zshrc.
+# Lightweight zshrc.
 #
 # Author:
 #     Jerry Yin / jerryyin.info
@@ -11,28 +11,67 @@
 #     http://creativecommons.org/publicdomain/zero/1.0/
 #
 
-#############
-# oh-my-zsh #
-#############
+################
+# Key-bindings #
+################
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Copied from oh-my-zsh
 
-# DISABLE_AUTO_UPDATE="true"
-export UPDATE_ZSH_DAYS=30
+bindkey -e
 
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# [Ctrl-r] - Search backward incrementally for a specified string. The string
+# may begin with ^ to anchor the search to the beginning of the line.
+bindkey '^r' history-incremental-search-backward
 
-# Plug-in can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plug-ins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+# start typing + [Up-Arrow] - fuzzy find history forward
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+  autoload -U up-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
 
-source $ZSH/oh-my-zsh.sh
+# start typing + [Down-Arrow] - fuzzy find history backward
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+  autoload -U down-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
 
-# I don't like oh-my-zsh aliases :/
-unalias -m '*'
+# [PageUp] - Up a line of history
+if [[ "${terminfo[kpp]}" != "" ]]; then
+  bindkey "${terminfo[kpp]}" up-line-or-history
+fi
+
+# [PageDown] - Down a line of history
+if [[ "${terminfo[knp]}" != "" ]]; then
+  bindkey "${terminfo[knp]}" down-line-or-history
+fi
+
+# [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5C' forward-word
+# [Ctrl-LeftArrow] - move backward one word
+bindkey '^[[1;5D' backward-word
+
+# [Shift-Tab] - move through the completion menu backwards
+if [[ "${terminfo[kcbt]}" != "" ]]; then
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete
+fi
+
+###########
+# History #
+###########
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
 
 #########################
 # Environment variables #
@@ -40,6 +79,7 @@ unalias -m '*'
 
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2016/bin/x86_64-linux:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
@@ -63,15 +103,6 @@ source ~/dotfiles/aliases.sh
 # Configure ls colors
 eval "$(dircolors ~/.dircolors)";
 
-# Blur the background of Konsole windows
-# Source: https://yuenhoe.com/blog/2013/10/applying-kwin-blur-to-transparent-konsoleyakuake-windows/
-konsolex=$(qdbus | grep konsole | cut -f 2 -d\ )
-if [ -n "$konsolex" ]; then
-    for konsole in `xdotool search --class konsole`; do
-        xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $konsole;
-    done
-fi
-
 # Syntax highlighting
 if [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -81,18 +112,17 @@ fi
 # Prompt #
 ##########
 
-source "$HOME/dotfiles/prompt-utils.sh"
-if [[ -f "$HOME/dotfiles/git-prompt.sh" ]]; then
-    . "$HOME/dotfiles/git-prompt.sh"
+autoload -U colors && colors
+
+setopt prompt_subst
+
+if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
+    source ~/dotfiles/prompt-utils.sh
+    source ~/dotfiles/git-prompt.sh
+
+    PROMPT=''
+    PROMPT="$PROMPT"$'\n''%{$bg[blue]$fg[white]%} %* '
+    PROMPT="$PROMPT"'$(__job_info)%~ '
+    PROMPT="$PROMPT"'$reset_color%{$fg[white]%} %{$fg[green]%}$(__custom_git_ps1)%{$reset_color%}'
+    PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
 fi
-
-PROMPT=''
-PROMPT="$PROMPT"$'\n''%{$bg[blue]$fg[white]%} %* '
-PROMPT="$PROMPT"'$(__job_info)%~ '
-PROMPT="$PROMPT"'$reset_color%{$fg[white]%} %{$fg[green]%}$(__custom_git_ps1)%{$reset_color%}'
-PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
-
-ZSH_THEME_GIT_PROMPT_PREFIX=' '
-ZSH_THEME_GIT_PROMPT_SUFFIX=''
-ZSH_THEME_GIT_PROMPT_DIRTY='*'
-ZSH_THEME_GIT_PROMPT_CLEAN=''
