@@ -105,7 +105,6 @@ set spell
 set spelllang=en_ca
 set so=3
 set tabstop=4
-set textwidth=80
 set t_vb=
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
