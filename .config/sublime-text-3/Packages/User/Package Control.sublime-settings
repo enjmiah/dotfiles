@@ -1,4 +1,5 @@
 {
+	"auto_upgrade": false,
 	"bootstrapped": true,
 	"in_process_packages":
 	[
@@ -10,9 +11,11 @@
 		"GitSyntaxes",
 		"gruvbox",
 		"Julia",
+		"lispindent",
 		"NeoVintageous",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
+		"Racket",
 		"Sass",
 		"SublimeCodeIntel",
 		"SublimeLinter",
