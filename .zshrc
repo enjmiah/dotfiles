@@ -86,7 +86,7 @@ export PATH="/usr/local/bin:$PATH"
 [[ "$(cat "/proc/${PPID}/comm")" == "xfce4-terminal" ]] && export XFCE_TERMINAL=1
 
 export LANG=en_US.UTF-8
-
+export LESSHISTFILE=-
 export EDITOR='vim'
 type nvim &> /dev/null && export EDITOR='nvim'
 

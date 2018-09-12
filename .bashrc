@@ -22,6 +22,7 @@ source ~/dotfiles/aliases.sh
 #########################
 
 export PAGER=less
+export LESSHISTFILE=-
 [[ "$TERM" == "cygwin" ]] && export PATH="$PATH:/c/bin"
 
 ####################
