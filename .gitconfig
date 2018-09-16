@@ -18,3 +18,8 @@
 	prompt = false
 [include]
 	path = "~/.gitconfig.user" # contains user.name and user.email
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
