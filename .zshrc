@@ -79,8 +79,9 @@ setopt share_history          # share command history data
 
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
+export PATH="$HOME/Applications/texlive2018/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/8.0.2/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/texlive/2016/bin/x86_64-linux:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 [[ "$(cat "/proc/${PPID}/comm")" == "xfce4-terminal" ]] && export XFCE_TERMINAL=1
