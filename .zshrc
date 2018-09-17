@@ -73,6 +73,12 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
+########
+# Misc #
+########
+
+setopt interactive_comments
+
 #########################
 # Environment variables #
 #########################
@@ -97,18 +103,6 @@ type nvim &> /dev/null && export EDITOR='nvim'
 
 source ~/dotfiles/aliases.sh
 
-####################
-# Start-up scripts #
-####################
-
-# Configure ls colors
-eval "$(dircolors ~/.dircolors)";
-
-# Syntax highlighting
-if [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
 ##########
 # Prompt #
 ##########
@@ -127,3 +121,50 @@ if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
     PROMPT="$PROMPT"'$reset_color%{$fg[white]%} %{$fg[green]%}$(__custom_git_ps1)%{$reset_color%}'
     PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
 fi
+
+#######################
+# Syntax highlighting #
+#######################
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=white,bold'
+
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=green'
+
+ZSH_HIGHLIGHT_STYLES[assign]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
+
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=yel'
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=yel'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=yel'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=yel'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=mag'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+
+####################
+# Start-up scripts #
+####################
+
+# Configure ls colors
+eval "$(dircolors ~/.dircolors)";
+
+PLUGINS=(syntax-highlighting autosuggestions)
+
+for plug in $PLUGINS; do
+    entry="$HOME/dotfiles/.config/zsh/$plug/zsh-$plug.zsh"
+    if [[ -f "$entry" ]]; then
+      source $entry
+    fi
+done
