@@ -158,7 +158,7 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ####################
 
 # Configure ls colors
-eval "$(dircolors ~/.dircolors)";
+eval "$(dircolors ~/dotfiles/.dircolors)";
 
 PLUGINS=(syntax-highlighting autosuggestions)
 

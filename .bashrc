@@ -30,11 +30,7 @@ export LESSHISTFILE=-
 ####################
 
 # improve ls colours
-if [[ -e "$HOME/.dircolors" ]]; then
-    eval "$(dircolors ~/.dircolors)";
-else
-    eval "$(dircolors -b /etc/DIR_COLORS)"
-fi
+eval "$(dircolors ~/dotfiles/.dircolors)";
 
 ##########
 # Prompt #
