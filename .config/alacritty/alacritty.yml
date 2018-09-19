@@ -1,17 +1,14 @@
 env:
   TERM: xterm-256color
 
-# Falls back to size specified by window manager if set to 0x0.
-dimensions:
-  columns: 90
-  lines: 30
-
-padding:
-  x: 16
-  y: 16
-
-tabspaces: 4
-draw_bold_text_with_bright_colors: false
+window:
+  dimensions:
+    columns: 108
+    lines: 39
+  padding:
+    x: 16
+    y: 16
+  decorations: true
 
 font:
   normal:
@@ -23,17 +20,24 @@ font:
   italic:
     family: Roboto Mono for Powerline
     style: Italic
-  size: 8.5
+  size: 7
   offset:
-    x: -8.0
-    y: 0.0
+    x: -1
+    y: 0
   glyph_offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
   use_thin_strokes: true
 
-render_timer: false
+background_opacity: 1.0
 custom_cursor_colors: true
+cursor_style: Beam
+draw_bold_text_with_bright_colors: false
+hide_cursor_when_typing: false
+live_config_reload: true
+tabspaces: 4
+unfocused_hollow_cursor: true
+render_timer: false
 
 # Colors (Gruvbox dark)
 colors:
@@ -71,6 +75,29 @@ colors:
     cyan:    '0x578e57'
     white:   '0xe6d4a3'
 
+scrolling:
+  # How many lines of scrollback to keep,
+  # '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line
+  # scrolled when scrollback is enabled (history > 0).
+  multiplier: 2
+
+  # Faux Scrolling
+  #
+  # The `faux_multiplier` setting controls the number
+  # of lines the terminal should scroll when the alternate
+  # screen buffer is active. This is used to allow mouse
+  # scrolling for applications like `man`.
+  #
+  # To disable this completely, set `faux_multiplier` to 0.
+  faux_multiplier: 0
+
+  # Automatically scroll to the bottom when new text is written
+  # to the terminal.
+  auto_scroll: false
+
 # Possible values for `animation`
 # `Ease`
 # `EaseOut`
@@ -85,8 +112,6 @@ colors:
 visual_bell:
   animation: EaseOutExpo
   duration: 67
-
-background_opacity: 1.0
 
 # Values for `mouse`:
 # - Middle
@@ -107,9 +132,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: false
-live_config_reload: true
-
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
@@ -117,16 +139,18 @@ key_bindings:
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: Up,       mods: Shift,   action: ScrollPageUp                 }
+  - { key: Down,     mods: Shift,   action: ScrollPageDown               }
+  - { key: PageUp,                  action: ScrollPageUp                 }
+  - { key: PageDown,                action: ScrollPageDown               }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
-  - { key: PageUp,                  chars: "\x1b[5~"                     }
   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
-  - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
   - { key: Back,                    chars: "\x7f"                        }
   - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
@@ -142,12 +166,10 @@ key_bindings:
   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Shift,   action: ScrollUp                     }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
   - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
   - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
-  - { key: Down,     mods: Shift,   action: ScrollDown                   }
   - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
