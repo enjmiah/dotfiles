@@ -25,8 +25,6 @@ bindsym $mod+Escape exec ksysguard
 bindsym F3 exec xfce4-terminal --drop-down
 bindsym F4 exec thunderbird
 
-bindsym --release $mod+Shift+x exec xkill
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -126,11 +124,11 @@ gaps inner 10
 gaps outer 8
 smart_borders on
 
-set $black  #bbbbbb
+set $black  #cccccc
 set $foreg  #faefbb
 set $yellow #fabd2f
 set $orange #fe8019
-set $blue   #6d91ab
+set $blue   #76BFC4
 set $red    #fb4934
 set $purp   #b16286
 set $white  #eff0f1
@@ -142,16 +140,15 @@ client.focused_inactive $white $white $black $black  $black
 client.unfocused        $white $white $black $black  $black
 client.urgent           $red   $red   $black $red    $black
 
-set $wallpaper unsplash/delfi-grain.jpg
+set $wallpaper wash/ocean.jpg
 exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
 
 #########
 # Rules #
 #########
 
-# Float all workspaces
+# Float all workspaces except 2
 for_window [workspace="1"] floating enable
-for_window [workspace="2"] floating enable
 for_window [workspace="3"] floating enable
 for_window [workspace="4"] floating enable
 for_window [workspace="5"] floating enable
@@ -162,20 +159,20 @@ for_window [workspace="9"] floating enable
 for_window [workspace="10"] floating enable
 
 # Font for window titles
-font pango:Roboto, lemon 12
-for_window [title=".*"] title_format "<span font='Roboto Medium 8'>   🌹  %title</span>"
+font pango:Roboto, lemon 13
+for_window [title=".*"] title_format "<span font='Roboto Medium 8'>   %title</span>"
 
 # These rules are nice for a tiling-default environment
-# for_window [title="Preferences"] floating enable
-# for_window [class="^Thunderbird$"] floating enable
+for_window [title="Preferences"] floating enable
+for_window [class="^Thunderbird$"] floating enable
 for_window [instance="^feh$" class="^feh$"] floating enable, border none
-# for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
-# for_window [instance="^gimp-2.8$"] floating enable
-# for_window [title="^Figure \d+$"] floating enable
-# for_window [title="^Plot Zoom$"] floating enable
-# for_window [title="^R Graphics"] floating enable
-# for_window [class="^Audacious$"] floating enable
-# for_window [class="^ksysguard$"] floating enable
+for_window [instance="^nomacs$" class="^Image Lounge$"] floating enable
+for_window [instance="^gimp-2.8$"] floating enable
+for_window [title="^Figure \d+$"] floating enable
+for_window [title="^Plot Zoom$"] floating enable
+for_window [title="^R Graphics"] floating enable
+for_window [class="^Audacious$"] floating enable
+for_window [class="^ksysguard$"] floating enable
 
 # Plasma integration
 exec --no-startup-id wmctrl -c Plasma
