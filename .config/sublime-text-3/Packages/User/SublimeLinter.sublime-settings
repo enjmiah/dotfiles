@@ -38,4 +38,10 @@
             "scope": "region.redish markup.error.sublime_linter"
         }
     ],
+    "linters": {
+        "annotations": {
+            "warnings": ["TODO", "@todo"],
+            "errors": ["FIXME"]
+        }
+    }
 }
