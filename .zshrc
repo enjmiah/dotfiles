@@ -128,12 +128,12 @@ fi
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='bold'
+ZSH_HIGHLIGHT_STYLES[command]='bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='bold'
+ZSH_HIGHLIGHT_STYLES[function]='bold'
 
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
@@ -144,7 +144,12 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
 
-ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+if [[ "$XFCE_TERMINAL" == 1 ]]; then
+    ZSH_HIGHLIGHT_STYLES[comment]='fg=blue'
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
+else
+    ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+fi
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=yel'
 ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=yel'
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=yel'
@@ -168,3 +173,7 @@ for plug in $PLUGINS; do
       source $entry
     fi
 done
+
+if [[ "$XFCE_TERMINAL" == 1 ]]; then
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
+fi
