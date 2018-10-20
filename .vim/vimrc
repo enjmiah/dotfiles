@@ -63,11 +63,11 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
 
-" Alt+Arrow to move between splits
-nnoremap <A-Left> <C-w>h
-nnoremap <A-Down> <C-w>j
-nnoremap <A-Up> <C-w>k
-nnoremap <A-Right> <C-w>l
+" Alt+{Left,Right} to move between tabs
+nnoremap <A-Left> gt
+nnoremap <A-Right> gT
+nnoremap <A-j> gt
+nnoremap <A-;> gT
 
 " Disable cursorline in insert mode
 autocmd InsertEnter,InsertLeave * set cul!
