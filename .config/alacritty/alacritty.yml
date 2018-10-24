@@ -42,7 +42,7 @@ render_timer: false
 # Colors (Gruvbox dark)
 colors:
   primary:
-    background: '0x242C30'
+    background: '0x32302f'
     foreground: '0xE6D4A3'
   cursor:
     text:    '0x242C30'
@@ -51,7 +51,7 @@ colors:
     black:   '0x242C30'
     red:     '0xF73028'
     green:   '0xaab01e'
-    yellow:  '0xf7b125'
+    yellow:  '0xd65d0e'
     blue:    '0x719586'
     magenta: '0xc77089'
     cyan:    '0x7db669'
@@ -65,15 +65,6 @@ colors:
     magenta: '0xc77089'
     cyan:    '0x7db669'
     white:   '0xfaefbb'
-  dim:
-    black:   '0x7f7061'
-    red:     '0xbe0f17'
-    green:   '0x868715'
-    yellow:  '0xcc881a'
-    blue:    '0x377375'
-    magenta: '0xa04b73'
-    cyan:    '0x578e57'
-    white:   '0xe6d4a3'
 
 scrolling:
   # How many lines of scrollback to keep,
