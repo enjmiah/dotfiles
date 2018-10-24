@@ -76,6 +76,11 @@ Create a symlink at `~/.config/compton.conf` that points to
 Create a symlink at `~/.local/share/konsole` that points to
 `~/dotfiles/.local/share/konsole`.
 
+### Polybar
+
+Create a symlink at `~/.config/polybar` that points to
+`~/dotfiles/.config/polybar`.
+
 ### Pylint
 
 Create a symlink at `~/.pylintrc` that points to `~/dotfiles/.pylintrc`.
