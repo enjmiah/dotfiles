@@ -6,6 +6,7 @@
 	],
 	"installed_packages":
 	[
+		"ayu",
 		"Clang Format",
 		"CMakeEditor",
 		"GitSyntaxes",
