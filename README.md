@@ -2,12 +2,9 @@
 
 <h1 align="center">d o t f i l e s</h1>
 
-![](https://assets.jerryyin.info/img/rice/3.png)
+![](https://assets.jerryyin.info/img/rice/dock.png)
 
-<p align="center">wallpaper:
-<a href="http://assets.jerryyin.info/img/rice/delfi-grain.jpg">edited</a> by
-me, original by <a href="https://unsplash.com/photos/-i-g_qjFNgs">delfi de la
-rua</a></p>
+<p align="center"><a href="https://u.teknik.io/EYFWLD.jpg">wallpaper</a></p>
 
 <h2 align="center">set-up</h2>
 
