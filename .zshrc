@@ -77,18 +77,19 @@ setopt share_history          # share command history data
 # Misc #
 ########
 
+setopt autopushd pushdminus pushdsilent pushdtohome
 setopt interactive_comments
 
 #########################
 # Environment variables #
 #########################
 
-export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
+export PATH="$HOME/Applications/julia-1.0.0/bin:$PATH"
 export PATH="$HOME/Applications/texlive2018/bin/x86_64-linux:$PATH"
-export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/8.0.2/bin:$PATH"
+export PATH="$HOME/.cabal/bin:/opt/cabal/bin:/opt/ghc/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 
 [[ "$(cat "/proc/${PPID}/comm")" == "xfce4-terminal" ]] && export XFCE_TERMINAL=1
 
@@ -115,11 +116,13 @@ if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
     source ~/dotfiles/prompt-utils.sh
     source ~/dotfiles/git-prompt.sh
 
-    PROMPT=''
-    PROMPT="$PROMPT"$'\n''%{$bg[blue]$fg[white]%} %* '
-    PROMPT="$PROMPT"'$(__job_info)%~ '
-    PROMPT="$PROMPT"'$reset_color%{$fg[white]%} %{$fg[green]%}$(__custom_git_ps1)%{$reset_color%}'
-    PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
+    PROMPT=$'\n'
+    PROMPT="$PROMPT"'%{$bg[blue]$fg[white]%}  %D{%L:%M%p}  '
+    PROMPT="$PROMPT"'$reset_color$(__job_info)'
+    PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
+    PROMPT="$PROMPT"'$reset_color%{$bg[white]$fg[black]%}  %~  '
+    PROMPT="$PROMPT"'$reset_color%{$fg[green]%}  $(__custom_git_ps1)%{$reset_color%}'
+    PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%G%G%G%}'
 fi
 
 #######################
@@ -164,6 +167,10 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
 # Configure ls colors
 eval "$(dircolors ~/dotfiles/.dircolors)";
+
+preexec() { __timer_start }
+precmd() { __timer_stop }
+chpwd() { ls }
 
 PLUGINS=(syntax-highlighting autosuggestions)
 

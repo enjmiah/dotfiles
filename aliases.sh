@@ -4,21 +4,28 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 if [[ "$TERM" == "cygwin" ]]; then
+    # Git Bash for Windows
     alias data='cd /d'
+    alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
     alias python2='/c/Anaconda3/envs/py27/python.exe'
 else
+    # Linux, probably
+    alias brightness='qdbus local.org_kde_powerdevil /org/kde/Solid/PowerManagement/Actions/BrightnessControl org.kde.Solid.PowerManagement.Actions.BrightnessControl.setBrightness'
+    alias ls='ls -A --color=auto'
     alias logmeout='qdbus org.kde.ksmserver /KSMServer logout 0 0 0'
 fi
 
+if [[ ! -z "$BASH_VERSION" ]]; then
+    function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`
+fi
+
 alias ag='ag --pager="less -FRX"'
-alias brightness='qdbus local.org_kde_powerdevil /org/kde/Solid/PowerManagement/Actions/BrightnessControl org.kde.Solid.PowerManagement.Actions.BrightnessControl.setBrightness'
-function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`
 [ -e /media/jerry/Data ] && alias data='cd /media/jerry/Data'
+alias erl="erl -eval 'code:add_path(\"$HOME/.local/share/erl\")'"
 alias h='hugo server -D'
 alias l='ls'
 alias less='less -FRX'
 alias ll='ls -Ahl --color=auto'
-alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
 type rg &> /dev/null && function rip() { rg -ip "$@" | less -FRX; }
 function spawn() { $@ &> /dev/null & disown; }
 alias v='vim'
@@ -44,15 +51,26 @@ function touchcmake() {
     return 1
 }
 
-function today() {
+function whale() {
     cat <<EOF
-                  .-'
-              '--./ /     _.---.
-              '-,  (__..-'       \
-                 \          .     |
-                  ',.__.   ,__.--/
-                    '._/_.'___.-'
+             .-'		
+         '--./ /     _.---.	
+         '-,  (__..-'       \	
+            \          .     |
+             ',.__.   ,__.--/	
+               '._/_.'___.-'
 
 EOF
+}
+
+function whalefetch() {
+    printf "\n\n\n"
+    whale
+    printf "\n\n\n"
+    neofetch
+}
+
+function today() {
+    whale
     khal calendar today 14d
 }

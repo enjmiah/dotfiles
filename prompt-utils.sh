@@ -9,19 +9,22 @@
 #     http://creativecommons.org/publicdomain/zero/1.0/
 #
 
+timer=0
+timer_show=0
+
 function __timer_start() {
-    timer=${timer:-$SECONDS}
+    timer=$SECONDS
 }
 
 function __timer_stop() {
     timer_show=$(($SECONDS - $timer))
-    unset timer
 }
 
 function __last_command_runtime() {
     local RTNVAL="$?"
-    if [[ ${timer_show} -gt 7 ]]; then
-        printf " ${timer_show}s "
+    printf '\033[30;103m'
+    if [[ ${timer_show} -gt 4 ]]; then
+        printf " ${timer_show}s "
     fi
     return $RTNVAL
 }
@@ -32,20 +35,16 @@ function __job_info() {
 '
     local lastjob="$(jobs)"
     if [[ ! -z "${lastjob}" ]]; then
-        printf "\033[34;43m "
-        printf "\033[30m"
+        printf "\033[37;43m "
         if [[ ! -z "$1" ]]; then
-            printf "$1 "
+            printf "$1"
         elif [[ ! -z "$ZSH_VERSION" ]]; then
-            printf '%%j '
+            printf '%%j'
         else
-            printf ':) ' # unknown shell, I guess
+            printf ':)' # unknown shell, I guess
         fi
-        printf "\033[33;47m "
-    else
-        printf "\033[34;47m "
+        printf ' '
     fi
-    printf '\033[30;47m'
     return $RTNVAL
 }
 
@@ -73,9 +72,9 @@ function __custom_git_ps1() {
 
 function __exit_status_ps1() {
     if [[ $? == 0 ]]; then
-        printf "$"
+        printf " ⚓ "
     else
-        printf '\033[31m✘\033[0m'
+        printf ' \033[31m✘\033[0m  '
     fi
     return $?
 }
