@@ -8,10 +8,14 @@
 	ldiff = diff HEAD~ HEAD
 	diffs = diff --staged
 	s = status -bsu
+[blame]
+	date = short
 [core]
 	autocrlf = false
 	eol = lf
 	pager = less -FX
+[diff]
+	colorMoved = default
 [credential]
 	helper = cache --timeout 1800
 [difftool]
