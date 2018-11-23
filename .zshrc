@@ -88,6 +88,7 @@ export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
 export PATH="$HOME/Applications/julia-1.0.0/bin:$PATH"
 export PATH="$HOME/Applications/texlive2018/bin/x86_64-linux:$PATH"
 export PATH="$HOME/.cabal/bin:/opt/cabal/bin:/opt/ghc/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -170,7 +171,6 @@ eval "$(dircolors ~/dotfiles/.dircolors)";
 
 preexec() { __timer_start }
 precmd() { __timer_stop }
-chpwd() { ls }
 
 PLUGINS=(syntax-highlighting autosuggestions)
 
