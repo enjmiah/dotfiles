@@ -33,7 +33,7 @@ Plug 'vim-airline/vim-airline-themes'
     let g:airline_right_alt_sep = ''
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Escape insert mode by typing "jj" or "jk" quickly
