@@ -32,39 +32,39 @@ font:
 background_opacity: 1.0
 custom_cursor_colors: true
 cursor_style: Beam
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 hide_cursor_when_typing: false
 live_config_reload: true
 tabspaces: 4
 unfocused_hollow_cursor: true
 render_timer: false
 
-# Colors (Gruvbox dark)
+# Colors (seoul256)
 colors:
   primary:
-    background: '0x32302f'
-    foreground: '0xE6D4A3'
+    background: '0xe1e1e1'
+    foreground: '0x616161'
   cursor:
-    text:    '0x242C30'
+    text:    '0xe1e1e1'
     cursor:  '0xFF2266'
   normal:
-    black:   '0x242C30'
-    red:     '0xF73028'
-    green:   '0xaab01e'
-    yellow:  '0xd65d0e'
-    blue:    '0x719586'
-    magenta: '0xc77089'
-    cyan:    '0x7db669'
-    white:   '0xfaefbb'
+    black:   '0x616161'
+    red:     '0xbe7572'
+    green:   '0x719872'
+    yellow:  '0xbe996f'
+    blue:    '0x6f99be'
+    magenta: '0x996f99'
+    cyan:    '0x6f9999'
+    white:   '0xe9e9e9'
   bright:
-    black:   '0x7f7061'
-    red:     '0xF73028'
-    green:   '0xaab01e'
-    yellow:  '0xf7b125'
-    blue:    '0x719586'
-    magenta: '0xc77089'
-    cyan:    '0x7db669'
-    white:   '0xfaefbb'
+    black:   '0x999999'
+    red:     '0xe17899'
+    green:   '0x006f00'
+    yellow:  '0xdf996f'
+    blue:    '0x0099be'
+    magenta: '0x99006f'
+    cyan:    '0x009999'
+    white:   '0xf1f1f1'
 
 scrolling:
   # How many lines of scrollback to keep,
