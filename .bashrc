@@ -56,7 +56,7 @@ if [[ -z "$WINELOADERNOEXEC" ]]; then
 fi
 PS1="$PS1"'\[\e[0m\]'                          # reset all
 PS1="$PS1"'\n'
-PS1="$PS1"'$(__exit_status_ps1)'               # prompt
+PS1="$PS1"' $(__exit_status_ps1) '             # prompt
 
 # magic that makes automatic timing of commands work
 trap '__timer_start' DEBUG # run before executing any command

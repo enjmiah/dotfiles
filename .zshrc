@@ -123,7 +123,7 @@ if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
     PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
     PROMPT="$PROMPT"'$reset_color%{$bg[white]$fg[black]%}  %~  '
     PROMPT="$PROMPT"'$reset_color%{$fg[green]%}  $(__custom_git_ps1)%{$reset_color%}'
-    PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%G%G%G%}'
+    PROMPT="$PROMPT"$'\n'' %{$(__exit_status_ps1)%G%} '
 fi
 
 #######################

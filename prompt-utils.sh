@@ -72,9 +72,9 @@ function __custom_git_ps1() {
 
 function __exit_status_ps1() {
     if [[ $? == 0 ]]; then
-        printf " ⚓ "
+        printf "$"
     else
-        printf ' \033[31m✘\033[0m  '
+        printf '\033[31mx\033[0m'
     fi
     return $?
 }
