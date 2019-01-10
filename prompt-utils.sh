@@ -22,7 +22,7 @@ function __timer_stop() {
 
 function __last_command_runtime() {
     local RTNVAL="$?"
-    printf '\033[30;103m'
+    printf '\e[0m\e[103m'
     if [[ ${timer_show} -gt 4 ]]; then
         printf " ${timer_show}s "
     fi
@@ -35,7 +35,7 @@ function __job_info() {
 '
     local lastjob="$(jobs)"
     if [[ ! -z "${lastjob}" ]]; then
-        printf "\033[37;43m "
+        printf '\e[0m\e[43m '
         if [[ ! -z "$1" ]]; then
             printf "$1"
         elif [[ ! -z "$ZSH_VERSION" ]]; then

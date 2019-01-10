@@ -124,15 +124,16 @@ default_floating_border normal 0
 gaps inner 6
 gaps outer 15
 smart_borders on
+title_align center
 
 set $black  #cccccc
 set $foreg  #E6D4A3
 set $yellow #fabd2f
-set $orange #CC6C4E
+set $orange #da8815
 set $blue   #76BFC4
 set $red    #fb4934
 set $purp   #DC6C6E
-set $white  #eff0f1
+set $white  #e1e1e1
 
 # Window colours
 #                       border bg      text   indicat child bord
@@ -148,10 +149,11 @@ exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
 # Rules #
 #########
 
-# Float all workspaces except 2, 4
+# Float all workspaces except 2
 for_window [workspace="1"] floating enable
 for_window [workspace="3"] floating enable
 for_window [workspace="4"] floating enable
+for_window [workspace="5"] floating enable
 for_window [workspace="6"] floating enable
 for_window [workspace="7"] floating enable
 for_window [workspace="8"] floating enable
@@ -159,8 +161,8 @@ for_window [workspace="9"] floating enable
 for_window [workspace="10"] floating enable
 
 # Font for window titles
-font pango:Roboto, lemon 13
-for_window [title=".*"] title_format "<span font='Roboto Medium 8'>   %title</span>"
+font pango:SF UI Text, lemon 13
+for_window [title=".*"] title_format "<span font='SF Pro Display Bold 9'>   %title</span>"
 
 # These rules are nice for a tiling-default environment
 for_window [title="Preferences"] floating enable
