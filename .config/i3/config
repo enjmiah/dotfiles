@@ -122,7 +122,7 @@ force_focus_wrapping no
 default_border normal 0
 default_floating_border normal 0
 gaps inner 6
-gaps outer 15
+gaps outer 13
 smart_borders on
 title_align center
 

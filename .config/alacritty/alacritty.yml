@@ -50,7 +50,7 @@ colors:
     text:    '0xe1e1e1'
     cursor:  '0xFF2266'
   normal:
-    black:   '0x929292'
+    black:   '0x535d67'
     red:     '0xe62e2e'
     green:   '0x79a100'
     yellow:  '0xda8815'

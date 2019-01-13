@@ -42,10 +42,9 @@ PS1=''
 PS1="$PS1"'\[\e[0m\]'                          # reset all
 PS1="$PS1"'\n'
 PS1="$PS1"'\[\e[37;44m\]  \D{%I:%M%p}  '       # time
-PS1="$PS1"'`__last_command_runtime`'           # run time of last command
 PS1="$PS1"'`__job_info \j`'                    # jobs count + separator
-PS1="$PS1"'\[\e[0m\]'                          # reset all
-PS1="$PS1"'\[\e[47m\]  \u@\h  \w  '            # pwd
+PS1="$PS1"'`__last_command_runtime`'           # run time of last command
+PS1="$PS1"'\[\e[30;47m\]  \u@\h  \w  '         # pwd
 PS1="$PS1"'\[\e[0m\]  '                        # change to default
 if [[ -z "$WINELOADERNOEXEC" ]]; then
     # git-prompt.sh wasn't pre-installed on all the machines I tested on

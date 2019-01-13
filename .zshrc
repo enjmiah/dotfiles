@@ -119,9 +119,9 @@ if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
 
     PROMPT=$'\n'
     PROMPT="$PROMPT"'%{$bg[blue]$fg[white]%}  %D{%L:%M%p}  '
-    PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
     PROMPT="$PROMPT"'$reset_color$(__job_info)'
-    PROMPT="$PROMPT"'$reset_color%{$bg[white]%}  %~  '
+    PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
+    PROMPT="$PROMPT"'$reset_color%{$bg[white]$fg[black]%}  %~  '
     PROMPT="$PROMPT"'$reset_color%{$fg[green]%}  $(__custom_git_ps1)%{$reset_color%}'
     PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
 fi
@@ -150,7 +150,6 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
 
 if [[ "$XFCE_TERMINAL" == 1 ]]; then
     ZSH_HIGHLIGHT_STYLES[comment]='fg=blue'
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
 else
     ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
 fi
@@ -181,6 +180,4 @@ for plug in $PLUGINS; do
     fi
 done
 
-if [[ "$XFCE_TERMINAL" == 1 ]]; then
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
-fi
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$ZSH_HIGHLIGHT_STYLES[comment]
