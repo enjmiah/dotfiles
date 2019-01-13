@@ -169,7 +169,6 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 eval "$(dircolors ~/dotfiles/.dircolors)";
 
 preexec() { __timer_start }
-precmd() { __timer_stop }
 
 PLUGINS=(syntax-highlighting autosuggestions)
 

@@ -60,7 +60,6 @@ PS1="$PS1"'$(__exit_status_ps1) '              # prompt
 
 # magic that makes automatic timing of commands work
 trap '__timer_start' DEBUG # run before executing any command
-PROMPT_COMMAND=__timer_stop # run before printing the prompt
 
 export PROMPT_DIRTRIM=3 # have \w show at most 3 directories
 

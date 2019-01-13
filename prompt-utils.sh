@@ -16,13 +16,10 @@ function __timer_start() {
     timer=$SECONDS
 }
 
-function __timer_stop() {
-    timer_show=$(($SECONDS - $timer))
-}
-
 function __last_command_runtime() {
     local RTNVAL="$?"
     printf '\e[30;43m'
+    timer_show=$(($SECONDS - $timer))
     if [[ ${timer_show} -gt 4 ]]; then
         printf " ${timer_show}s "
     fi
