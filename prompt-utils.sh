@@ -18,7 +18,7 @@ function __timer_start() {
 
 function __last_command_runtime() {
     local RTNVAL="$?"
-    printf '\e[30;43m'
+    printf '\001\e[30;43m\002'
     timer_show=$(($SECONDS - $timer))
     if [[ ${timer_show} -gt 4 ]]; then
         printf " ${timer_show}s "
@@ -32,7 +32,7 @@ function __job_info() {
 '
     local lastjob="$(jobs)"
     if [[ ! -z "${lastjob}" ]]; then
-        printf '\e[30;103m '
+        printf '\001\e[30;103m\002 '
         if [[ ! -z "$1" ]]; then
             printf "$1"
         elif [[ ! -z "$ZSH_VERSION" ]]; then
@@ -71,7 +71,7 @@ function __exit_status_ps1() {
     if [[ $? == 0 ]]; then
         printf "$"
     else
-        printf '\033[31mx\033[0m'
+        printf '\001\033[31m\002x\001\033[0m\002'
     fi
     return $?
 }
