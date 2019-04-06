@@ -6,10 +6,6 @@ Plug 'haya14busa/vim-operator-flashy'
     let g:operator#flashy#flash_time=300
     map y <Plug>(operator-flashy)
     nmap Y <Plug>(operator-flashy)$
-Plug 'junegunn/goyo.vim'
-    let g:goyo_linenr=1
-Plug 'junegunn/seoul256.vim'
-    let g:seoul256_srgb = 1
 Plug 'junegunn/vim-slash'
 Plug 'kana/vim-operator-user'
 Plug 'morhetz/gruvbox'
@@ -17,23 +13,15 @@ Plug 'morhetz/gruvbox'
 Plug 'rhysd/vim-clang-format'
     let g:clang_format#detect_style_file=1
 Plug 'sukima/xmledit'
-Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='silver'
-    let g:airline_powerline_fonts=1
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+Plug 'ap/vim-buftabline'
 Plug 'w0rp/ale'
+    let g:ale_sign_error='x'
+    let g:ale_sign_warning='!'
 call plug#end()
 
 " Escape insert mode by typing "jj" or "jk" quickly
@@ -95,7 +83,6 @@ set complete-=i
 set completeopt=longest,menuone
 set colorcolumn=81,91
 set copyindent
-set cursorline
 set directory=~/.vim/swap
 set encoding=utf-8
 set fillchars+=vert:\ 
@@ -135,8 +122,8 @@ if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
-colo seoul256
-set background=light
+colo gruvbox
+set background=dark
 " I use a light theme in drop-down terminal
 if !empty($XFCE_TERMINAL)
     set background=light
@@ -144,6 +131,10 @@ if !empty($XFCE_TERMINAL)
     colo ayu
 endif
 hi Normal ctermbg=NONE
+hi CursorLineNr ctermbg=NONE
+hi SignColumn ctermbg=NONE
+hi ALEErrorSign ctermbg=NONE ctermfg=Red cterm=bold
+hi ALEWarningSign ctermbg=NONE ctermfg=Yellow cterm=bold
 
 autocmd FileType c,cpp,objc map <buffer><Leader>rf <Plug>(operator-clang-format)
 autocmd FileType yaml setlocal indentexpr=
