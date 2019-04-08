@@ -26,7 +26,9 @@
 		"internship",
 		"recurse",
 		"bitonic",
-		"whitespace"
+		"whitespace",
+		"defragmented",
+		"remeshing"
 	],
 	"always_prompt_for_file_reload": true,
 	"auto_complete_commit_on_tab": true,
@@ -34,7 +36,7 @@
 	"caret_blink_interval": 0.6,
 	"caret_extra_top": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/seoul256/seoul256.sublime-color-scheme",
+	"color_scheme": "Packages/User/ColorSublime/gruvbox cool.tmTheme",
 	"default_line_ending": "unix",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
@@ -78,12 +80,14 @@
 	"scroll_speed": 1.5,
 	"set_unsaved_view_name": false,
 	"show_encoding": false,
+	"show_git_status": false,
 	"smart_indent": true,
 	"spell_check": true,
 	"theme": "Nothing.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_hlsearch": true,
 	"vintageous_incsearch": true,
+	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true
 }

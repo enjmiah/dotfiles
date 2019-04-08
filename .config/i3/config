@@ -121,26 +121,26 @@ focus_follows_mouse no
 force_focus_wrapping no
 default_border normal 0
 default_floating_border normal 0
-gaps inner 6
-gaps outer 13
+gaps inner 4
+gaps outer 10
 smart_borders on
 title_align center
 
 set $black  #cccccc
-set $foreg  #E6D4A3
+set $foreg  #dddddd
 set $yellow #fabd2f
-set $orange #da8815
+set $orange #CC6C4E
 set $blue   #76BFC4
 set $red    #fb4934
 set $purp   #DC6C6E
 set $white  #e1e1e1
 
 # Window colours
-#                       border bg      text   indicat child bord
-client.focused          $purp  $orange $foreg $orange $yellow
-client.focused_inactive $white $white  $black $black  $black
-client.unfocused        $white $white  $black $black  $black
-client.urgent           $red   $red    $black $red    $black
+#                       border  bg      text   indicat child bord
+client.focused          $orange $orange $foreg $red    $yellow
+client.focused_inactive $white  $white  $black $black  $black
+client.unfocused        $white  $white  $black $black  $black
+client.urgent           $red    $red    $black $red    $black
 
 set $wallpaper wash/03.jpg
 exec_always --no-startup-id feh --bg-fill "/home/jerry/Wallpapers/$wallpaper"
@@ -162,7 +162,7 @@ for_window [workspace="10"] floating enable
 
 # Font for window titles
 font pango:SF UI Text, lemon 13
-for_window [title=".*"] title_format "<span font='SF Pro Display Bold 9'>   %title</span>"
+for_window [title=".*"] title_format "<span font='SF Pro Display Medium 9'>   %title</span>"
 
 # These rules are nice for a tiling-default environment
 for_window [title="Preferences"] floating enable
@@ -175,6 +175,7 @@ for_window [title="^Plot Zoom$"] floating enable
 for_window [title="^R Graphics"] floating enable
 for_window [class="^Audacious$"] floating enable
 for_window [class="^ksysguard$"] floating enable
+for_window [title="^ImageMagick:"] floating enable
 
 # Plasma integration
 exec --no-startup-id wmctrl -c Plasma

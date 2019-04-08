@@ -5,6 +5,9 @@ window:
   dimensions:
     columns: 80
     lines: 30
+  position:
+    x: 410
+    y: 185
   padding:
     x: 14
     y: 14
@@ -41,39 +44,39 @@ live_config_reload: true
 tabspaces: 4
 render_timer: false
 
-# Colors (ayu light)
+# Colors (Gruvbox cool)
 colors:
   primary:
-    background: '0xe1e1e1'
-    foreground: '0x5c6773'
+    background: '0x242C30'
+    foreground: '0xE6D4A3'
   cursor:
-    text:    '0xe1e1e1'
+    text:    '0x242C30'
     cursor:  '0xFF2266'
   normal:
-    black:   '0x535d67'
-    red:     '0xe62e2e'
-    green:   '0x79a100'
-    yellow:  '0xda8815'
-    blue:    '0x3a95c4'
-    magenta: '0xd8666c'
-    cyan:    '0x45ac8a'
-    white:   '0xf7f7f7'
+    black:   '0x242C30'
+    red:     '0xF73028'
+    green:   '0xaab01e'
+    yellow:  '0xd65d0e'
+    blue:    '0x719586'
+    magenta: '0xc77089'
+    cyan:    '0x7db669'
+    white:   '0xfaefbb'
   bright:
-    black:   '0xa2a2a2'
-    red:     '0xff3333'
-    green:   '0x86b300'
-    yellow:  '0xf29718'
-    blue:    '0x41a6d9'
-    magenta: '0xf07178'
-    cyan:    '0x4dbf99'
-    white:   '0xffffff'
+    black:   '0x7f7061'
+    red:     '0xF73028'
+    green:   '0xaab01e'
+    yellow:  '0xf7b125'
+    blue:    '0x719586'
+    magenta: '0xc77089'
+    cyan:    '0x7db669'
+    white:   '0xfaefbb'
 
 scrolling:
   history: 10000
 
   # Number of lines the viewport will move for every line
   # scrolled when scrollback is enabled (history > 0).
-  multiplier: 2
+  multiplier: 4
 
   # Faux Scrolling
   #
@@ -134,18 +137,20 @@ key_bindings:
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
-  - { key: Up,       mods: Shift,   action: ScrollPageUp                 }
-  - { key: Down,     mods: Shift,   action: ScrollPageDown               }
-  - { key: PageUp,                  action: ScrollPageUp                 }
-  - { key: PageDown,                action: ScrollPageDown               }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp,   mode: Alt    }
+  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~",     mode: ~Alt   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
-  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+  - { key: PageUp,   mods: Alt,     chars: "\x1b[5;3~"                   }
+  - { key: PageUp,                  chars: "\x1b[5~"                     }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown, mode: Alt    }
+  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~",     mode: ~Alt   }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
+  - { key: PageDown, mods: Alt,     chars: "\x1b[6;3~"                   }
+  - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
   - { key: Back,                    chars: "\x7f"                        }
   - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
@@ -161,11 +166,14 @@ key_bindings:
   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
-  - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
-  - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
-  - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
-  - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
+  - { key: Up,       mods: Control|Shift, action: ScrollLineUp           }
+  - { key: Up,       mods: Shift,   chars: "\x1b[1;2A",     mode: Alt        }
+  - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
+  - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
+  - { key: Up,                      chars: "\x1b[A",        mode: ~AppCursor }
+  - { key: Up,                      chars: "\x1bOA",        mode: AppCursor  }
+  - { key: Down,     mods: Control|Shift, action: ScrollLineDown         }
+  - { key: Down,     mods: Shift,   chars: "\x1b[1;2B",     mode: Alt    }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
   - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }

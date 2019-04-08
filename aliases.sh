@@ -22,6 +22,7 @@ fi
 alias ag='ag --pager="less -FRX"'
 [ -e /media/jerry/Data ] && alias data='cd /media/jerry/Data'
 alias erl="erl -eval 'code:add_path(\"$HOME/.local/share/erl\")'"
+alias flux="xflux -l 49.263569 -g -123.138573 -k 3600"
 alias h='hugo server -D'
 alias l='ls'
 alias less='less -FRX'
@@ -52,14 +53,15 @@ function touchcmake() {
 }
 
 function whale() {
+    fc="$(tput setaf 4)"
+    sc="$(tput setaf 7)"
     cat <<EOF
-             .-'		
-         '--./ /     _.---.	
-         '-,  (__..-'       \	
-            \          .     |
-             ',.__.   ,__.--/	
-               '._/_.'___.-'
-
+${fc}             .-'		
+${fc}         '--./ /     _.---.	
+${fc}         '-,  (__..-'       \	
+${fc}            \          ${sc}.${fc}     |
+${fc}             ',.__.   ,__.--/	
+${sc}               '._${sc}/_.'${sc}___.-'
 EOF
 }
 
@@ -68,6 +70,7 @@ function whalefetch() {
     whale
     printf "\n\n\n"
     neofetch
+    colordots
 }
 
 function today() {
