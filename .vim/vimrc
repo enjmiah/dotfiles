@@ -93,9 +93,9 @@ set infercase
 set laststatus=2
 set list
 set listchars=tab:→\ ,trail:·
-set modeline
 set mouse=a
 set nocompatible
+set nomodeline
 set noshowmatch
 set nrformats-=octal
 set number
