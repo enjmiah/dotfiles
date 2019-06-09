@@ -33,7 +33,7 @@
             // The underline styles are replaced with outlines when there is
             // whitespace in the problem region, because underlines aren't drawn
             // on whitespace (ST issue #137).
-            "mark_style": "squiggly_underline",
+            "mark_style": "outline",
 
             "scope": "region.redish markup.error.sublime_linter"
         }

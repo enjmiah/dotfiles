@@ -87,6 +87,7 @@
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_hlsearch": true,
 	"vintageous_incsearch": true,
+	"vintageous_scrolloff": 3,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true

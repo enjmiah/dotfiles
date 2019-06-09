@@ -21,6 +21,8 @@
           <string>#242c30</string>
           <key>caret</key>
           <string>#FF3E58</string>
+          <key>blockCaret</key>
+          <string>#FF3E58</string>
           <key>foreground</key>
           <string>#ebdbb280</string>
           <key>invisibles</key>
@@ -34,7 +36,7 @@
           <key>guide</key>
           <string>#ebdbb226</string>
           <key>activeGuide</key>
-          <string>#ebdbb280</string>
+          <string>#ebdbb260</string>
           <key>stackGuide</key>
           <string>#ebdbb240</string>
           <key>bracketContentsOptions</key>
