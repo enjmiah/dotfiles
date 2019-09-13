@@ -1,3 +1,4 @@
+desktop.ini
 .netrwhist
 .DS_Store
 Thumbs.db
@@ -8,7 +9,7 @@ core
 /.vim/plug
 /.vim/spell
 
-/.config/Code/User/workspaceStorage
+/.config/Code/User/*torage
 
 Package Control.last-run
 Package Control.ca-list

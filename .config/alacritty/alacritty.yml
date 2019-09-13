@@ -13,6 +13,7 @@ window:
     y: 14
   dynamic_padding: true
   decorations: full
+  startup_mode: Windowed
 
 font:
   normal:
@@ -42,7 +43,6 @@ draw_bold_text_with_bright_colors: false
 dynamic_title: true
 live_config_reload: true
 tabspaces: 4
-render_timer: false
 
 # Colors (Gruvbox cool)
 colors:

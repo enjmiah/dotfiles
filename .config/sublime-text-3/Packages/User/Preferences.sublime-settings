@@ -28,7 +28,8 @@
 		"bitonic",
 		"whitespace",
 		"defragmented",
-		"remeshing"
+		"remeshing",
+		"kanji"
 	],
 	"always_prompt_for_file_reload": true,
 	"auto_complete_commit_on_tab": true,
@@ -47,7 +48,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": false,
 	"font_face": "Roboto Mono",
-	"font_size": 9,
+	"font_size": 11,
 	"highlight_line": false,
 	"ignored_packages":
 	[
@@ -70,6 +71,7 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 0,
 	"margin": -2,
+	"neovintageous_build_version": 11100,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
@@ -89,6 +91,7 @@
 	"vintageous_incsearch": true,
 	"vintageous_scrolloff": 3,
 	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": null,
 	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true
 }

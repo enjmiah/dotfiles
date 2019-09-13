@@ -87,5 +87,6 @@
     ],
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
-    "workbench.statusBar.feedback.visible": false
+    "workbench.statusBar.feedback.visible": false,
+    "telemetry.enableTelemetry": false
 }

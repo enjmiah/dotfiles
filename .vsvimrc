@@ -1,0 +1,56 @@
+" Escape insert mode by typing "jj" or "jk" quickly
+imap jj <Esc>
+imap jk <Esc>
+
+" Allow single character insertions from normal mode
+noremap <Space> i <Esc>r
+
+" Clear the search highlight
+nnoremap <silent> <return> :noh<return>
+
+" Navigate with jkl; instead of hjkl
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+noremap h <nop>
+
+" Have x and c not modify registers
+noremap x "_x
+noremap c "_c
+
+set backspace=indent,eol,start
+set clipboard=unnamedplus
+set completeopt=longest,menuone
+set colorcolumn=81,91
+set copyindent
+set directory=~/.vim/swap
+set encoding=utf-8
+set formatoptions+=j " Delete comment character when joining commented lines
+set hidden
+set ignorecase
+set incsearch
+set infercase
+set laststatus=2
+set list
+set listchars=tab:→\ ,trail:·
+set mouse=a
+set nocompatible
+set nomodeline
+set noshowmatch
+set nrformats-=octal
+set number
+set relativenumber
+set omnifunc=syntaxcomplete#Complete
+set ruler
+set shiftwidth=4
+set smartcase
+set spell
+set spelllang=en_ca
+set so=3
+set tabstop=4
+set t_vb=
+set timeout
+set timeoutlen=500
+set visualbell
+set wildmenu
