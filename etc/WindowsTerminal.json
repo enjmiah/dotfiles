@@ -1,0 +1,98 @@
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+
+    "profiles":
+    {
+        "defaults":
+        {
+            // Put settings here that you want to apply to all profiles
+            "fontFace": "Roboto Mono for Powerline",
+            "fontSize": 10,
+            "cursorColor": "#FF6600",
+            "colorScheme": "Gruvbox",
+            "padding": "8, 8, 8, 8",
+            "useAcrylic": false,
+            "acrylicOpacity": 0.8
+        },
+        "list":
+        [
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "hidden": false
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
+                "name": "Git Bash",
+                "commandline": "C:/Program Files/Git/bin/bash.exe",
+                "icon": "C:/Program Files/Git/git-bash.exe",
+                "startingDirectory" : "%USERPROFILE%",
+                "hidden": false
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "cmd",
+                "commandline": "cmd.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure",
+                "hidden": true
+            }
+        ]
+    },
+
+    "initialCols": 90,
+    "initialRows": 28,
+    "snapToGridOnResize": true,
+    "alwaysShowTabs": false,
+    "tabWidthMode": "titleLength",
+    "rowsToScroll": 2,
+
+    // Add custom color schemes to this array
+    "schemes": [
+      {
+        "name" : "Gruvbox",
+        "foreground" : "#EBDBB2",
+        "background" : "#282828",
+        "black" : "#282828",
+        "blue" : "#458588",
+        "cyan" : "#689D6A",
+        "green" : "#98971A",
+        "purple" : "#B16286",
+        "red" : "#CC241D",
+        "white" : "#A89984",
+        "yellow" : "#D79921",
+        "brightBlack" : "#928374", // zsh autocomplete
+        "brightBlue" : "#83A598",
+        "brightCyan" : "#8EC07C",
+        "brightGreen" : "#B8BB26",
+        "brightPurple" : "#D3869B",
+        "brightRed" : "#FB4934",
+        "brightWhite" : "#EBDBB2",
+        "brightYellow" : "#FABD2F"
+      }
+    ],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": [
+        { "command": "closePane", "keys": ["ctrl+w"] },
+        { "command": "unbound", "keys": ["ctrl+shift+w"] }
+    ]
+}
