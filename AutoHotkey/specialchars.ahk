@@ -14,3 +14,11 @@ Capslock & 9:: Send {U+2190} ; ←
 Capslock & 0:: Send {U+2192} ; →
 Capslock & ?:: Send {U+261E} ; ☞
 Capslock & 1:: Send {U+26A0} ; ⚠
+
+Capslock & a:: EnterUnicode()
+
+EnterUnicode()
+{
+	Input, Code, , {LShift}
+	Send {U+%Code%}
+}
