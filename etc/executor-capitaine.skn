@@ -1,0 +1,17 @@
+﻿[skinvalues]
+textcolor=#0D0E0C
+textbackcolor=#C3C4BB
+windowcolor=#3E3F38
+buttonarrowcolor=#626146
+buttonoutlinecolor=#626146
+buttonfillcolor=#C3C4BB
+skintype=small
+editwidth=256
+transactive=255
+transinactive=255
+showwindow=0
+showicon=1
+showcombo=1
+fontname=HelveticaNeueLT Com 55 Roman
+fontsize=18
+

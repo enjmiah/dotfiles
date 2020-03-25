@@ -14,7 +14,7 @@
             // Put settings here that you want to apply to all profiles
             "fontFace": "Roboto Mono for Powerline",
             "fontSize": 10,
-            "cursorColor": "#FF6600",
+            "cursorColor": "#ff455b",
             "colorScheme": "Gruvbox",
             "padding": "8, 8, 8, 8",
             "useAcrylic": false,
