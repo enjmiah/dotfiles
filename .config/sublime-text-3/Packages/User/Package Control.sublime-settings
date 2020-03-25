@@ -7,17 +7,15 @@
 	"installed_packages":
 	[
 		"ayu",
+		"Babel",
 		"Clang Format",
 		"CMakeEditor",
 		"GitSyntaxes",
 		"gruvbox",
-		"Julia",
-		"lispindent",
 		"NeoVintageous",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
 		"PlainTasks",
-		"Racket",
 		"Sass",
 		"SublimeCodeIntel",
 		"SublimeLinter",

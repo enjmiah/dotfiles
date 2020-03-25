@@ -29,7 +29,17 @@
 		"whitespace",
 		"defragmented",
 		"remeshing",
-		"kanji"
+		"kanji",
+		"Bézier",
+		"Hermite",
+		"casteljau",
+		"skeptical",
+		"programmatically",
+		"reparameterize",
+		"Analyze",
+		"parameterization",
+		"parameterized",
+		"reparameterization"
 	],
 	"always_prompt_for_file_reload": true,
 	"auto_complete_commit_on_tab": true,

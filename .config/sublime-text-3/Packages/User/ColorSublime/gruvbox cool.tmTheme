@@ -64,12 +64,8 @@
           <key>popupCss</key>
           <string>
             html {
-              background-color: #252323;
-              color: #f2e5bc;
-            }
-
-            body {
-              font-size: 1.4em;
+              background-color: #242c30;
+              color: #ebdbb280;
             }
 
             a {
