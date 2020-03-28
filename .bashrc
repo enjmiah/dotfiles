@@ -41,7 +41,11 @@ source "$HOME/dotfiles/prompt-utils.sh"
 PS1=''
 PS1="$PS1"'\[\e[0m\]'                          # reset all
 PS1="$PS1"'\n'
-PS1="$PS1"'\[\e[37;44m\]  \D{%I:%M%p}  '       # time
+if [[ $(grep Microsoft /proc/version) ]]; then
+    PS1="$PS1"'\[\e[37;43m\]  \D{%I:%M%p}  '   # time (red)
+else
+    PS1="$PS1"'\[\e[37;44m\]  \D{%I:%M%p}  '   # time (blue)
+fi
 PS1="$PS1"'`__job_info \j`'                    # jobs count + separator
 PS1="$PS1"'`__last_command_runtime`'           # run time of last command
 PS1="$PS1"'\[\e[30;47m\]  \u@\h  \w  '         # pwd

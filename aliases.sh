@@ -20,8 +20,8 @@ if [[ ! -z "$BASH_VERSION" ]]; then
 fi
 
 alias ag='ag --pager="less -FRX"'
-[ -e /media/jerry/Data ] && alias data='cd /media/jerry/Data'
-[ -e /c/Users/yin/d ] && alias data='cd /c/Users/yin/d'
+[ -e /media/$USER/Data ] && alias data='cd /media/$USER/Data'
+[ -e /c/Users/$USER/d ] && alias data='cd /c/Users/$USER/d'
 alias erl="erl -eval 'code:add_path(\"$HOME/.local/share/erl\")'"
 alias flux="xflux -l 49.263569 -g -123.138573 -k 3600"
 alias h='hugo server -D'

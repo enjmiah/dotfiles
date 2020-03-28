@@ -85,8 +85,8 @@ setopt interactive_comments
 #########################
 
 export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
-export PATH="$HOME/Applications/julia-1.0.0/bin:$PATH"
-export PATH="$HOME/Applications/texlive2018/bin/x86_64-linux:$PATH"
+export PATH="$HOME/Applications/julia-1.2.0/bin:$PATH"
+export PATH="$HOME/Applications/texlive2019/bin/x86_64-linux:$PATH"
 export PATH="$HOME/.cabal/bin:/opt/cabal/bin:/opt/ghc/bin:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -118,7 +118,11 @@ if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
     source ~/dotfiles/git-prompt.sh
 
     PROMPT=$'\n'
-    PROMPT="$PROMPT"'%{$bg[blue]$fg[white]%}  %D{%L:%M%p}  '
+    if [[ $(grep Microsoft /proc/version) ]]; then
+        PROMPT="$PROMPT"'%{$bg[red]$fg[black]%}  %D{%L:%M%p}  '
+    else
+        PROMPT="$PROMPT"'%{$bg[blue]$fg[white]%}  %D{%L:%M%p}  '
+    fi
     PROMPT="$PROMPT"'$reset_color$(__job_info)'
     PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
     PROMPT="$PROMPT"'$reset_color%{$bg[white]$fg[black]%}  %~  '
