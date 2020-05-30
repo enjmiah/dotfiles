@@ -1,5 +1,4 @@
-" Escape insert mode by typing "jj" or "jk" quickly
-imap jj <Esc>
+" Escape insert mode by typing "jk" quickly
 imap jk <Esc>
 
 " Allow single character insertions from normal mode

@@ -24,6 +24,7 @@ source ~/dotfiles/aliases.sh
 export PAGER=less
 export LESSHISTFILE=-
 [[ "$TERM" == "cygwin" ]] && export PATH="$PATH:/c/bin"
+export PROMPT_COMMAND='history -a'
 
 ####################
 # Start-up scripts #

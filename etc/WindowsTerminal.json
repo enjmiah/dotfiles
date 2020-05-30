@@ -93,6 +93,8 @@
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [
         { "command": "closePane", "keys": ["ctrl+w"] },
-        { "command": "unbound", "keys": ["ctrl+shift+w"] }
+        { "command": "unbound", "keys": ["ctrl+shift+w"] },
+        { "command": "scrollUp", "keys": ["shift+up"] },
+        { "command": "scrollDown", "keys": ["shift+down"] }
     ]
 }
