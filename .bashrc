@@ -24,6 +24,8 @@ source ~/dotfiles/aliases.sh
 export PAGER=less
 export LESSHISTFILE=-
 [[ "$TERM" == "cygwin" ]] && export PATH="$PATH:/c/bin"
+export HISTSIZE=5000
+shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
 ####################
@@ -31,7 +33,7 @@ export PROMPT_COMMAND='history -a'
 ####################
 
 # improve ls colours
-eval "$(dircolors ~/dotfiles/.dircolors)";
+eval "$(dircolors -b ~/dotfiles/.dircolors)"
 
 ##########
 # Prompt #
