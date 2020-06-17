@@ -8,10 +8,11 @@
 	ldiff = diff HEAD~ HEAD
 	diffs = diff --staged
 	s = status -bsu
+	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 [blame]
 	date = short
 [core]
-	autocrlf = false
+	autocrlf = input
 	eol = lf
 	pager = less -FX
 [diff]
