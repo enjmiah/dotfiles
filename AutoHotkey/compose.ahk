@@ -1,5 +1,6 @@
 #MaxHotkeysPerInterval 120
 SetCapsLockState, AlwaysOff
+SendMode Input
 
 Capslock & =:: Send {U+2013} ; en dash –
 Capslock & -:: Send {U+2014} ; em dash —
@@ -22,7 +23,8 @@ Capslock & k:: Send {Down}
 Capslock & l:: Send {Up}
 Capslock & `;:: Send {Right}
 
-:*:;r::</ruby>
+Capslock & r:: Send </ruby>
+Capslock & c:: Send !``
 
 Capslock & a:: EnterUnicode()
 
