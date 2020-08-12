@@ -22,13 +22,14 @@ fi
 alias ag='ag --pager="less -FRX"'
 [ -e /media/$USER/Data ] && alias data='cd /media/$USER/Data'
 [ -e /c/Users/$USER/d ] && alias data='cd /c/Users/$USER/d'
+alias cmake-vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=$(dirname $(which vcpkg))/scripts/buildsystems/vcpkg.cmake"
 alias erl="erl -eval 'code:add_path(\"$HOME/.local/share/erl\")'"
 alias flux="xflux -l 49.263569 -g -123.138573 -k 3600"
 alias h='hugo server -D'
 alias l='ls'
-alias less='less -FRX'
+alias less='less -FR'
 alias ll='ls -Ahl --color=auto'
-type rg &> /dev/null && function rip() { rg -ip "$@" | less -FRX; }
+type rg &> /dev/null && function rip() { rg -Sp "$@" | less -FRX; }
 function spawn() { $@ &> /dev/null & disown; }
 alias v='vim'
 alias view='vim -R'
