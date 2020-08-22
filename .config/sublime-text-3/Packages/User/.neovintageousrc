@@ -1,8 +1,10 @@
-:noremap <space> i<space><esc><left>r
-:noremap x "_x
-:noremap ; l
-:noremap l gk
-:noremap k gj
-:noremap j h
-:unmap h
-:noremap c "_c
+noremap <space> i<space><esc><left>r
+noremap x "_x
+noremap ; l
+noremap l gk
+noremap k gj
+noremap j h
+unmap h
+noremap c "_c
+
+set ignorecase

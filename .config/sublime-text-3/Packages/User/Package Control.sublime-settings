@@ -6,7 +6,6 @@
 	],
 	"installed_packages":
 	[
-		"ayu",
 		"Babel",
 		"Clang Format",
 		"CMakeEditor",
