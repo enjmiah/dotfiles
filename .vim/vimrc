@@ -19,9 +19,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
-Plug 'w0rp/ale'
-    let g:ale_sign_error='x'
-    let g:ale_sign_warning='!'
 call plug#end()
 
 " Escape insert mode by typing "jk" quickly
@@ -103,8 +100,8 @@ set omnifunc=syntaxcomplete#Complete
 set ruler
 set shiftwidth=4
 set smartcase
-set spell
-set spelllang=en_ca
+" set spell
+" set spelllang=en_ca
 set so=3
 set tabstop=4
 set t_vb=
