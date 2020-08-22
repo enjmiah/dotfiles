@@ -15,6 +15,7 @@
 	autocrlf = input
 	eol = lf
 	pager = less -FX
+	editor = vim
 [diff]
 	colorMoved = default
 [credential]
