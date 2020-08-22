@@ -1,5 +1,6 @@
 [MESSAGES CONTROL]
 disable=fixme,
+        global-statement,
         invalid-name,
         locally-disabled,
         missing-docstring,
