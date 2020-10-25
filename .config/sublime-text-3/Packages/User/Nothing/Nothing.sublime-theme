@@ -56,11 +56,6 @@
     },
     {
         "class": "sidebar_tree",
-        "platforms": ["windows"],
-        "row_padding": [8, 1, 16, 2],
-    },
-    {
-        "class": "sidebar_tree",
         "parents": [{"class": "window", "attributes": ["file_light"]}],
         "dark_content": false,
     },

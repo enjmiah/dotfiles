@@ -8,3 +8,4 @@ unmap h
 noremap c "_c
 
 set ignorecase
+set winaltkeys=yes
