@@ -9,6 +9,7 @@
 	diffs = diff --staged
 	s = status -bsu
 	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+	rb = rebase
 [blame]
 	date = short
 [core]
@@ -18,6 +19,7 @@
 	editor = vim
 [diff]
 	colorMoved = default
+	algorithm = histogram
 [credential]
 	helper = cache --timeout 1800
 [difftool]

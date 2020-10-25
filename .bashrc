@@ -17,6 +17,13 @@
 
 source ~/dotfiles/aliases.sh
 
+###########
+# Options #
+###########
+
+shopt -s globstar
+shopt -s histappend
+
 #########################
 # Environment variables #
 #########################
@@ -25,7 +32,6 @@ export PAGER=less
 export LESSHISTFILE=-
 [[ "$TERM" == "cygwin" ]] && export PATH="$PATH:/c/bin"
 export HISTSIZE=5000
-shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
 ####################

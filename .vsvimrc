@@ -4,9 +4,6 @@ imap jk <Esc>
 " Allow single character insertions from normal mode
 noremap <Space> i <Esc>r
 
-" Clear the search highlight
-nnoremap <silent> <return> :noh<return>
-
 " Navigate with jkl; instead of hjkl
 noremap ; l
 noremap l k
