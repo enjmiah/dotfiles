@@ -19,6 +19,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
+Plug 'vimwiki/vimwiki'
+    let g:vimwiki_list = [{'path': '~/vimwiki/',
+                          \ 'syntax': 'markdown', 'ext': '.md'}]
 call plug#end()
 
 " Escape insert mode by typing "jk" quickly
@@ -54,20 +57,18 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
 
-" Alt+{Left,Right} to move between buffers
-nnoremap <A-Left> :bp<return>
-nnoremap <A-Right> :bn<return>
-nnoremap <A-j> :bp<return>
-nnoremap <A-;> :bn<return>
+" Alt+, and Alt+. to move between buffers
+nnoremap <A-,> :bp<return>
+nnoremap <A-.> :bn<return>
 
 " Fast go to buffer
 nnoremap gb :ls<CR>:b<Space>
 
 " Alt+{Up,Down} to move between vertical splits
-nnoremap <A-Down> <C-w>j
-nnoremap <A-Up> <C-w>k
-nnoremap <A-k> <C-w>j
-nnoremap <A-l> <C-w>k
+nnoremap <C-J> <C-w>h
+nnoremap <C-K> <C-w>j
+nnoremap <C-L> <C-w>k
+nnoremap <C-;> <C-w>l
 
 " Disable cursorline in insert mode
 autocmd InsertEnter,InsertLeave * set cul!
@@ -107,10 +108,10 @@ set tabstop=4
 set t_vb=
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
-    set ttimeoutlen=500
+    set ttimeoutlen=400
 endif
 set timeout
-set timeoutlen=500
+set timeoutlen=400
 set visualbell
 set wildmenu
 
@@ -120,17 +121,9 @@ endif
 
 colo gruvbox
 set background=dark
-" I use a light theme in drop-down terminal
-if !empty($XFCE_TERMINAL)
-    set background=light
-    let ayucolor="light"
-    colo ayu
-endif
 hi Normal ctermbg=NONE
 hi CursorLineNr ctermbg=NONE
 hi SignColumn ctermbg=NONE
-hi ALEErrorSign ctermbg=NONE ctermfg=Red cterm=bold
-hi ALEWarningSign ctermbg=NONE ctermfg=Yellow cterm=bold
 
 autocmd FileType c,cpp,objc map <buffer><Leader>rf <Plug>(operator-clang-format)
 autocmd FileType yaml setlocal indentexpr=

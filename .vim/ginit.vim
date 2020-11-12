@@ -1,5 +1,4 @@
-Guifont! Roboto Mono for Powerline:h9
-colo gruvbox
-set background=dark
+Guifont! Roboto Mono:h13
 let g:airline_theme='gruvbox'
-set lines=30 columns=100
+set lines=30 columns=40
+set linespace=-2
