@@ -69,7 +69,7 @@ function __custom_git_ps1() {
             # detached HEAD state
             out="${out:3:-2}"
         fi
-        out=" ${out}"
+        out="↪ ${out}"
         printf "$out"
     fi
     return $RTNVAL

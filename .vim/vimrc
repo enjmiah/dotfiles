@@ -1,7 +1,6 @@
 " Plugins
 call plug#begin('~/.vim/plug')
 Plug 'ayu-theme/ayu-vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-operator-flashy'
     let g:operator#flashy#flash_time=300
     map y <Plug>(operator-flashy)
@@ -66,11 +65,17 @@ nnoremap <A-.> :bn<return>
 " Fast go to buffer
 nnoremap gb :ls<CR>:b<Space>
 
-" Alt+{Up,Down} to move between vertical splits
+" Ctrl+Direction to move between windows
 nnoremap <C-J> <C-w>h
 nnoremap <C-K> <C-w>j
 nnoremap <C-L> <C-w>k
 nnoremap <C-;> <C-w>l
+
+" Current date and time
+iab <expr> dts strftime("%Y-%M-%d %T")
+
+" Avoid Ctrl+W
+map <C-J> <C-W>
 
 " Disable cursorline in insert mode
 autocmd InsertEnter,InsertLeave * set cul!

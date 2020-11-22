@@ -7,7 +7,7 @@
     "profiles": {
         "defaults": {
             // Put settings here that you want to apply to all profiles
-            "fontFace": "Roboto Mono for Powerline",
+            "fontFace": "Roboto Mono",
             "fontSize": 10,
             "cursorColor": "#ff455b",
             "colorScheme": "Gruvbox",
