@@ -6,6 +6,8 @@ noremap k gj
 noremap j h
 unmap h
 noremap c "_c
+nnoremap <C-w> :tabclose<CR>
+nnoremap <C-n> :new<CR>
 
 set ignorecase
 set winaltkeys=yes

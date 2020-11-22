@@ -18,7 +18,8 @@ Capslock & i:: Send {U+201D} ; ”
 Capslock & o:: Send {U+2018} ; ‘
 Capslock & p:: Send {U+2019} ; ’
 Capslock & *:: Send {U+2606} ; ☆
-Capslock & .:: Send {U+2026} ; …
+Capslock & .:: Send {U+00A0}.{U+00A0}.{U+00A0}. ; . . .
+Capslock & e:: Send {U+2026} ; …
 Capslock & ,:: Send {U+30FB} ; ・
 Capslock & 9:: Send {U+2190} ; ←
 Capslock & 0:: Send {U+2192} ; →

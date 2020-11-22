@@ -24,7 +24,8 @@
           <key>blockCaret</key>
           <string>#FF3E58</string>
           <key>foreground</key>
-          <string>#ebdbb280</string>
+          <!-- This affects the ruler -->
+          <string>#fbf1c7</string>
           <key>invisibles</key>
           <string>#ebdbb226</string>
           <key>lineHighlight</key>

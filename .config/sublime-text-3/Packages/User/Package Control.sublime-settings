@@ -6,7 +6,6 @@
 	],
 	"installed_packages":
 	[
-		"Babel",
 		"Clang Format",
 		"CMakeEditor",
 		"GitSyntaxes",

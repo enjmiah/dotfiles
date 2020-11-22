@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'rhysd/vim-clang-format'
     let g:clang_format#detect_style_file=1
 Plug 'sukima/xmledit'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
@@ -20,7 +21,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
 Plug 'vimwiki/vimwiki'
-    let g:vimwiki_list = [{'path': '~/vimwiki/',
+    let g:vimwiki_list = [{'path': '~/Dropbox/Sync/notebook/content',
+                          \ 'index': '_index', 'diary_rel_path': 'journal',
                           \ 'syntax': 'markdown', 'ext': '.md'}]
 call plug#end()
 
@@ -82,6 +84,7 @@ set colorcolumn=81,91
 set copyindent
 set directory=~/.vim/swap
 set encoding=utf-8
+set expandtab
 set fillchars+=vert:\ 
 set ignorecase
 set hidden
@@ -104,6 +107,7 @@ set smartcase
 " set spell
 " set spelllang=en_ca
 set so=3
+set softtabstop=4
 set tabstop=4
 set t_vb=
 if !has('nvim') && &ttimeoutlen == -1
