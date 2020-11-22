@@ -1,16 +1,11 @@
-
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
 
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             // Put settings here that you want to apply to all profiles
             "fontFace": "Roboto Mono for Powerline",
             "fontSize": 10,
@@ -20,8 +15,7 @@
             "useAcrylic": false,
             "acrylicOpacity": 0.8
         },
-        "list":
-        [
+        "list": [
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "name": "Ubuntu",
@@ -59,12 +53,12 @@
 
     "initialCols": 90,
     "initialRows": 28,
-    "snapToGridOnResize": true,
     "alwaysShowTabs": false,
-    "tabWidthMode": "titleLength",
     "rowsToScroll": 2,
+    "snapToGridOnResize": true,
+    "tabWidthMode": "titleLength",
+    "useTabSwitcher": false,
 
-    // Add custom color schemes to this array
     "schemes": [
       {
         "name" : "Gruvbox",
@@ -89,12 +83,13 @@
       }
     ],
 
-    // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [
         { "command": "closePane", "keys": ["ctrl+w"] },
         { "command": "unbound", "keys": ["ctrl+shift+w"] },
         { "command": "scrollUp", "keys": ["shift+up"] },
-        { "command": "scrollDown", "keys": ["shift+down"] }
+        { "command": "scrollDown", "keys": ["shift+down"] },
+        { "command": "prevTab", "keys": ["alt+,"] },
+        { "command": "nextTab", "keys": ["alt+."] }
     ]
 }
