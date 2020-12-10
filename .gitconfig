@@ -15,21 +15,23 @@
 [core]
 	autocrlf = input
 	eol = lf
-	pager = less -FX
+	pager = delta --plus-color="#194d19" --minus-color="#5d1919"
 	editor = vim
+[credential]
+	helper = cache --timeout 1800
+[delta]
+	features = line-numbers
 [diff]
 	colorMoved = default
 	algorithm = histogram
-[credential]
-	helper = cache --timeout 1800
 [difftool]
 	prompt = false
-[include]
-	path = "~/.gitconfig.user" # contains user.name and user.email
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[include]
+	path = "~/.gitconfig.user" # contains user.name and user.email
 [pull]
 	rebase = false
