@@ -8,8 +8,8 @@
 	[
 		"Clang Format",
 		"CMakeEditor",
-		"GitSyntaxes",
 		"gruvbox",
+		"LSP",
 		"NeoVintageous",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
