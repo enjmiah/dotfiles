@@ -1,0 +1,25 @@
+[
+    { "keys": ["alt+,"], "command": "prev_view" },
+    { "keys": ["alt+."], "command": "next_view" },
+    { "keys": ["alt+left"], "command": "prev_view" },
+    { "keys": ["alt+right"], "command": "next_view" },
+    { "keys": ["ctrl+t"], "command": "pass" },
+    {
+        "keys": ["ctrl+r", "ctrl+r"],
+        "command": "lsp_symbol_rename",
+        "context": [{"key": "setting.lsp_active"}]
+    },
+    { "keys": ["ctrl+;"], "command": "ace_jump_word" },
+    {
+        "keys": ["ctrl+r", "ctrl+f"], "command": "clang_format",
+        "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.c++"}
+        ],
+    },
+    {
+        "keys": ["ctrl+r", "ctrl+f"], "command": "clang_format",
+        "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.c"}
+        ],
+    },
+]

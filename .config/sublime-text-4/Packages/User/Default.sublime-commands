@@ -1,0 +1,3 @@
+[
+    { "caption": "Toggle Show Whitespace", "command": "toggle_whitespace" }
+]
