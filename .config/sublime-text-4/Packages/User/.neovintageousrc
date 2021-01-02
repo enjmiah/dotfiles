@@ -5,7 +5,7 @@ noremap k j
 noremap j h
 noremap gk gj
 noremap gl gk
-unmap h
+noremap h ;
 noremap c "_c
 noremap x "_x
 nnoremap <C-w> :tabclose<CR>

@@ -1,14 +1,18 @@
 {
+	"auto_upgrade": false,
 	"bootstrapped": true,
 	"installed_packages":
 	[
 		"AceJump",
 		"CMake",
 		"LSP",
+		"NeoVintageous",
 		"Package Control",
 		"PlainTasks",
+		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
+		"ToggleNeoVintageous",
 	],
 	"ignore_vcs_packages":
 	[
