@@ -3,7 +3,6 @@
 	"bootstrapped": true,
 	"installed_packages":
 	[
-		"AceJump",
 		"CMake",
 		"LSP",
 		"NeoVintageous",
