@@ -1,7 +1,9 @@
 {
+    "archive_name": "done:",
     "color_scheme": "Packages/User/ColorSublime/gruvbox cool.tmTheme",
-    "open_tasks_bullet": "□",
-    "done_tasks_bullet": "+",
     "cancelled_tasks_bullet": "x",
-    "archive_name": "done:"
+    "done_tasks_bullet": "+",
+    "open_tasks_bullet": "□",
+    "stats_format": "✓ $n/$a, last done: $last",
+    "stats_ignore_archive": true
 }

@@ -11,6 +11,7 @@
 		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
+		"SublimeLinter-pylint",
 		"ToggleNeoVintageous",
 	],
 	"ignore_vcs_packages":
