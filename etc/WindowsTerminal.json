@@ -26,7 +26,7 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
                 "name": "Git Bash",
                 "commandline": "C:/Program Files/Git/bin/bash.exe",
-                "icon": "C:/Program Files/Git/git-bash.exe",
+                "icon": "%HOME%/dotfiles/var/git.png",
                 "startingDirectory" : "%USERPROFILE%",
                 "hidden": false
             },
