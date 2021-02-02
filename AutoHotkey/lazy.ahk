@@ -19,9 +19,9 @@ CapsLock & k::  Send {Down}
 CapsLock & l::  Send {Up}
 CapsLock & `;:: Send {Right}
 
-:*?:````::{U+201C} ; “
-:*?:''::{U+201D}   ; ”
-Capslock & `:: Send {U+2018} ; ‘
+Capslock & g:: Send {U+201C}  ; “
+Capslock & h:: Send {U+201D}  ; ”
+Capslock & `:: Send {U+2018}  ; ‘
 Capslock & ':: Send {U+2019}  ; ’
 Capslock & =:: Send {U+2013}  ; en dash –
 Capslock & -:: Send {U+2014}  ; em dash —
