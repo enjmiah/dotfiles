@@ -4,3 +4,6 @@
 [submodule ".config/zsh/autosuggestions"]
 	path = .config/zsh/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/zsh/agkozak"]
+	path = .config/zsh/agkozak
+	url = git@github.com:agkozak/agkozak-zsh-prompt.git

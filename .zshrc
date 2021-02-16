@@ -84,15 +84,12 @@ setopt interactive_comments
 # Environment variables #
 #########################
 
-export PATH="$HOME/Applications/MATLAB-R2018a/bin:$PATH"
-export PATH="$HOME/Applications/julia-1.2.0/bin:$PATH"
 export PATH="$HOME/Applications/texlive2019/bin/x86_64-linux:$PATH"
-export PATH="$HOME/.cabal/bin:/opt/cabal/bin:/opt/ghc/bin:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-[[ "$(cat "/proc/${PPID}/comm")" == "xfce4-terminal" ]] && export XFCE_TERMINAL=1
+export JUPYTER_PATH="${PYTHONPATH}"
 
 export LANG=en_US.UTF-8
 export LESSHISTFILE=-
@@ -104,31 +101,17 @@ type nvim &> /dev/null && export EDITOR='nvim'
 ###########
 
 source ~/dotfiles/aliases.sh
+alias vi=vim
 
 ##########
 # Prompt #
 ##########
 
-autoload -U colors && colors
-
-setopt prompt_subst
-
-if [[ -f ~/dotfiles/prompt-utils.sh && -f ~/dotfiles/git-prompt.sh ]]; then
-    source ~/dotfiles/prompt-utils.sh
-    source ~/dotfiles/git-prompt.sh
-
-    PROMPT=$'\n'
-    if [[ $(grep Microsoft /proc/version) ]]; then
-        PROMPT="$PROMPT"'%{$bg[red]$fg[black]%}  %D{%L:%M%p}  '
-    else
-        PROMPT="$PROMPT"'%{$bg[blue]$fg[white]%}  %D{%L:%M%p}  '
-    fi
-    PROMPT="$PROMPT"'$reset_color$(__job_info)'
-    PROMPT="$PROMPT"'$reset_color$(__last_command_runtime)'
-    PROMPT="$PROMPT"'$reset_color%{$bg[white]$fg[black]%}  %~  '
-    PROMPT="$PROMPT"'$reset_color%{$fg[green]%}  $(__custom_git_ps1)%{$reset_color%}'
-    PROMPT="$PROMPT"$'\n''%{$(__exit_status_ps1)%G%} '
-fi
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
+AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_PROMPT_DIRTRIM=0
+source ~/dotfiles/.config/zsh/agkozak/agkozak-zsh-prompt.plugin.zsh
 
 #######################
 # Syntax highlighting #
@@ -170,16 +153,16 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ####################
 
 # Configure ls colors
-eval "$(dircolors ~/dotfiles/.dircolors)";
-
-preexec() { __timer_start }
+if ! [[ $(uname) =~ "MINGW" ]]; then
+    eval "$(dircolors ~/dotfiles/.dircolors)";
+fi
 
 PLUGINS=(syntax-highlighting autosuggestions)
 
 for plug in $PLUGINS; do
     entry="$HOME/dotfiles/.config/zsh/$plug/zsh-$plug.zsh"
     if [[ -f "$entry" ]]; then
-      source $entry
+        source $entry
     fi
 done
 
