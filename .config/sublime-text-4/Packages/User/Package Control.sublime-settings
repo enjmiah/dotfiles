@@ -13,6 +13,7 @@
 		"SublimeLinter-annotations",
 		"SublimeLinter-pylint",
 		"ToggleNeoVintageous",
+		"Wrap Plus",
 	],
 	"ignore_vcs_packages":
 	[

@@ -1,0 +1,8 @@
+// These settings override both User and Default settings for the Markdown syntax
+{
+    "font_face": "Segoe UI",
+    "font_size": 13,
+    "rulers": [],
+    "wrap_width": 40,
+    "WrapPlus.wrap_width": 80,
+}

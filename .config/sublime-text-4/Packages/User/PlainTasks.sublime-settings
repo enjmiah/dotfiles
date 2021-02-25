@@ -5,5 +5,9 @@
     "done_tasks_bullet": "+",
     "open_tasks_bullet": "□",
     "stats_format": "✓ $n/$a, last done: $last",
-    "stats_ignore_archive": true
+    "stats_ignore_archive": true,
+    "font_face": "Segoe UI",
+    "font_size": 13,
+    "rulers": [],
+    "wrap_width": 50,
 }

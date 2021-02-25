@@ -69,8 +69,11 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_tab_style": "square",
 	"find_selected_text": false,
-	"font_face": "Roboto Mono Medium",
-	"font_size": 12,
+	"font_face": "Iosevka Helv Medium",
+	"font_size": 13,
+	"font_options": [
+		"gdi"
+	],
 	"hide_new_tab_button": true,
 	"hide_pointer_while_typing": false,
 	"hide_tab_scrolling_buttons": true,
@@ -91,7 +94,6 @@
 	"line_padding_top": -1,
 	"margin": -2,
 	"overlay_scroll_bars": "enabled",
-	"relative_line_numbers": true,
 	"rulers": [
 		80,
 		90
@@ -132,6 +134,7 @@
 		"<C-h>": false,
 		"<C-n>": false,
 		"<C-s>": false,
+		"<C-w>": false,
 		"<C-[>": false,
 		"<C-]>": false,
 		"i_<C-v>": false,

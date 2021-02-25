@@ -25,7 +25,7 @@
           <string>#FF3E58</string>
           <key>foreground</key>
           <!-- This affects the ruler -->
-          <string>#fbf1c7</string>
+          <string>#fbf1c7a0</string>
           <key>invisibles</key>
           <string>#ebdbb226</string>
           <key>lineHighlight</key>
@@ -49,7 +49,7 @@
           <key>bracketsForeground</key>
           <string>#bdae93</string>
           <key>gutterForeground</key>
-          <string>#928374</string>
+          <string>#92837477</string>
           <key>highlight</key>
           <string>#f2e5bc</string>
           <key>highlightForeground</key>
@@ -548,7 +548,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe8019</string>
+          <string>#ffffff</string>
           <key>fontStyle</key>
           <string>bold</string>
         </dict>
@@ -561,7 +561,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d65d0e</string>
+          <string>#a89984</string>
           <key>fontStyle</key>
           <string>bold</string>
         </dict>
@@ -574,7 +574,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fb4934</string>
+          <string>#ffffff</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -587,7 +587,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#cc241d</string>
+          <string>#a89984</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -597,6 +597,17 @@
         <string>Markdown Inline Code</string>
         <key>scope</key>
         <string>markup.raw.inline</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#fabd2f</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Markdown Code Block</string>
+        <key>scope</key>
+        <string>markup.raw.block</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
@@ -634,28 +645,6 @@
         <dict>
           <key>foreground</key>
           <string>#b16286</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Markdown List</string>
-        <key>scope</key>
-        <string>markup.list</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#83a598</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Markdown List Punctuation</string>
-        <key>scope</key>
-        <string>markup.list punctuation.definition.list_item</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#458588</string>
         </dict>
       </dict>
       <dict>
@@ -1314,19 +1303,6 @@
         <dict>
           <key>foreground</key>
           <string>#ebdbb226</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>PlainTasks: Header</string>
-        <key>scope</key>
-        <string>keyword.control.header.todo</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#b8bb26</string>
-          <key>background</key>
-          <string>#444240</string>
         </dict>
       </dict>
       <dict>
