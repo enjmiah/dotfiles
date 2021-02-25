@@ -102,6 +102,7 @@ type nvim &> /dev/null && export EDITOR='nvim'
 
 source ~/dotfiles/aliases.sh
 alias vi=vim
+alias git="wsl git"
 
 ##########
 # Prompt #

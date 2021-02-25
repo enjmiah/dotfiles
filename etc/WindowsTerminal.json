@@ -7,8 +7,8 @@
     "profiles": {
         "defaults": {
             // Put settings here that you want to apply to all profiles
-            "fontFace": "Roboto Mono",
-            "fontSize": 10,
+            "fontFace": "Iosevka Helv",
+            "fontSize": 11,
             "cursorColor": "#ff455b",
             "colorScheme": "Gruvbox",
             "padding": "8, 8, 8, 8",
@@ -23,10 +23,10 @@
                 "hidden": false
             },
             {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
-                "name": "Git Bash",
-                "commandline": "C:/Program Files/Git/bin/bash.exe",
-                "icon": "%USERPROFILE%/dotfiles/var/git.png",
+                "guid": "{7476211c-da9e-4450-b9ba-c5992cfbe2a5}",
+                "name": "MINGW",
+                "commandline": "C:/bin/msys64/bin/bash.exe -c zsh",
+                "icon": "C:/bin/msys64/mingw64.ico",
                 "startingDirectory" : "%USERPROFILE%",
                 "hidden": false
             },
@@ -47,6 +47,14 @@
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure",
                 "hidden": true
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
+                "name": "Git Bash",
+                "commandline": "C:/Program Files/Git/bin/bash.exe",
+                "icon": "%USERPROFILE%/dotfiles/var/git.png",
+                "startingDirectory" : "%USERPROFILE%",
+                "hidden": false
             }
         ]
     },
