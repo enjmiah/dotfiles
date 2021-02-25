@@ -1,8 +1,10 @@
 [MESSAGES CONTROL]
 disable=bad-indentation,
+        c-extension-no-member,
         fixme,
         global-statement,
         invalid-name,
+        import-outside-toplevel,
         locally-disabled,
         missing-docstring,
         mixed-indentation,
@@ -10,12 +12,12 @@ disable=bad-indentation,
         too-few-public-methods,
         too-many-arguments,
         too-many-branches,
-        too-many-public-methods,
+        too-many-instance-attribute,
         too-many-locals,
         too-many-nested-blocks,
+        too-many-public-methods,
         too-many-statements,
-        wrong-import-position,
-        c-extension-no-member
+        wrong-import-position
 
 [BASIC]
 # Top level variables are not necessarily constants
