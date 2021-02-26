@@ -89,6 +89,10 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+if [[ -e "/d/jerry/sketching" ]]; then
+    export PYTHONPATH="/d/jerry/sketching/build/python/core/Debug:/d/jerry/sketching/python"
+    export PATH="/d/jerry/sketching/tools:$PATH"
+fi
 export JUPYTER_PATH="${PYTHONPATH}"
 
 export LANG=en_US.UTF-8
@@ -114,6 +118,25 @@ AGKOZAK_BLANK_LINES=1
 AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
 AGKOZAK_LEFT_PROMPT_ONLY=1
 AGKOZAK_PROMPT_DIRTRIM=0
+
+# Exit status
+AGKOZAK_CUSTOM_PROMPT='%(?..%B%F{red}(%?%)%f%b )'
+# Command execution time
+AGKOZAK_CUSTOM_PROMPT+='%(9V.%9v .)'
+# Username and hostname
+if [[ $(uname) =~ "Linux" ]]; then
+  AGKOZAK_CUSTOM_PROMPT+='%K{red}'
+else
+  AGKOZAK_CUSTOM_PROMPT+='%K{blue}'
+fi
+AGKOZAK_CUSTOM_PROMPT+=' %(!.%S%B.%B%F{white})%n%1v%(!.%b%s.%f%b) %k '
+# Path
+AGKOZAK_CUSTOM_PROMPT+=$'%B%2v%b'
+# Git status
+AGKOZAK_CUSTOM_PROMPT+=$'%(3V.%F{green}%3v%f.)\n'
+# Prompt character
+AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%#) '
+
 source ~/dotfiles/.config/zsh/agkozak/agkozak-zsh-prompt.plugin.zsh
 
 #######################
