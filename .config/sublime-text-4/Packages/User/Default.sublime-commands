@@ -1,3 +1,4 @@
 [
-    { "caption": "Toggle Show Whitespace", "command": "toggle_whitespace" }
+    { "caption": "Code Folding: Fold All Links", "command": "markdown_fold_links" },
+    { "caption": "Notebook: Open Today’s Journal Entry", "command": "open_journal_entry" }
 ]
