@@ -79,6 +79,7 @@ setopt share_history          # share command history data
 
 setopt autopushd pushdminus pushdsilent pushdtohome
 setopt interactive_comments
+autoload -U zmv
 
 #########################
 # Environment variables #
@@ -119,23 +120,22 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
 AGKOZAK_LEFT_PROMPT_ONLY=1
 AGKOZAK_PROMPT_DIRTRIM=0
 
-# Exit status
-AGKOZAK_CUSTOM_PROMPT='%(?..%B%F{red}(%?%)%f%b )'
-# Command execution time
-AGKOZAK_CUSTOM_PROMPT+='%(9V.%9v .)'
-# Username and hostname
+AGKOZAK_CUSTOM_PROMPT=''
+# Username and hostname / virtual environment indicator
 if [[ $(uname) =~ "Linux" ]]; then
   AGKOZAK_CUSTOM_PROMPT+='%K{red}'
 else
-  AGKOZAK_CUSTOM_PROMPT+='%K{blue}'
+  AGKOZAK_CUSTOM_PROMPT+='%K{cyan}'
 fi
-AGKOZAK_CUSTOM_PROMPT+=' %(!.%S%B.%B%F{white})%n%1v%(!.%b%s.%f%b) %k '
+AGKOZAK_CUSTOM_PROMPT+=' %(10V.[%10v].%(!.%S%B.%B%F{white})%n%1v%(!.%b%s.%f%b)) %k'
+# Command execution time
+AGKOZAK_CUSTOM_PROMPT+='%(9V.%K{yellow}%F{black} %9v %k%f.)'
 # Path
-AGKOZAK_CUSTOM_PROMPT+=$'%B%2v%b'
+AGKOZAK_CUSTOM_PROMPT+=$' %B%2v%b'
 # Git status
-AGKOZAK_CUSTOM_PROMPT+=$'%(3V.%F{green}%3v%f.)\n'
-# Prompt character
-AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%#) '
+AGKOZAK_CUSTOM_PROMPT+='%(3V.%F{green}%3v%f.)'$'\n'
+# Prompt character / exit status
+AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%B%(?.%F{black}%#.%F{red}x)%f%b) '
 
 source ~/dotfiles/.config/zsh/agkozak/agkozak-zsh-prompt.plugin.zsh
 
@@ -192,4 +192,21 @@ for plug in $PLUGINS; do
     fi
 done
 
+if type fzf &> /dev/null; then
+    source "$HOME/dotfiles/.config/zsh/fzf/completion.zsh"
+    source "$HOME/dotfiles/.config/zsh/fzf/key-bindings.zsh"
+fi
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$ZSH_HIGHLIGHT_STYLES[comment]
+
+#####################################
+# Switch to last directory on login #
+#####################################
+
+if [ -f ~/.lastdir ] && [ $(pwd) = "$HOME" ]; then
+    cd "`cat ~/.lastdir`"
+fi
+function record_last_dir {
+    pwd > ~/.lastdir
+}
+precmd_functions+=record_last_dir
