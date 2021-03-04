@@ -1,12 +1,21 @@
 " Plugins
 call plug#begin('~/.vim/plug')
+Plug 'ap/vim-buftabline'
 Plug 'haya14busa/vim-operator-flashy'
     let g:operator#flashy#flash_time=300
     map y <Plug>(operator-flashy)
     nmap Y <Plug>(operator-flashy)$
+Plug 'itchyny/lightline.vim'
+    let g:lightline = { 'colorscheme': 'Tomorrow_Night', }
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-slash'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-operator-user'
+Plug 'godlygeek/tabular' " Must appear before vim-markdown.
+Plug 'plasticboy/vim-markdown'
+    let g:vim_markdown_no_extensions_in_markdown = 1
 Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='soft'
 Plug 'rhysd/vim-clang-format'
@@ -19,15 +28,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#ffff00' gui=underline ctermfg=226 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary gui=underline cterm=underline
-augroup END
-Plug 'ap/vim-buftabline'
+    augroup qs_colors
+        autocmd!
+        autocmd ColorScheme * highlight QuickScopePrimary guifg='#ffff00' gui=underline ctermfg=226 cterm=underline
+        autocmd ColorScheme * highlight QuickScopeSecondary gui=underline cterm=underline
+    augroup END
 Plug 'vimwiki/vimwiki'
-    let g:vimwiki_list = [{'path': '~/Dropbox/Sync/notebook/content',
-                          \ 'index': '_index', 'diary_rel_path': 'journal',
+    let g:vimwiki_list = [{'path': '~/Dropbox/Sync/notes', 'index': '_index',
                           \ 'syntax': 'markdown', 'ext': '.md'}]
 call plug#end()
 
@@ -59,22 +66,21 @@ nnoremap <expr> l v:count ? 'k' : 'gk'
 noremap x "_x
 noremap c "_c
 
-if has('nvim')
-    " Make Esc escape Insert mode in NVIM terminal
-    tnoremap <Esc> <C-\><C-n>
-endif
-
 " Alt+, and Alt+. to move between buffers
 nnoremap <A-,> :bp<return>
 nnoremap <A-.> :bn<return>
+
+" Sublime-ish chords.
+nnoremap <C-s> :w<return>
+nnoremap <A-q> gqip
 
 " Fast go to buffer
 nnoremap gb :ls<CR>:b<Space>
 
 " Ctrl+Direction to move between windows
-nnoremap <C-J> <C-w>h
-nnoremap <C-K> <C-w>j
-nnoremap <C-L> <C-w>k
+nnoremap <C-j> <C-w>h
+nnoremap <C-k> <C-w>j
+nnoremap <C-l> <C-w>k
 nnoremap <C-;> <C-w>l
 
 " Current date and time
@@ -83,16 +89,33 @@ iab <expr> dts strftime("%Y-%M-%d %T")
 " Avoid Ctrl+W
 map <C-J> <C-W>
 
-" Disable cursorline in insert mode
-autocmd InsertEnter,InsertLeave * set cul!
+" Make Esc escape Insert mode in NVIM terminal
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
 
 syntax on
 set backspace=indent,eol,start
 set clipboard=unnamedplus
+if system('grep Microsoft /proc/version')
+  let g:clipboard = {
+      \   'name': 'win32yank-wsl',
+      \   'copy': {
+      \      '+': 'win32yank.exe -i --crlf',
+      \      '*': 'win32yank.exe -i --crlf',
+      \    },
+      \   'paste': {
+      \      '+': 'win32yank.exe -o --lf',
+      \      '*': 'win32yank.exe -o --lf',
+      \   },
+      \   'cache_enabled': 0,
+      \ }
+endif
 set complete-=i
 set completeopt=longest,menuone
 set colorcolumn=81,91
 set copyindent
+set cursorline
 set directory=~/.vim/swap
 set encoding=utf-8
 set expandtab
@@ -110,13 +133,13 @@ set nomodeline
 set noshowmatch
 set nrformats-=octal
 set number
-set relativenumber
+set noshowmode
 set omnifunc=syntaxcomplete#Complete
 set ruler
 set shiftwidth=4
 set smartcase
-" set spell
-" set spelllang=en_ca
+set spell
+set spelllang=en_ca
 set so=3
 set softtabstop=4
 set tabstop=4
@@ -129,16 +152,25 @@ set timeout
 set timeoutlen=400
 set visualbell
 set wildmenu
-
 if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
+    set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
+" Color scheme
 colo gruvbox
 set background=dark
 hi Normal ctermbg=NONE
-hi CursorLineNr ctermbg=NONE
+hi clear CursorLine
+hi CursorLineNr ctermbg=NONE cterm=bold
 hi SignColumn ctermbg=NONE
+augroup CLNRSet
+    autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
 
+" Journal entries created with pass
+autocmd BufNewFile,BufRead *.md.txt setlocal syntax=markdown
+autocmd BufNewFile,BufRead *.md,*.md.txt setlocal textwidth=80
 autocmd FileType c,cpp,objc map <buffer><Leader>rf <Plug>(operator-clang-format)
 autocmd FileType yaml setlocal indentexpr=
+" Disable cursorline in insert mode
+autocmd InsertEnter,InsertLeave * set cul!
