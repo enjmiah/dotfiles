@@ -68,15 +68,12 @@ ${sc}               '._${sc}/_.'${sc}___.-'
 EOF
 }
 
-function whalefetch() {
-    printf "\n\n\n"
-    whale
-    printf "\n\n\n"
-    neofetch
-    colordots
-}
-
-function today() {
-    whale
-    khal calendar today 14d
-}
+if type pass &> /dev/null; then
+    export PASSWORD_STORE_DIR=~/journal
+    alias pass=' PASSWORD_STORE_DIR=~/.password-store pass'
+    alias jo='\pass'
+    alias j='\pass edit'
+    function jot {
+        \pass edit $(date +'%Y/%m/%d').md
+    }
+fi
