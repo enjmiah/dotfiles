@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-slash'
 Plug 'justinmk/vim-sneak'
+    let g:sneak#label = 1
 Plug 'kana/vim-operator-user'
 Plug 'godlygeek/tabular' " Must appear before vim-markdown.
 Plug 'plasticboy/vim-markdown'
@@ -30,7 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
     augroup qs_colors
         autocmd!
-        autocmd ColorScheme * highlight QuickScopePrimary guifg='#ffff00' gui=underline ctermfg=226 cterm=underline
+        autocmd ColorScheme * highlight QuickScopePrimary guibg='#323232' gui=underline ctermbg=238 cterm=underline
         autocmd ColorScheme * highlight QuickScopeSecondary gui=underline cterm=underline
     augroup END
 Plug 'vimwiki/vimwiki'

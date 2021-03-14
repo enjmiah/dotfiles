@@ -100,7 +100,6 @@
 	],
 	"scroll_context_lines": 4,
 	"scroll_past_end": false,
-	"scroll_speed": 1.5,
 	"set_unsaved_view_name": false,
 	"show_encoding": false,
 	"show_git_status": false,

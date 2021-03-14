@@ -107,9 +107,6 @@ type nvim &> /dev/null && export EDITOR='nvim'
 
 source ~/dotfiles/aliases.sh
 alias vi=vim
-if [[ $(uname) =~ "MINGW" ]]; then
-    alias git="wsl git"
-fi
 
 ##########
 # Prompt #
