@@ -1,6 +1,6 @@
 [
     {
-        "key": "alt+;",
+        "key": "alt+.",
         "command": "workbench.action.nextEditor"
     },
     {
@@ -12,7 +12,7 @@
         "command": "-workbench.action.nextEditor"
     },
     {
-        "key": "alt+j",
+        "key": "alt+,",
         "command": "workbench.action.previousEditor"
     },
     {
