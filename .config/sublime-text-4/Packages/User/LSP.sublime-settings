@@ -4,7 +4,7 @@
   "show_code_actions_bulb": true,
   "clients": {
     "pyls": {
-      "enabled": true,
+      "enabled": false,
       "settings": {
         "pyls": {
           "env": {

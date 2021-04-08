@@ -1,12 +1,13 @@
 [alias]
+	amend = commit --amend
 	ci = commit -m
 	co = checkout
 	st = status
 	br = branch
 	loneline = log --graph -10 --pretty=\"format:%C(auto)%h %s\"
-	amend = commit --amend
 	ldiff = diff HEAD~ HEAD
 	diffs = diff --staged
+	me = merge
 	s = status -bsu
 	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 	rb = rebase
@@ -35,3 +36,5 @@
 	path = "~/.gitconfig.user" # contains user.name and user.email
 [pull]
 	rebase = false
+[advice]
+	detachedHead = false

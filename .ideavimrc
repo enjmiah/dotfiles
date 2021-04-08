@@ -17,7 +17,7 @@ noremap ; l
 noremap l k
 noremap k j
 noremap j h
-noremap h <nop>
+noremap h ;
 
 " Visual navigation by default, unless preceded by number
 nnoremap <expr> k v:count ? 'j' : 'gj'
@@ -46,6 +46,7 @@ set fillchars+=vert:\
 set guicursor=
 set ignorecase
 set hidden
+set ideajoin
 set incsearch
 set infercase
 set laststatus=2
@@ -57,12 +58,11 @@ set nocompatible
 set noshowmatch
 set nrformats-=octal
 set number
-set relativenumber
 set omnifunc=syntaxcomplete#Complete
 set ruler
 set shiftwidth=4
 set smartcase
-set so=3
+set so=4
 set surround
 set tabstop=4
 set title

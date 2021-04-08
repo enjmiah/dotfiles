@@ -5,6 +5,8 @@
 	[
 		"CMake",
 		"LSP",
+		"LSP-pyright",
+		"LSP-typescript",
 		"NeoVintageous",
 		"Package Control",
 		"PlainTasks",
