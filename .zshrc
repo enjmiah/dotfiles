@@ -200,7 +200,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$ZSH_HIGHLIGHT_STYLES[comment]
 # Switch to last directory on login #
 #####################################
 
-if [ -f ~/.lastdir ] && [ $(pwd) = "$HOME" ]; then
+if [ -f ~/.lastdir ] && [ "$(pwd)" = "$HOME" ]; then
     cd "`cat ~/.lastdir`"
 fi
 function record_last_dir {
