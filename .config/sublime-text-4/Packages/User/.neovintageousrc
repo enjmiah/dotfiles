@@ -11,6 +11,8 @@ noremap x "_x
 nnoremap <C-w> :tabclose<CR>
 nnoremap <C-n> :new<CR>
 nnoremap <C-t> :ReopenLastFile<CR>
+vnoremap < <gv
+vnoremap > >gv
 
 set ignorecase
 set smartcase

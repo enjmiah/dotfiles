@@ -1,6 +1,7 @@
 {
   "auto_show_diagnostics_panel": "never",
   "diagnostics_highlight_style": "box",
+  "document_highlight_style": "stippled",
   "show_code_actions_bulb": true,
   "clients": {
     "pyls": {
@@ -31,18 +32,21 @@
               ],
               "maxLineLength": 90,
             },
-            "pydocstyle": {"enabled": false},
-            "pyflakes": {"enabled": true},
-            "pylint": {"enabled": true},
-            "yapf": {"enabled": false},
+            "pydocstyle": {"enabled": false,},
+            "pyflakes": {"enabled": true,},
+            "pylint": {"enabled": true,},
+            "yapf": {"enabled": false,},
             // pyls' 3rd Party Plugins, Mypy type checking for Python 3, Must be installed via pip before enabling
             "pyls_mypy": {  // Install with: pip install pyls-mypy
               "enabled": false,
               "live_mode": true,
             },
-          }
-        }
-      }
-    }
-  }
+          },
+        },
+      },
+    },
+    "clangd": {
+      "enabled": true
+    },
+  },
 }

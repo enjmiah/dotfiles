@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "ninja",
+    "working_dir": "$project_path/build-debug",
+    "selector": "source.c++"
+}

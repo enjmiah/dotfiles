@@ -1,0 +1,37 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+  "variables": {
+    "bg": "#242c30",
+    "bg0": "#242c30",
+  },
+  "globals": {
+    "caret": "#FF3E58",
+    "block_caret": "#FF3E58",
+    "gutter_foreground": "#92837477",
+    "invisibles": "#ebdbb226",
+  },
+  "rules": [
+    {
+      "name": "Types",
+      "scope": "storage.type,meta.method.parameters meta.group,entity.name.struct,entity.name.enum",
+      "foreground": "var(yellow)"
+    },
+    {
+      "scope": "variable.function.member",
+      "foreground": "var(blue)"
+    },
+    {
+      "name": "Method Call Arguments",
+      "scope": "meta.function-call.method support.function,meta.function-call.method variable.function,meta.function-call.static variable.function,meta.method-call,meta.method-call support.function,meta.method-call variable.function,support.function.mutator",
+      "foreground": "var(fg)"
+    },
+    {
+      "scope": "meta.block meta.group, variable.other.readwrite.member",
+      "foreground": "var(fg)"
+    },
+    {
+      "scope": "entity.name.namespace",
+      "foreground": "var(fg)"
+    }
+  ]
+}

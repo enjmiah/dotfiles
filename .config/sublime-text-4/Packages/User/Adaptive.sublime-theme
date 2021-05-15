@@ -6,6 +6,10 @@
     "rules":
     [
         {
+            "class": "auto_complete",
+            "row_padding": -2,
+        },
+        {
             "class": "status_bar",
             "layer0.tint": "color(var(--background))",
             "layer0.opacity": 1.0,
