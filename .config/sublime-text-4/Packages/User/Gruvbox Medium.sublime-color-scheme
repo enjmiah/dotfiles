@@ -32,6 +32,15 @@
     {
       "scope": "entity.name.namespace",
       "foreground": "var(fg)"
+    },
+    {
+      "scope": "support.variable",
+      "foreground": "var(fg)"
+    },
+    {
+      "name": "Python f-string variables",
+      "scope": "meta.qualified-name",
+      "foreground": "var(fg)"
     }
   ]
 }

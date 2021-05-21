@@ -1,6 +1,6 @@
 {
   "auto_show_diagnostics_panel": "never",
-  "diagnostics_highlight_style": "box",
+  "diagnostics_highlight_style": "squiggly",
   "document_highlight_style": "stippled",
   "show_code_actions_bulb": true,
   "clients": {

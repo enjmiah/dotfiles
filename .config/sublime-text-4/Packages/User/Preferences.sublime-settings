@@ -95,6 +95,7 @@
 	"line_padding_bottom": 0,
 	"line_padding_top": -1,
 	"margin": -2,
+	"mini_diff": "auto",
 	"overlay_scroll_bars": "enabled",
 	"rulers": [
 		80,
