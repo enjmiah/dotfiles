@@ -10,6 +10,8 @@ SetScrollLockState, AlwaysOff
 SendMode Input
 Menu, Tray, Icon, ../var/quill.ico
 
+!+q::Send !{F4}
+
 CapsLock & F1::Send {Volume_Mute}
 CapsLock & F2::Send {Volume_Down 1}
 CapsLock & F3::Send {Volume_Up 1}
@@ -27,7 +29,7 @@ Capslock & =:: Send {U+2013}  ; en dash –
 Capslock & -:: Send {U+2014}  ; em dash —
 Capslock & *:: Send {U+2606}  ; ☆
 Capslock & .:: Send {U+00A0}.{U+00A0}.{U+00A0}. ; . . .
-Capslock & e:: Send {U+2026}  ; …
+Capslock & \:: Send {U+2026}  ; …
 Capslock & ,:: Send {U+30FB}  ; ・
 Capslock & 9:: Send {U+2190}  ; ←
 Capslock & 0:: Send {U+2192}  ; →
@@ -36,5 +38,13 @@ Capslock & 1:: Send {U+26A0}  ; ⚠
 Capslock & x:: Send {U+2718}  ; ✘
 
 Capslock & Space:: Send !``
-Capslock & a:: Send {Insert}
 Capslock & r:: Send </ruby>
+
+Capslock & e:: Send {U+00E9}
+Capslock & u:: Send const{Space}
+Capslock & i:: Send auto{Space}
+Capslock & o:: Send &{Space}
+Capslock & a:: Send {Backspace}
+Capslock & f:: Send for{Space}(
+Capslock & t:: Send return{Space}
+Capslock & Backspace:: Send ^{Backspace}
