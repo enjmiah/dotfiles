@@ -3,6 +3,7 @@
 	"bootstrapped": true,
 	"installed_packages":
 	[
+		"Clang Format",
 		"CMake",
 		"LSP",
 		"LSP-pyright",
@@ -11,15 +12,12 @@
 		"Package Control",
 		"PlainTasks",
 		"Sass",
-		"SublimeLinter",
-		"SublimeLinter-annotations",
-		"SublimeLinter-pylint",
 		"ToggleNeoVintageous",
 		"Wrap Plus",
 	],
 	"ignore_vcs_packages":
 	[
-		"NeoVintageous"
+		"PlainTasks"
 	],
 	"in_process_packages":
 	[

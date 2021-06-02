@@ -8,11 +8,8 @@ noremap gl gk
 noremap h ;
 noremap c "_c
 noremap x "_x
-nnoremap <C-w> :tabclose<CR>
-nnoremap <C-n> :new<CR>
-nnoremap <C-t> :ReopenLastFile<CR>
-vnoremap < <gv
-vnoremap > >gv
+nnoremap <C-]> :LspSymbolDefinition<CR>
+vnoremap > :Indent<CR>
 
 set ignorecase
 set smartcase

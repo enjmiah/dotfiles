@@ -2,6 +2,9 @@
 
 {
     "settings": {
-        "python.analysis.typeCheckingMode": "off"
+        "python.analysis.typeCheckingMode": "off",
+        "python.analysis.diagnosticSeverityOverrides": {
+            "reportImplicitStringConcatenation": "none",
+        }
     }
 }

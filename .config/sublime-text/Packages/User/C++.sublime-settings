@@ -4,4 +4,6 @@
 		"h",
 	],
 	"rulers": [90],
+	"tab_size": 2,
+	"use_tab_stops": false,
 }
