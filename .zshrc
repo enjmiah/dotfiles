@@ -57,6 +57,10 @@ if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
+if [[ $(uname) =~ "MINGW" ]]; then
+  bindkey "^[[3~" delete-char
+fi
+
 ###########
 # History #
 ###########
@@ -130,7 +134,7 @@ AGKOZAK_CUSTOM_PROMPT+='%(9V.%K{yellow}%F{black} %9v %k%f.)'
 # Path
 AGKOZAK_CUSTOM_PROMPT+=$' %B%2v%b'
 # Git status
-AGKOZAK_CUSTOM_PROMPT+='%(3V.%F{green}%3v%f.)'$'\n'
+AGKOZAK_CUSTOM_PROMPT+='%(3V.%F{green} (%6v)%f.)'$'\n'
 # Prompt character / exit status
 AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%B%(?.%F{black}%#.%F{red}x)%f%b) '
 
