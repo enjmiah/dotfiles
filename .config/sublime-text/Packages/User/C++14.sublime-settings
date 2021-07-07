@@ -1,5 +1,5 @@
 // These settings override both User and Default settings for the C++11 syntax
 {
     "rulers": [90],
-    "extensions": [],
+    "extensions": ["h", "hpp", "cpp"],
 }
