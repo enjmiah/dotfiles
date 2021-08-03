@@ -1,8 +1,8 @@
 noremap <space> i<space><esc><left>r
-noremap ; l
-noremap l k
-noremap k j
-noremap j h
+noremap ; 1l
+noremap l 1k
+noremap k 1j
+noremap j 1h
 noremap gk gj
 noremap gl gk
 noremap h ;
