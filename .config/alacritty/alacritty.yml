@@ -3,11 +3,8 @@ env:
 
 window:
   dimensions:
-    columns: 80
-    lines: 30
-  position:
-    x: 410
-    y: 185
+    columns: 92
+    lines: 25
   padding:
     x: 14
     y: 14
@@ -17,22 +14,15 @@ window:
 
 font:
   normal:
-    family: Roboto Mono for Powerline
+    family: Iosevka Helv
     # style: Regular
   bold:
-    family: Roboto Mono for Powerline
+    family: Iosevka Helv
     style: Bold
   italic:
-    family: Roboto Mono for Powerline
+    family: Iosevka Helv
     style: Italic
-  size: 7
-  offset:
-    x: -1
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
-  use_thin_strokes: true
+  size: 13
 
 cursor:
   style: Beam
@@ -122,21 +112,19 @@ mouse_bindings: []
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
-  url:
-    launcher: xdg-open
-    modifiers: Control
   hide_when_typing: false
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 key_bindings:
-  - { key: V,        mods: Control|Shift,    action: Paste               }
-  - { key: C,        mods: Control|Shift,    action: Copy                }
-  - { key: Q,        mods: Command, action: Quit                         }
+  - { key: F11, action: ToggleFullscreen }
+  - { key: Return, mods: Alt, action: SpawnNewInstance }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: Minus,    mods: Control, action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
@@ -166,13 +154,13 @@ key_bindings:
   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Control|Shift, action: ScrollLineUp           }
+  - { key: Up,       mods: Shift,   action: ScrollLineUp           }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A",     mode: Alt        }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
   - { key: Up,                      chars: "\x1b[A",        mode: ~AppCursor }
   - { key: Up,                      chars: "\x1bOA",        mode: AppCursor  }
-  - { key: Down,     mods: Control|Shift, action: ScrollLineDown         }
+  - { key: Down,     mods: Shift,   action: ScrollLineDown         }
   - { key: Down,     mods: Shift,   chars: "\x1b[1;2B",     mode: Alt    }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
