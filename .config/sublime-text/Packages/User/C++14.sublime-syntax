@@ -140,7 +140,7 @@ contexts:
       scope: keyword.operator.word.c++
 
   unique-types:
-    - match: \b(char8_t|char16_t|char32_t|wchar_t|nullptr_t|[A-Z][a-zA-Z0-9_]+)\b
+    - match: \b(char8_t|char16_t|char32_t|wchar_t|nullptr_t|unique_ptr|multimap|pair|tuple|unordered_map|string|vector|[A-Z][a-zA-Z0-9_]*[a-z]+[a-zA-Z0-9_]*)\b
       scope: storage.type.c++
     - match: \bclass\b
       scope: keyword.declaration.class.c++

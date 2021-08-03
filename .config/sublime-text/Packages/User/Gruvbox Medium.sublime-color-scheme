@@ -7,7 +7,7 @@
   "globals": {
     "caret": "#FF3E58",
     "block_caret": "#FF3E58",
-    "gutter_foreground": "#92837477",
+    "gutter_foreground": "#92837499",
     "invisibles": "#ebdbb226",
   },
   "rules": [

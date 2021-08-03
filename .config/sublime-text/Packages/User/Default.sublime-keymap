@@ -6,6 +6,19 @@
     { "keys": ["alt+right"], "command": "next_view" },
     { "keys": ["ctrl+t"], "command": "pass" },
 
+    { "keys": ["alt+w"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["alt+s"], "command": "travel_to_pane", "args": {"direction": "down"} },
+
+    { "keys": ["ctrl+k", "l"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+k", ";"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+k", "k"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+k", "j"], "command": "travel_to_pane", "args": {"direction": "left"} },
+
+    { "keys": ["ctrl+k", "L"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+k", ":"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+k", "K"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+k", "J"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
+
     // lsp_format_document is buggy...
     // {
     //     "command": "lsp_format_document",
