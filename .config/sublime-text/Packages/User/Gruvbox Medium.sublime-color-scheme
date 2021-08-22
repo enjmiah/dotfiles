@@ -8,7 +8,7 @@
     "caret": "#FF3E58",
     "block_caret": "#FF3E58",
     "gutter_foreground": "#92837499",
-    "invisibles": "#ebdbb226",
+    "invisibles": "#ebdbb222",
   },
   "rules": [
     {
@@ -16,6 +16,16 @@
       "scope": "comment.line.todo",
       "foreground": "var(aqua)",
       "font_style": "bold"
+    },
+    {
+      "name": "Operators",
+      "scope": "keyword.operator,punctuation.accessor,punctuation.separator",
+      "foreground": "var(fg2)"
+    },
+    {
+      "name": "Punctuation",
+      "scope": "punctuation.accessor.double-colon,punctuation.terminator,punctuation.section.arguments.begin,punctuation.section.arguments.end,punctuation.section.block.begin,punctuation.section.block.end,punctuation.section.brackets.begin,punctuation.section.brackets.end,punctuation.section.group.begin,punctuation.section.group.end,punctuation.section.generic.begin,punctuation.section.generic.end",
+      "foreground": "var(fg4)"
     },
     {
       "name": "Types",

@@ -96,14 +96,14 @@
     },
     {
       "name": "Punctuation",
-      "scope": "entity.quasi.element meta.group.braces,keyword.operator keyword.operator.neon,keyword.operator operator.neon,keyword.operator.accessor,keyword.other.accessor,meta.attribute-selector keyword.operator.stylus,meta.brace,meta.delimiter,meta.group.braces,meta.punctuation.separator,meta.separator,punctuation",
+      "scope": "entity.quasi.element meta.group.braces,keyword.operator keyword.operator.neon,keyword.operator operator.neon,keyword.operator.accessor,keyword.other.accessor,meta.attribute-selector keyword.operator.stylus,meta.brace,meta.delimiter,meta.group.braces",
       "foreground": "var(fg)"
     },
     {
       "name": "Comments",
       "scope": "comment,comment text,markup.strikethrough,punctuation.definition.comment,punctuation.whitespace.comment,string.comment,text.cancelled",
       "font_style": "italic",
-      "foreground": "var(gray)"
+      "foreground": "var(fg4)"
     },
     {
       "name": "Keywords Inside Comments",
