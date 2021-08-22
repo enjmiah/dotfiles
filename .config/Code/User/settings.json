@@ -29,7 +29,6 @@
     "files.hotExit": "onExitAndWindowClose",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "git.enabled": false,
     "problems.decorations.enabled": false,
     "problems.showCurrentInStatus": true,
     "search.showLineNumbers": true,

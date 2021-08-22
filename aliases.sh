@@ -77,3 +77,6 @@ if type pass &> /dev/null; then
         \pass edit $(date +'%Y/%m/%d').md
     }
 fi
+alias gp='git push'
+alias n='ninja'
+alias t='ninja && ./run_tests.sh'

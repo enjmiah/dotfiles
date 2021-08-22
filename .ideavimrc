@@ -27,6 +27,10 @@ nnoremap <expr> l v:count ? 'k' : 'gk'
 noremap x "_x
 noremap c "_c
 
+" Indent preserves selection.
+vnoremap < <gv
+vnoremap > >gv
+
 " Alt+Arrow to move between splits
 nnoremap <A-Left> <C-w>h
 nnoremap <A-Down> <C-w>j
@@ -68,10 +72,10 @@ set tabstop=4
 set title
 if !has('nvim') && &ttimeoutlen == -1
     set ttimeout
-    set ttimeoutlen=500
+    set ttimeoutlen=100
 endif
 set timeout
-set timeoutlen=500
+set timeoutlen=100
 set visualbell
 set wildmenu
 
