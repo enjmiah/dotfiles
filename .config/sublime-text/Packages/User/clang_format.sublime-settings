@@ -1,0 +1,6 @@
+{
+	"binary": "clang-format.exe",
+	"style": "File",
+	"format_on_save": true,
+    "languages": ["C", "C++", "C++14"]
+}
