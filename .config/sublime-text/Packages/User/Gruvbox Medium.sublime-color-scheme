@@ -12,6 +12,12 @@
   },
   "rules": [
     {
+      "name": "TODO, FIXME, etc.",
+      "scope": "comment.line.todo",
+      "foreground": "var(aqua)",
+      "font_style": "bold"
+    },
+    {
       "name": "Types",
       "scope": "storage.type,meta.method.parameters meta.group,entity.name.struct,entity.name.enum",
       "foreground": "var(yellow)"
