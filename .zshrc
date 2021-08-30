@@ -57,7 +57,7 @@ if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
-if [[ $(uname) =~ "MINGW" ]]; then
+if [[ -x "$(command -v uname)" && "$(uname)" == "MINGW" ]]; then
   bindkey "^[[3~" delete-char
 fi
 
@@ -123,7 +123,7 @@ AGKOZAK_PROMPT_DIRTRIM=0
 
 AGKOZAK_CUSTOM_PROMPT=''
 # Username and hostname / virtual environment indicator
-if [[ $(uname) =~ "Linux" ]]; then
+if [[ -x "$(command -v uname)" && "$(uname)" == "Linux" ]]; then
   AGKOZAK_CUSTOM_PROMPT+='%K{red}'
 else
   AGKOZAK_CUSTOM_PROMPT+='%K{cyan}'
@@ -180,7 +180,7 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ####################
 
 # Configure ls colors
-if ! [[ $(uname) =~ "MINGW" ]]; then
+if [[ -x "$(command -v uname)" && "$(uname)" == "MINGW" ]]; then
     eval "$(dircolors ~/dotfiles/.dircolors)";
 fi
 
