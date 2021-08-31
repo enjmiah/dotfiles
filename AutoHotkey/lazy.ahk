@@ -28,7 +28,7 @@ Capslock & ':: Send {U+2019}  ; ’
 Capslock & =:: Send {U+2013}  ; en dash –
 Capslock & -:: Send {U+2014}  ; em dash —
 Capslock & *:: Send {U+2606}  ; ☆
-Capslock & .:: Send {U+00A0}.{U+00A0}.{U+00A0}. ; . . .
+Capslock & .:: Send {U+202F}.{U+202F}.{U+202F}.{U+2009} ; . . .
 Capslock & \:: Send {U+2026}  ; …
 Capslock & ,:: Send {U+30FB}  ; ・
 Capslock & 9:: Send {U+2190}  ; ←
