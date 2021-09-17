@@ -3,14 +3,29 @@
   "variables": {
     "bg": "#242c30",
     "bg0": "#242c30",
+    "pink": "#FF3E58",
   },
   "globals": {
-    "caret": "#FF3E58",
-    "block_caret": "#FF3E58",
+    "caret": "var(pink)",
+    "block_caret": "var(pink)",
+    "find_highlight": "var(pink)",
     "gutter_foreground": "#92837499",
     "invisibles": "#ebdbb222",
+    "selection_corner_radius": "2",
   },
   "rules": [
+    {
+      "scope": "neovintageous_search_inc,neovintageous_search_cur",
+      "background": "color(var(pink) alpha(0.6))",
+      "foreground": "var(bg)",
+      "font_style": "glow"
+    },
+    {
+      "scope": "neovintageous_search_occ",
+      "background": "var(pink)",
+      "foreground": "var(bg)",
+      "font_style": "glow"
+    },
     {
       "name": "TODO, FIXME, etc.",
       "scope": "comment.line.todo",

@@ -12,14 +12,14 @@ Menu, Tray, Icon, ../var/quill.ico
 
 !+q::Send !{F4}
 
-CapsLock & F1::Send {Volume_Mute}
-CapsLock & F2::Send {Volume_Down 1}
-CapsLock & F3::Send {Volume_Up 1}
+Capslock & F1::Send {Volume_Mute}
+Capslock & F2::Send {Volume_Down 1}
+Capslock & F3::Send {Volume_Up 1}
 
-CapsLock & j::  Send {blind}{Left}
-CapsLock & k::  Send {blind}{Down}
-CapsLock & l::  Send {blind}{Up}
-CapsLock & `;:: Send {blind}{Right}
+Capslock & j::  Send {blind}{Left}
+Capslock & k::  Send {blind}{Down}
+Capslock & l::  Send {blind}{Up}
+Capslock & `;:: Send {blind}{Right}
 
 Capslock & g:: Send {U+201C}  ; “
 Capslock & h:: Send {U+201D}  ; ”

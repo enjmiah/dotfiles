@@ -80,3 +80,4 @@ fi
 alias gp='git push'
 alias n='ninja'
 alias t='ninja && ./run_tests.sh'
+alias pdf='spawn sumatrapdf'

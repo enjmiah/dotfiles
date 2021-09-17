@@ -36,5 +36,6 @@
 	path = "~/.gitconfig.user" # contains user.name and user.email
 [pull]
 	rebase = false
+	ff = only
 [advice]
 	detachedHead = false

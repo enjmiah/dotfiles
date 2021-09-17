@@ -95,7 +95,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 if [[ -e "/d/jerry/sketching" ]]; then
-    export PYTHONPATH="/d/jerry/sketching/build/python/core/Debug:/d/jerry/sketching/python"
+    export PYTHONPATH="/d/jerry/sketching/build-debug/python/core/:/d/jerry/sketching/python"
     export PATH="/d/jerry/sketching/tools:$PATH"
 fi
 export JUPYTER_PATH="${PYTHONPATH}"

@@ -151,4 +151,7 @@
 	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true,
 	"neovintageous_build_version": 11100,
+    "highlightedyank_duration": 200,
+    "highlightedyank_style": "fill",
+    "neovintageous_search_occ_style": "outline"
 }
