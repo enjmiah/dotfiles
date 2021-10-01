@@ -40,6 +40,10 @@
         ],
     },
     {
+        "command": "lsp_restart_server",
+        "keys": ["ctrl+alt+r"],
+    },
+    {
         "command": "lsp_hover",
         "keys": ["ctrl+i"],
         "context": [
