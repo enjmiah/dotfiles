@@ -128,7 +128,7 @@ if [[ -x "$(command -v uname)" && "$(uname)" == "Linux" ]]; then
 else
   AGKOZAK_CUSTOM_PROMPT+='%K{cyan}'
 fi
-AGKOZAK_CUSTOM_PROMPT+=' %(10V.[%10v].%(!.%S%B.%B%F{white})%n%1v%(!.%b%s.%f%b)) %k'
+AGKOZAK_CUSTOM_PROMPT+=' %(10V.[%10v].%(!.%S%B.%B)%n%1v%(!.%b%s.%f%b)) %k'
 # Command execution time
 AGKOZAK_CUSTOM_PROMPT+='%(9V.%K{yellow}%F{black} %9v %k%f.)'
 # Path
@@ -136,7 +136,7 @@ AGKOZAK_CUSTOM_PROMPT+=$' %B%2v%b'
 # Git status
 AGKOZAK_CUSTOM_PROMPT+='%(3V.%F{green} (%6v)%f.)'$'\n'
 # Prompt character / exit status
-AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%B%(?.%F{black}%#.%F{red}x)%f%b) '
+AGKOZAK_CUSTOM_PROMPT+='%(4V.:.%B%(?.%F{8}%#.%F{red}x)%f%b) '
 
 source ~/dotfiles/.config/zsh/agkozak/agkozak-zsh-prompt.plugin.zsh
 
