@@ -159,10 +159,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
 <margins>
-  <top>60</top>
-  <bottom>0</bottom>
-  <left>0</left>
-  <right>0</right>
+  <top>55</top>
+  <bottom>8</bottom>
+  <left>8</left>
+  <right>8</right>
 </margins>
 
 <dock>
@@ -263,11 +263,6 @@
     <action name="ShowMenu"><menu>client-menu</menu></action>
   </keybind>
 
-  <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
-  <keybind key="A-Print">
-    <action name="Execute"><command>scrot -s</command></action>
-  </keybind>
-
   <!-- Keybindings for window switching -->
   <keybind key="A-Tab">
     <action name="NextWindow">
@@ -320,6 +315,52 @@
     </action>
   </keybind>
 
+  <keybind key="W-S-j">
+    <action name="MoveRelative">
+      <x>-14</x>
+    </action>
+  </keybind>
+  <keybind key="W-S-semicolon">
+    <action name="MoveRelative">
+      <x>14</x>
+    </action>
+  </keybind>
+  <keybind key="W-S-k">
+    <action name="MoveRelative">
+      <y>14</y>
+    </action>
+  </keybind>
+  <keybind key="W-S-l">
+    <action name="MoveRelative">
+      <y>-14</y>
+    </action>
+  </keybind>
+
+  <keybind key="W-A-j">
+    <action name="ResizeRelative">
+      <left>-4</left>
+      <right>-4</right>
+    </action>
+  </keybind>
+  <keybind key="W-A-semicolon">
+    <action name="ResizeRelative">
+      <left>4</left>
+      <right>4</right>
+    </action>
+  </keybind>
+  <keybind key="W-A-k">
+    <action name="ResizeRelative">
+      <top>4</top>
+      <bottom>4</bottom>
+    </action>
+  </keybind>
+  <keybind key="W-A-l">
+    <action name="ResizeRelative">
+      <top>-4</top>
+      <bottom>-4</bottom>
+    </action>
+  </keybind>
+
   <!-- Keybindings for running applications -->
   <keybind key="W-e">
     <action name="Execute">
@@ -329,11 +370,6 @@
       </startupnotify>
       <command>kfmclient openProfile filemanagement</command>
     </action>
-  </keybind>
-
-  <!-- Launch scrot when Print is pressed -->
-  <keybind key="Print">
-    <action name="Execute"><command>scrot</command></action>
   </keybind>
 
 </keyboard>
