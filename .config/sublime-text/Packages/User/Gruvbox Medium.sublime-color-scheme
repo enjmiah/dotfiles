@@ -50,7 +50,7 @@
     },
     {
       "name": "Punctuation",
-      "scope": "punctuation.accessor.double-colon,punctuation.terminator,punctuation.section.arguments.begin,punctuation.section.arguments.end,punctuation.section.block.begin,punctuation.section.block.end,punctuation.section.brackets.begin,punctuation.section.brackets.end,punctuation.section.group.begin,punctuation.section.group.end,punctuation.section.generic.begin,punctuation.section.generic.end",
+      "scope": "punctuation.accessor.double-colon,punctuation.terminator,punctuation.section.arguments.begin,punctuation.section.arguments.end,punctuation.section.block.begin,punctuation.section.block.end,punctuation.section.brackets.begin,punctuation.section.brackets.end,punctuation.section.group.begin,punctuation.section.group.end,punctuation.section.generic.begin,punctuation.section.generic.end,punctuation.section.sequence.begin,punctuation.section.sequence.end",
       "foreground": "var(fg4)"
     },
     {
@@ -58,6 +58,16 @@
       "scope": "storage.type,meta.method.parameters meta.group,entity.name.struct,entity.name.enum",
       "foreground": "var(yellow)"
     },
+    // {
+    //   "name": "Keywords",
+    //   "scope": "keyword.control,storage.modifier",
+    //   "foreground": "var(red)"
+    // },
+    // {
+    //   "name": "Constants",
+    //   "scope": "constant.numeric",
+    //   "foreground": "var(aqua)"
+    // },
     {
       "scope": "variable.function.member",
       "foreground": "var(blue)"

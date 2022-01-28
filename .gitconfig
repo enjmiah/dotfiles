@@ -2,13 +2,15 @@
 	amend = commit --amend
 	ci = commit -m
 	co = checkout
+	s = status -bsu
 	st = status
 	br = branch
+	ch = cherry-pick
+	lo = log --graph -10 --pretty=\"format:%C(auto)%h %s\"
 	loneline = log --graph -10 --pretty=\"format:%C(auto)%h %s\"
 	ldiff = diff HEAD~ HEAD
 	diffs = diff --staged
 	me = merge
-	s = status -bsu
 	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 	rb = rebase
 [blame]
@@ -16,12 +18,17 @@
 [core]
 	autocrlf = input
 	eol = lf
-	pager = delta --plus-color="#194d19" --minus-color="#5d1919"
 	editor = vim
-[credential]
-	helper = cache --timeout 1800
+	pager = delta
 [delta]
 	features = line-numbers
+	minus-style = "syntax 52"
+	plus-style  = "syntax 16"
+	minus-emph-style = "231 88 bold"
+	plus-emph-style  = "231 22 bold"
+	line-numbers-left-format = "{nm} "
+	line-numbers-right-format = "{np} "
+	syntax-theme = gruvbox-dark
 [diff]
 	colorMoved = default
 	algorithm = histogram

@@ -425,7 +425,7 @@ contexts:
       scope: punctuation.definition.comment.c
       push:
         - meta_scope: comment.line.double-slash.c
-        - match: '(\b(TODO|FIXME)\b|@optimize\b):?'
+        - match: '(\b(TODO|FIXME)\b|@optimize|@perf\b):?'
           scope: comment.line.todo.c
         - match: '(\\)$\n'
           captures:

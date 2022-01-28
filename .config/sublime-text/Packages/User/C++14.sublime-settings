@@ -2,4 +2,5 @@
 {
     "rulers": [90],
     "extensions": ["h", "hpp", "cpp"],
+    "tab_size": 2,
 }

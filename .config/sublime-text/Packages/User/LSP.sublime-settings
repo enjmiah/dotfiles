@@ -47,11 +47,7 @@
     },
     "clangd": {
       "enabled": true,
-      "command": [
-        "clangd",
-        "-header-insertion=never",
-        "-index"
-      ]
+      "command": ["clangd", "-header-insertion=never", "-index"]
     },
   },
 }

@@ -8,5 +8,6 @@
     "font_face": "Segoe UI",
     "font_size": 13,
     "rulers": [],
+    "tab_size": 3,
     "wrap_width": 50,
 }
