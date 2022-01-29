@@ -9,11 +9,16 @@ alias h='hugo server -D'
 alias l='ls'
 alias ll='ls -Ahl --color=auto'
 alias less='less -FR'
-alias n='mold -run ninja'
 function spawn() { $@ &> /dev/null & disown; }
-alias t='ninja && ./run_tests.sh'
 alias v='vim'
 alias view='vim -R'
+
+if type mold &> /dev/null; then
+	alias n='mold -run ninja'
+else
+	alias n='ninja'
+fi
+alias t='ninja && ./run_tests.sh'
 
 if [[ ! -z "$BASH_VERSION" ]]; then
 	function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`

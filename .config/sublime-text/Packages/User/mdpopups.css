@@ -1,0 +1,11 @@
+html {
+	--mdpopups-font-mono: "Iosevka Helv Medium";
+}
+
+.lsp_popup, .diagnostics, .actions {
+	font-family: "Helvetica Neue";
+}
+
+.lsp_popup {
+	font-size: 0.8em;
+}

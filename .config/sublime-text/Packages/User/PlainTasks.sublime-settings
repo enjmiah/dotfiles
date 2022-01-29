@@ -5,8 +5,11 @@
     "open_tasks_bullet": "□",
     "stats_format": "✓ $n/$a, last done: $last",
     "stats_ignore_archive": true,
-    "font_face": "Segoe UI",
+
+    "font_face": "Helvetica Neue",
     "font_size": 13,
+    "line_padding_top": 1,
+    "line_padding_bottom": 3,
     "rulers": [],
     "tab_size": 3,
     "wrap_width": 50,

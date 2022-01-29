@@ -2,8 +2,8 @@
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 <resistance>
-  <strength>10</strength>
-  <screen_edge_strength>10</screen_edge_strength>
+  <strength>16</strength>
+  <screen_edge_strength>32</screen_edge_strength>
 </resistance>
 
 <focus>
@@ -60,57 +60,39 @@
   <animateIconify>no</animateIconify>
   <font place="ActiveWindow">
     <name>Helvetica Neue</name>
-    <size>10</size>
-    <!-- font size in points -->
-    <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
+    <size>10</size> <!-- font size in points -->
+    <weight>bold</weight> <!-- 'bold' or 'normal' -->
+    <slant>normal</slant> <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveWindow">
     <name>Helvetica Neue</name>
     <size>10</size>
-    <!-- font size in points -->
     <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuHeader">
     <name>Helvetica Neue</name>
     <size>9</size>
-    <!-- font size in points -->
     <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuItem">
     <name>Helvetica Neue</name>
     <size>11</size>
-    <!-- font size in points -->
     <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
   <font place="ActiveOnScreenDisplay">
     <name>Helvetica Neue</name>
     <size>9</size>
-    <!-- font size in points -->
     <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
   <font place="InactiveOnScreenDisplay">
     <name>Helvetica Neue</name>
     <size>9</size>
-    <!-- font size in points -->
     <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
     <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
   </font>
 </theme>
 
@@ -126,10 +108,17 @@
   <number>10</number>
   <firstdesk>1</firstdesk>
   <names>
-    <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+    <!-- set names up here if you want to -->
+    <name>1</name>
+    <name>2</name>
+    <name>3</name>
+    <name>4</name>
+    <name>5</name>
+    <name>6</name>
+    <name>7</name>
+    <name>8</name>
+    <name>9</name>
+    <name>0</name>
   </names>
   <popupTime>0</popupTime>
   <!-- The number of milliseconds to show the popup for when switching
@@ -159,10 +148,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
 <margins>
-  <top>55</top>
-  <bottom>8</bottom>
-  <left>8</left>
-  <right>8</right>
+  <top>40</top>
+  <bottom>20</bottom>
+  <left>20</left>
+  <right>20</right>
 </margins>
 
 <dock>

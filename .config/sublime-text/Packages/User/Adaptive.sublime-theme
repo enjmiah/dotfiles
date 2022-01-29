@@ -1,10 +1,9 @@
 // Documentation at https://www.sublimetext.com/docs/themes.html
 {
-    "variables":
-    {
+    "variables": {
+        "font_face": "Helvetica Neue",
     },
-    "rules":
-    [
+    "rules": [
         {
             "class": "auto_complete",
             "row_padding": -2,
