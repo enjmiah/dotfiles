@@ -349,7 +349,11 @@
     </action>
   </keybind>
 
-  <!-- Keybindings for running applications -->
+  <keybind key="W-O">
+    <action name="ToggleAlwaysOnTop"/>
+  </keybind>
+
+  <!-- Keybindings for launching applications. -->
   <keybind key="W-e">
     <action name="Execute">
       <startupnotify>
