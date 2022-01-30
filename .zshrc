@@ -180,8 +180,8 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ####################
 
 # Configure ls colors
-if [[ -x "$(command -v uname)" && "$(uname)" == "MINGW" ]]; then
-    eval "$(dircolors ~/dotfiles/.dircolors)";
+if type dircolors &> /dev/null; then
+    eval "$(dircolors ~/dotfiles/.dircolors)"
 fi
 
 PLUGINS=(syntax-highlighting autosuggestions)

@@ -29,7 +29,7 @@ if [[ "$TERM" == "cygwin" ]]; then
 	alias pdf='spawn sumatrapdf'
 	alias python2='/c/Anaconda3/envs/py27/python.exe'
 else # Linux, probably.
-	alias ls='ls -A --color=auto'
+	alias ls='ls -A --color=auto --group-directories-first'
 	alias start='xdg-open'
 fi
 
