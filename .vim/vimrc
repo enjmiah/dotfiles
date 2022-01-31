@@ -74,6 +74,7 @@ nnoremap <A-.> :bn<return>
 " Sublime-ish chords.
 nnoremap <C-s> :w<return>
 nnoremap <A-q> gqip
+inoremap <C-v> <C-o>p
 
 " Fast go to buffer
 nnoremap gb :ls<CR>:b<Space>

@@ -102,7 +102,6 @@
     {
       "name": "Comments",
       "scope": "comment,comment text,markup.strikethrough,punctuation.definition.comment,punctuation.whitespace.comment,string.comment,text.cancelled",
-      "font_style": "italic",
       "foreground": "var(fg2)"
     },
     {
