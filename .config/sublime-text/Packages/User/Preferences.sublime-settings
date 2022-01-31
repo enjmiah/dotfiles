@@ -98,8 +98,8 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_tab_style": "square",
 	"find_selected_text": false,
-	"font_face": "Iosevka Helv Medium",
-	"font_size": 15,
+	"font_face": "Incon",
+	"font_size": 17,
 	"font_options": [
 		"gdi",
 		"gray_antialias"
