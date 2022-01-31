@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+// Copy constructors.
+${1:MyClass}(const ${1:MyClass}& other) = default;
+${1:MyClass}& operator=(const ${1:MyClass}& other) = default;
+]]></content>
+    <tabTrigger>cpcon</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Copy constructors</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+// Move constructors.
+${1:MyClass}(${1:MyClass}&& other) noexcept = default;
+${1:MyClass}& operator=(${1:MyClass}&& other) noexcept = default;
+]]></content>
+    <tabTrigger>mvcon</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Move constructors</description>
+</snippet>
