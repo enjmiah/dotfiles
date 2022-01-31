@@ -1,44 +1,44 @@
 // Documentation at https://www.sublimetext.com/docs/themes.html
 {
-    "variables": {
-        "font_face": "Helvetica Neue",
-    },
-    "rules": [
-        {
-            "class": "auto_complete",
-            "row_padding": -2,
-        },
-        {
-            "class": "status_bar",
-            "layer0.tint": "color(var(--background))",
-            "layer0.opacity": 1.0,
-            "content_margin": [6, 6, 6, 6]
-        },
-        {
-            "class": "tab_control",
-            "settings": {"file_tab_style": ["", "rounded", "square"]},
-            "attributes": ["!selected", "hover"],
-            "layer1.opacity": 0.0,
-        },
-        {
-            "class": "tab_control",
-            "settings": {"file_tab_style": "square"},
-            "attributes": ["right_of_selected", "!right", "!left_of_selected", "!left_of_hover", "!selected", "!hover"],
-            "layer3.texture": "",
-            "layer3.opacity": 0.0,
-        },
-        {
-            "class": "tab_control",
-            "settings": {"file_tab_style": "square"},
-            "attributes": ["right_of_hover", "!right", "!left_of_selected", "!left_of_hover", "!selected", "!hover"],
-            "layer3.texture": "",
-            "layer3.opacity": 0.0,
-        },
-        {
-            "class": "tab_control",
-            "settings": {"file_tab_style": "square"},
-            "attributes": ["!highlighted", "!selected", "!hover", "!left_of_selected", "!right_of_selected", "!left_of_hover", "!right_of_hover"],
-            "layer3.opacity": 0.0,
-        },
-    ]
+	"variables": {
+		"font_face": "Helvetica Neue",
+	},
+	"rules": [
+		{
+			"class": "auto_complete",
+			"row_padding": -2,
+		},
+		{
+			"class": "status_bar",
+			"layer0.tint": "color(var(--background))",
+			"layer0.opacity": 1.0,
+			"content_margin": [6, 6, 6, 6]
+		},
+		{
+			"class": "tab_control",
+			"settings": {"file_tab_style": ["", "rounded", "square"]},
+			"attributes": ["!selected", "hover"],
+			"layer1.opacity": 0.0,
+		},
+		{
+			"class": "tab_control",
+			"settings": {"file_tab_style": "square"},
+			"attributes": ["right_of_selected", "!right", "!left_of_selected", "!left_of_hover", "!selected", "!hover"],
+			"layer3.texture": "",
+			"layer3.opacity": 0.0,
+		},
+		{
+			"class": "tab_control",
+			"settings": {"file_tab_style": "square"},
+			"attributes": ["right_of_hover", "!right", "!left_of_selected", "!left_of_hover", "!selected", "!hover"],
+			"layer3.texture": "",
+			"layer3.opacity": 0.0,
+		},
+		{
+			"class": "tab_control",
+			"settings": {"file_tab_style": "square"},
+			"attributes": ["!highlighted", "!selected", "!hover", "!left_of_selected", "!right_of_selected", "!left_of_hover", "!right_of_hover"],
+			"layer3.opacity": 0.0,
+		},
+	]
 }

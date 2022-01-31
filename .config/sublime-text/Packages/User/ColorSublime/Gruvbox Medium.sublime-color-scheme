@@ -103,7 +103,7 @@
       "name": "Comments",
       "scope": "comment,comment text,markup.strikethrough,punctuation.definition.comment,punctuation.whitespace.comment,string.comment,text.cancelled",
       "font_style": "italic",
-      "foreground": "var(fg4)"
+      "foreground": "var(fg2)"
     },
     {
       "name": "Keywords Inside Comments",
@@ -301,11 +301,6 @@
       "foreground": "var(aqua)"
     },
     {
-      "name": "Hyperlink Punctuation",
-      "scope": "meta.image.inline punctuation.definition.string,meta.link.inline punctuation.definition.string,meta.link.reference punctuation.definition.constant,meta.link.reference.literal punctuation.definition.constant,meta.link.reference.literal punctuation.definition.string",
-      "foreground": "var(aqua1)"
-    },
-    {
       "name": "Markup Tag Punctuation",
       "scope": "punctuation.definition.tag",
       "foreground": "var(blue1)"
@@ -485,12 +480,12 @@
     {
       "name": "Markdown Image & Hyperlink",
       "scope": "meta.image,meta.link",
-      "foreground": "var(purple)"
+      "foreground": "var(blue)"
     },
     {
       "name": "Markdown Image & Hyperlink Punctuation",
       "scope": "meta.image punctuation.definition.metadata,meta.link punctuation.definition.metadata",
-      "foreground": "var(purple1)"
+      "foreground": "var(fg4)"
     },
     {
       "scope": "meta.require",
