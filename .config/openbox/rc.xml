@@ -3,7 +3,7 @@
 
 <resistance>
   <strength>16</strength>
-  <screen_edge_strength>32</screen_edge_strength>
+  <screen_edge_strength>16</screen_edge_strength>
 </resistance>
 
 <focus>

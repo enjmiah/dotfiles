@@ -78,6 +78,10 @@
 			"foreground": "var(fg)"
 		},
 		{
+			"scope": "keyword.control.import",
+			"foreground": "var(aqua)"
+		},
+		{
 			"scope": "meta.block meta.group, variable.other.readwrite.member",
 			"foreground": "var(fg)"
 		},

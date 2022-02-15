@@ -14,9 +14,6 @@ Plug 'junegunn/vim-slash'
 Plug 'justinmk/vim-sneak'
     let g:sneak#label = 1
 Plug 'kana/vim-operator-user'
-Plug 'godlygeek/tabular' " Must appear before vim-markdown.
-Plug 'plasticboy/vim-markdown'
-    let g:vim_markdown_no_extensions_in_markdown = 1
 Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='soft'
 Plug 'rhysd/vim-clang-format'
@@ -34,9 +31,6 @@ Plug 'unblevable/quick-scope'
         autocmd ColorScheme * highlight QuickScopePrimary guibg='#323232' gui=underline ctermbg=238 cterm=underline
         autocmd ColorScheme * highlight QuickScopeSecondary gui=underline cterm=underline
     augroup END
-Plug 'vimwiki/vimwiki'
-    let g:vimwiki_list = [{'path': '~/Dropbox/Sync/notes', 'index': '_index',
-                          \ 'syntax': 'markdown', 'ext': '.md'}]
 call plug#end()
 
 " Escape insert mode by typing "jk" quickly
