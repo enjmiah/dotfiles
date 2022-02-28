@@ -684,6 +684,15 @@ xkb_types "complete" {
         level_name[Level3]= "Alt Base";
         level_name[Level4]= "Alt Number";
     };
+    type "CUST_CAPSLOCK" {
+        modifiers= Shift+Lock;
+        map[Shift] = Level2; // Maps Shift and no Lock. Shift+Alt goes here too, because Alt isn't in modifiers.
+        map[Lock] = Level3;
+        map[Shift+Lock] = Level3; // Maps Shift and Lock. Shift+Lock+Alt goes here too.
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Shift";
+        level_name[Level3]= "Lock";
+    };
 };
 
 xkb_compatibility "complete" {
@@ -1138,7 +1147,7 @@ xkb_compatibility "complete" {
         action= LockMods(modifiers=LevelFive);
     };
     interpret Caps_Lock+AnyOfOrNone(all) {
-        action= LockMods(modifiers=Lock);
+        action= SetMods(modifiers=Lock);
     };
     interpret Any+Exactly(Lock) {
         action= LockMods(modifiers=Lock);
@@ -1193,13 +1202,22 @@ xkb_symbols "pc+us+inet(evdev)" {
     key <AE08> {         [               8,        asterisk ] };
     key <AE09> {         [               9,       parenleft ] };
     key <AE10> {         [               0,      parenright ] };
-    key <AE11> {         [           minus,      underscore ] };
-    key <AE12> {         [           equal,            plus ] };
+    key <AE11> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ minus, underscore, endash ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
+    key <AE12> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ equal, plus, emdash ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
     key <BKSP> {         [       BackSpace,       BackSpace ] };
     key  <TAB> {         [             Tab,    ISO_Left_Tab ] };
     key <AD01> {
-        type= "ALPHABETIC",
-        symbols[Group1]= [               q,               Q ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ q, Q, Eisu_toggle ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <AD02> {
         type= "ALPHABETIC",
@@ -1258,29 +1276,45 @@ xkb_symbols "pc+us+inet(evdev)" {
         symbols[Group1]= [               f,               F ]
     };
     key <AC05> {
-        type= "ALPHABETIC",
-        symbols[Group1]= [               g,               G ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ g, G, leftdoublequotemark ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <AC06> {
-        type= "ALPHABETIC",
-        symbols[Group1]= [               h,               H ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ h, H, rightdoublequotemark ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <AC07> {
-        type[group1]= "ALPHABETIC",
-        symbols[Group1]= [               j,               J ],
-        symbols[Group2]= [         KP_Left,               J ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ j,          J,          Left ],
+        actions[Group1]= [ NoAction(), NoAction(), RedirectKey(Keycode=<LEFT>, clearmods=Lock) ]
     };
     key <AC08> {
-        type= "ALPHABETIC",
-        symbols[Group1]= [               k,               K ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ k,          K,          Down ],
+        actions[Group1]= [ NoAction(), NoAction(), RedirectKey(Keycode=<DOWN>, clearmods=Lock) ]
     };
     key <AC09> {
-        type= "ALPHABETIC",
-        symbols[Group1]= [               l,               L ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ l,          L,          Up ],
+        actions[Group1]= [ NoAction(), NoAction(), RedirectKey(Keycode=<UP>, clearmods=Lock) ]
     };
-    key <AC10> {         [       semicolon,           colon ] };
-    key <AC11> {         [      apostrophe,        quotedbl ] };
-    key <TLDE> {         [           grave,      asciitilde ] };
+    key <AC10> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ semicolon,  colon,      Right ],
+        actions[Group1]= [ NoAction(), NoAction(), RedirectKey(Keycode=<RGHT>, clearmods=Lock) ]
+    };
+    key <AC11> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ apostrophe, quotedbl, rightsinglequotemark ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
+    key <TLDE> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ grave, asciitilde, leftsinglequotemark ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
     key <LFSH> {         [         Shift_L ] };
     key <BKSL> {         [       backslash,             bar ] };
     key <AB01> {
@@ -1311,9 +1345,21 @@ xkb_symbols "pc+us+inet(evdev)" {
         type= "ALPHABETIC",
         symbols[Group1]= [               m,               M ]
     };
-    key <AB08> {         [           comma,            less ] };
-    key <AB09> {         [          period,         greater ] };
-    key <AB10> {         [           slash,        question ] };
+    key <AB08> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ comma, less, kana_conjunctive ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
+    key <AB09> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ period, greater, ellipsis ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
+    key <AB10> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ slash, question, rightpointer ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
     key <RTSH> {         [         Shift_R ] };
     key <KPMU> {
         type[group1]= "CTRL+ALT",
@@ -1321,22 +1367,26 @@ xkb_symbols "pc+us+inet(evdev)" {
         symbols[Group2]= [     KP_Multiply,     KP_Multiply ]
     };
     key <LALT> {         [           Alt_L,          Meta_L ] };
-    key <SPCE> {         [           space ] };
+    key <SPCE> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ space, space, nobreakspace ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
     key <CAPS> {         [       Caps_Lock ] };
     key <FK01> {
-        type[group1]= "CTRL+ALT",
-        symbols[Group1]= [              F1,              F1,              F1,              F1, XF86Switch_VT_1 ],
-        symbols[Group2]= [              F1,              F1 ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ F1, XF86Switch_VT_1, XF86AudioMute ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <FK02> {
-        type[group1]= "CTRL+ALT",
-        symbols[Group1]= [              F2,              F2,              F2,              F2, XF86Switch_VT_2 ],
-        symbols[Group2]= [              F2,              F2 ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ F2, XF86Switch_VT_2, XF86AudioLowerVolume ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <FK03> {
-        type[group1]= "CTRL+ALT",
-        symbols[Group1]= [              F3,              F3,              F3,              F3, XF86Switch_VT_3 ],
-        symbols[Group2]= [              F3,              F3 ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ F3, XF86Switch_VT_3, XF86AudioRaiseVolume ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <FK04> {
         type[group1]= "CTRL+ALT",
