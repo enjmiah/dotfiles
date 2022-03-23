@@ -1192,7 +1192,11 @@ xkb_symbols "pc+us+inet(evdev)" {
     name[group1]="English (US)";
 
     key  <ESC> {         [          Escape ] };
-    key <AE01> {         [               1,          exclam ] };
+    key <AE01> {
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ 1, exclam, U26A0 ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
+    };
     key <AE02> {         [               2,              at ] };
     key <AE03> {         [               3,      numbersign ] };
     key <AE04> {         [               4,          dollar ] };
@@ -1352,7 +1356,7 @@ xkb_symbols "pc+us+inet(evdev)" {
     };
     key <AB09> {
         type[group1]= "CUST_CAPSLOCK",
-        symbols[Group1]= [ period, greater, ellipsis ],
+        symbols[Group1]= [ period, greater, Mode_switch ],
         actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <AB10> {
@@ -1394,14 +1398,14 @@ xkb_symbols "pc+us+inet(evdev)" {
         symbols[Group2]= [              F4,              F4 ]
     };
     key <FK05> {
-        type[group1]= "CTRL+ALT",
-        symbols[Group1]= [              F5,              F5,              F5,              F5, XF86Switch_VT_5 ],
-        symbols[Group2]= [              F5,              F5 ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ F5, XF86Switch_VT_5, XF86MonBrightnessDown ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <FK06> {
-        type[group1]= "CTRL+ALT",
-        symbols[Group1]= [              F6,              F6,              F6,              F6, XF86Switch_VT_6 ],
-        symbols[Group2]= [              F6,              F6 ]
+        type[group1]= "CUST_CAPSLOCK",
+        symbols[Group1]= [ F6, XF86Switch_VT_6, XF86MonBrightnessUp ],
+        actions[Group1]= [ NoAction(), NoAction(), NoAction() ]
     };
     key <FK07> {
         type[group1]= "CTRL+ALT",
