@@ -30,7 +30,7 @@ if [[ "$TERM" == "cygwin" ]]; then
 	alias python2='/c/Anaconda3/envs/py27/python.exe'
 else # Linux, probably.
 	alias ls='ls -A --color=auto --group-directories-first'
-	alias start='xdg-open'
+	alias start='xdg-open 2>/dev/null'
 fi
 
 type rg &> /dev/null && function rip() { rg -Sp "$@" | less -FRX; }

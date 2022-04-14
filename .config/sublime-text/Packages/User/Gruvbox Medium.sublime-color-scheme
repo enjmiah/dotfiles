@@ -54,23 +54,33 @@
 			"foreground": "var(fg4)"
 		},
 		{
+		    "name": "Keywords",
+		    "scope": "keyword.control,storage.modifier",
+		    "foreground": "var(red)"
+		},
+		{
 			"name": "Types",
 			"scope": "storage.type,meta.method.parameters meta.group,entity.name.struct,entity.name.enum",
-			"foreground": "var(yellow)"
+			"foreground": "var(blue)"
 		},
-		// {
-		//   "name": "Keywords",
-		//   "scope": "keyword.control,storage.modifier",
-		//   "foreground": "var(red)"
-		// },
 		// {
 		//   "name": "Constants",
 		//   "scope": "constant.numeric",
 		//   "foreground": "var(aqua)"
 		// },
+	    {
+	      	"name": "Function Calls",
+	      	"scope": "entity.name.function.jade,entity.name.function,keyword.other.special-method,meta.function-call entity.name.function.ts,meta.function-call variable.function,meta.function-call variable.other.dollar.only punctuation.dollar,support.function,variable.function",
+	      	"foreground": "var(yellow)"
+	    },
+	    {
+	        "name": "Entities",
+	        "scope": "entity.name,entity.name.accessor,entity.name.function,entity.name.label,entity.name.section,variable.other.member.declaration",
+	        "foreground": "var(yellow)"
+	    },
 		{
 			"scope": "variable.function.member",
-			"foreground": "var(blue)"
+			"foreground": "var(yellow)"
 		},
 		{
 			"name": "Method Call Arguments",

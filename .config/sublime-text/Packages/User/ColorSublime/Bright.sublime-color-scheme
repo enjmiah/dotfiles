@@ -1,0 +1,330 @@
+{
+	"name": "Bright",
+	"description": "Based on ayu light, but with better contrast.",
+	"variables": {
+		"bg": "#f5f4f3",
+		"fg": "#222222",
+		"grey": "#787b80",
+		"red": "#f07171",
+		"orange": "#fa8d3e",
+		// "yellow": "#ffaa33", // Original colour.
+		"yellow": "#d4a200",
+		"purple": "#a37acc",
+		"green": "#86b300",
+		"cyan": "#4cbf99",
+		"aqua": "#55b4d4",
+		"blue": "#22a4e6",
+		"pink": "#FF3E58",
+		"--background": "var(bg)",
+		"--foreground": "var(fg)",
+		"--redish": "var(red)",
+		"--orangish": "var(orange)",
+		"--yellowish": "var(yellow)",
+		"--greenish": "var(green)",
+		"--cyanish": "var(cyan)",
+		"--bluish": "var(blue)",
+		"--purplish": "var(purple)"
+	},
+	"globals": {
+		"background": "var(bg)",
+		"foreground": "var(fg)",
+		"invisibles": "color(var(fg) alpha(0.07))",
+		"caret": "color(var(pink))",
+		"block_caret": "color(var(pink) alpha(0.5))",
+		"line_highlight": "#8a91991a",
+		"accent": "#ffaa33",
+		"popup_css": "\n      html, body {\n        background-color: #ffffff;\n        color: #5c6166;\n        --mdpopups-font-mono: Incon, Inconsolata, monospace;\n        --mdpopups-bg: #ffffff;\n        --mdpopups-link: #22a4e6;\n      }\n      body {\n        padding: 1px 3px;\n      }\n      a {\n        color: rgba(34,164,230, .7);\n      }\n    ",
+		"gutter": "color(var(bg))",
+		"gutter_foreground": "color(var(fg) alpha(0.12))",
+		"line_diff_width": "2",
+		"line_diff_added": "#6cbf43b3",
+		"line_diff_modified": "#478accb3",
+		"line_diff_deleted": "#ff7383b3",
+		"selection": "#036dd626",
+		"selection_border": "#036dd626",
+		"selection_border_width": "1",
+		"inactive_selection": "#5696d61a",
+		"inactive_selection_border": "#5696d61a",
+		"selection_corner_style": "round",
+		"selection_corner_radius": "4",
+		"highlight": "#ffaa3366",
+		"find_highlight": "#ffaa33",
+		"find_highlight_foreground": "#fcfcfc",
+		"guide": "#8a91992e",
+		"active_guide": "#8a919959",
+		"stack_guide": "#8a919966",
+		"shadow": "#fcfcfc4d",
+		"shadow_width": "3"
+	},
+	"rules": [
+		{
+			"name": "Invalid",
+			"scope": "invalid",
+			"foreground": "#ff0000",
+			"font_style": "bold glow squiggly_underline"
+		},
+		{
+			"name": "Comment",
+			"scope": "comment",
+			"foreground": "color(var(grey))"
+		},
+		{
+			"name": "TODO, FIXME, etc.",
+			"scope": "comment.line.todo",
+			"foreground": "var(pink)",
+			"font_style": "bold"
+		},
+		{
+			"name": "String",
+			"scope": "string - meta.template, constant.other.symbol, string.quoted",
+			"foreground": "color(var(green))"
+		},
+		{
+			"name": "Regular Expressions and Escape Characters",
+			"scope": "string.regexp, constant.character, constant.other",
+			"foreground": "#4cbf99"
+		},
+		{
+			"name": "Literals",
+			"scope": "constant.numeric, constant.language",
+			"foreground": "var(purple)"
+		},
+		{
+			"name": "Keyword",
+			"scope": "keyword, keyword.declaration.struct",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Storage",
+			"scope": "storage, storage.type.keyword",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Types",
+			"scope": "storage.type",
+			"foreground": "var(orange)",
+		},
+		{
+			"name": "Operators and punctuation",
+			"scope": "keyword.operator, punctuation",
+			"foreground": "color(var(grey) alpha(0.8))"
+		},
+		{
+			"scope": "keyword.operator.word",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "JavaScript/TypeScript/Ruby interpolation punctuation",
+			"scope": "punctuation.definition.template-expression, punctuation.section.interpolation",
+			"foreground": "#fa8d3e"
+		},
+		{
+			"name": "Function name",
+			"scope": "entity.name.function",
+			"foreground": "var(cyan)",
+		},
+		{
+			"name": "Function call",
+			"scope": "variable.function, variable.annotation, meta.function-call.generic, support.function",
+			"foreground": "var(blue)"
+		},
+		{
+			"name": "#include",
+			"scope": "meta.preprocessor.include keyword",
+			"foreground": "var(cyan)",
+		},
+		{
+			"name": "Namespace",
+			"scope": "entity.name.namespace",
+			"foreground": "var(grey)",
+		},
+
+		{
+			"name": "Imports and packages",
+			"scope": "entity.name.import, entity.name.package",
+			"foreground": "#86b300"
+		},
+		{
+			"name": "Tag",
+			"scope": "entity.name.tag, meta.tag",
+			"foreground": "var(aqua)"
+		},
+		{
+			"name": "Tag start/end",
+			"scope": "punctuation.definition.tag.end, punctuation.definition.tag.begin, punctuation.definition.tag",
+			"foreground": "#55b4d480"
+		},
+		{
+			"name": "Tag attribute",
+			"scope": "entity.other.attribute-name",
+			"foreground": "#f2ae49"
+		},
+		{
+			"name": "Decorators and annotations",
+			"scope": "meta.decorator variable.other, meta.decorator punctuation.decorator, storage.type.annotation, variable.annotation, punctuation.definition.annotation, meta.brackets.c++ meta.brackets.c++",
+			"foreground": "var(yellow)"
+		},
+		{
+			"name": "diff.header",
+			"scope": "meta.diff, meta.diff.header",
+			"foreground": "#c594c5"
+		},
+		{
+			"name": "CSS tag names",
+			"scope": "source.css entity.name.tag, source.sass entity.name.tag, source.scss entity.name.tag, source.less entity.name.tag, source.stylus entity.name.tag",
+			"foreground": "#22a4e6"
+		},
+		{
+			"name": "CSS browser prefix",
+			"scope": "source.css support.type, source.sass support.type, source.scss support.type, source.less support.type, source.stylus support.type",
+			"foreground": "#787b8099"
+		},
+		{
+			"name": "CSS Properties",
+			"scope": "support.type.property-name",
+			"font_style": "normal",
+			"foreground": "#55b4d4"
+		},
+		{
+			"name": "Search Results Nums",
+			"scope": "constant.numeric.line-number.find-in-files - match",
+			"foreground": "#787b8099"
+		},
+		{
+			"name": "Search Results Match Nums",
+			"scope": "constant.numeric.line-number.match",
+			"foreground": "#fa8d3e"
+		},
+		{
+			"name": "Search Results Lines",
+			"scope": "entity.name.filename.find-in-files",
+			"foreground": "#86b300"
+		},
+		{
+			"scope": "message.error",
+			"foreground": "#e65050"
+		},
+
+		{
+			"name": "Markup heading",
+			"scope": "markup.heading, markup.heading entity.name, punctuation.definition.heading",
+			"font_style": "bold",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Markup links",
+			"scope": "markup.underline.link, string.other.link, meta.link.inline.description",
+			"foreground": "#22a4e6",
+			"font_style": "underline",
+		},
+		{
+			"name": "Markup Italic",
+			"scope": "markup.italic",
+			"font_style": "italic",
+		},
+		{
+			"name": "Markup Bold",
+			"scope": "markup.bold",
+			"font_style": "bold",
+		},
+		{
+			"name": "Markup Bold/italic",
+			"scope": "markup.italic markup.bold, markup.bold markup.italic",
+			"font_style": "bold italic"
+		},
+		{
+			"name": "Markup Code",
+			"scope": "markup.raw",
+			"background": "#5c616605"
+		},
+		{
+			"name": "Markup Code Inline",
+			"scope": "markup.raw.inline",
+			"background": "#5c61660f"
+		},
+		{
+			"name": "Markdown Separator",
+			"scope": "meta.separator",
+			"font_style": "bold",
+			"background": "#5c61660f",
+			"foreground": "#787b8099"
+		},
+		{
+			"name": "Markup Blockquote",
+			"scope": "markup.quote, punctuation.definition.blockquote",
+			"foreground": "var(green)",
+		},
+		{
+			"name": "Markup List Bullet",
+			"scope": "markup.list punctuation.definition.list.begin",
+			"foreground": "#f2ae49"
+		},
+		{
+			"name": "Markup added",
+			"scope": "markup.inserted",
+			"foreground": "#6cbf43"
+		},
+		{
+			"name": "Markup modified",
+			"scope": "markup.changed",
+			"foreground": "#478acc"
+		},
+		{
+			"name": "Markup removed",
+			"scope": "markup.deleted",
+			"foreground": "#ff7383"
+		},
+		{
+			"name": "Markup Strike",
+			"scope": "markup.strike",
+			"foreground": "#e6b673"
+		},
+		{
+			"name": "Markup Table",
+			"scope": "markup.table",
+			"background": "#5c61660f",
+			"foreground": "#55b4d4"
+		},
+		{
+			"name": "Markup Raw Inline",
+			"scope": "text.html.markdown markup.inline.raw",
+			"foreground": "#ed9366"
+		},
+		{
+			"name": "Markdown - Line Break",
+			"scope": "text.html.markdown meta.dummy.line-break",
+			"background": "#787b8099",
+			"foreground": "#787b8099"
+		},
+		{
+			"name": "Markdown - Raw Block Fenced",
+			"scope": "punctuation.definition.markdown",
+			"background": "#5c6166",
+			"foreground": "#787b8099"
+		},
+
+		{
+			"scope": "neovintageous_search_inc",
+			"background": "color(var(fg))",
+			"foreground": "var(bg)",
+			"font_style": "glow"
+		},
+		{
+			"scope": "neovintageous_search_cur",
+			"background": "color(var(pink) alpha(0.6))",
+			"foreground": "var(bg)",
+			"font_style": "glow"
+		},
+		{
+			"scope": "neovintageous_search_occ",
+			"background": "var(pink)",
+			"foreground": "var(bg)",
+			"font_style": "glow"
+		},
+		{
+			"scope": "highlightedyank",
+			"background": "var(fg)",
+			"foreground": "var(bg)"
+		},
+	]
+}

@@ -5,8 +5,8 @@ foreground = #444
 foreground-alt = #76BFC4
 background = #00ffffff
 background-alt = #555555
-primary = #eff0f1
-secondary = #161a1d
+primary = #F4E7DB
+secondary = #d66b5a
 alert = #ff0000
 
 [bar/sticker]

@@ -1,6 +1,5 @@
-// These settings override both User and Default settings for the C++11 syntax
 {
-    "rulers": [90],
-    "extensions": ["h", "hpp", "cpp"],
-    "tab_size": 2,
+	"rulers": [90],
+	"extensions": ["h", "hpp", "cpp"],
+	"tab_size": 2,
 }
