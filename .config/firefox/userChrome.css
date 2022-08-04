@@ -1,7 +1,7 @@
 #TabsToolbar,
 #navigator-toolbox {
-    background: -moz-accent-color !important;
-    color: white;
+    background: AccentColor !important;
+    color: AccentColorText;
 }
 #TabsToolbar:-moz-window-inactive,
 #navigator-toolbox:-moz-window-inactive {

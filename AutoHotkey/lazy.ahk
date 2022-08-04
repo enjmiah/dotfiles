@@ -2,15 +2,45 @@
 #MaxHotkeysPerInterval 200
 #NoEnv
 
-MouseMode := false
-Distance := 10
-
 SetCapsLockState, AlwaysOff
 SetScrollLockState, AlwaysOff
-SendMode Input
 Menu, Tray, Icon, ../var/quill.ico
 
-!+q::Send !{F4}
+#If GetKeyState("ScrollLock", "P")
+; Close the active window.
++q::Send !{F4}
+; Activate colour picker (PowerToys).
++c::Send #+c
+; Activate crosshairs (PowerToys).
++x::Send #+x
+#If
+
+; Activate launcher (PowerToys).
+ScrollLock & Space::Send #{Space}
+
+; Spawn launcher (Run box).
+ScrollLock & d::Send #r
+ScrollLock & e::Run explorer.exe
+ScrollLock & w::Run firefox.exe
+ScrollLock & a::Run "C:\Program Files\Anki\anki.exe"
+
+; For desktop-switching in VirtuaWin.
+ScrollLock & 1::Send !1
+ScrollLock & 2::Send !2
+ScrollLock & 3::Send !3
+ScrollLock & 4::Send !4
+ScrollLock & 5::Send !5
+ScrollLock & 6::Send !6
+ScrollLock & 7::Send !7
+ScrollLock & 8::Send !8
+ScrollLock & 9::Send !9
+ScrollLock & 0::Send !0
+
+; Switching windows using a custom program.
+ScrollLock & j::Send !j
+ScrollLock & k::Send !k
+ScrollLock & l::Send !l
+ScrollLock & `;::Send !`;
 
 Capslock & F1::Send {Volume_Mute}
 Capslock & F2::Send {Volume_Down 1}
@@ -33,18 +63,11 @@ Capslock & \:: Send {U+2026}  ; …
 Capslock & ,:: Send {U+30FB}  ; ・
 Capslock & 9:: Send {U+2190}  ; ←
 Capslock & 0:: Send {U+2192}  ; →
-Capslock & ?:: Send {U+261E}{U+00A0} ; ☞<nbsp>
+Capslock & /:: Send {U+261E}{U+00A0} ; ☞<nbsp>
 Capslock & 1:: Send {U+26A0}  ; ⚠
 Capslock & x:: Send {U+2718}  ; ✘
 
-Capslock & Space:: Send !``
+Capslock & q:: Send !`` ; Toggle IME
 Capslock & r:: Send </ruby>
 
-Capslock & e:: Send {U+00E9}
-Capslock & u:: Send const{Space}
-Capslock & i:: Send auto{Space}
-Capslock & o:: Send &{Space}
-Capslock & a:: Send {Backspace}
-Capslock & f:: Send for{Space}(
-Capslock & t:: Send return{Space}
-Capslock & Backspace:: Send ^{Backspace}
+Capslock & e:: Send {U+00E9} ; é

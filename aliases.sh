@@ -24,10 +24,10 @@ if [[ ! -z "$BASH_VERSION" ]]; then
 	function cd() { pushd "$@" > /dev/null; } # allows going back with `popd`
 fi
 
-if [[ "$TERM" == "cygwin" ]]; then
-	alias ls='ls -A --color=auto -I NTUSER.DAT\* -I ntuser.dat\*'
+if [[ "$(uname)" =~ "MINGW" ]]; then
+	alias ls='ls -A --color=auto --group-directories-first -I NTUSER.DAT\* -I ntuser.dat\*'
 	alias pdf='spawn sumatrapdf'
-	alias python2='/c/Anaconda3/envs/py27/python.exe'
+	alias python2='~/Anaconda3/envs/py27/python.exe'
 else # Linux, probably.
 	alias ls='ls -A --color=auto --group-directories-first'
 	alias start='xdg-open 2>/dev/null'

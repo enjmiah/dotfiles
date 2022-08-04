@@ -43,6 +43,8 @@
 	defaultBranch = trunk
 [include]
 	path = "~/.gitconfig.user" # contains user.name and user.email
+[init]
+	defaultBranch = trunk
 [pull]
 	rebase = false
 	ff = only

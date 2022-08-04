@@ -48,7 +48,7 @@
 			"colorScheme": "Gruvbox Cool",
 			"cursorColor": "#FF455B",
 			"fontFace": "Iosevka Helv",
-			"fontSize": 11,
+			"fontSize": 12,
 			"padding": "8, 8, 8, 8",
 			"useAcrylic": false
 		},
@@ -60,7 +60,7 @@
 				"source": "Windows.Terminal.Wsl"
 			},
 			{
-				"commandline": "C:\\Users\\jerryyin\\Desktop\\zsh.bat",
+				"commandline": "C:\\bin\\mingw.bat",
 				"guid": "{7476211c-da9e-4450-b9ba-c5992cfbe2a5}",
 				"hidden": false,
 				"icon": "C:/bin/msys64/mingw64.ico",
