@@ -20,11 +20,13 @@ ScrollLock & Space::Send #{Space}
 
 ; Spawn launcher (Run box).
 ScrollLock & d::Send #r
-ScrollLock & e::Run explorer.exe
-ScrollLock & w::Run firefox.exe
-ScrollLock & a::Run "C:\Program Files\Anki\anki.exe"
+ScrollLock & e::Run explorer
+ScrollLock & w::Send #2
+ScrollLock & a::Send #7
+ScrollLock & Enter::Send #6
 
 ; For desktop-switching in VirtuaWin.
+#If not GetKeyState("LShift", "P")
 ScrollLock & 1::Send !1
 ScrollLock & 2::Send !2
 ScrollLock & 3::Send !3
@@ -35,6 +37,18 @@ ScrollLock & 7::Send !7
 ScrollLock & 8::Send !8
 ScrollLock & 9::Send !9
 ScrollLock & 0::Send !0
+#If GetKeyState("LShift", "P")
+ScrollLock & 1::Send !+1
+ScrollLock & 2::Send !+2
+ScrollLock & 3::Send !+3
+ScrollLock & 4::Send !+4
+ScrollLock & 5::Send !+5
+ScrollLock & 6::Send !+6
+ScrollLock & 7::Send !+7
+ScrollLock & 8::Send !+8
+ScrollLock & 9::Send !+9
+ScrollLock & 0::Send !+0
+#If
 
 ; Switching windows using a custom program.
 ScrollLock & j::Send !j
@@ -68,6 +82,5 @@ Capslock & 1:: Send {U+26A0}  ; ⚠
 Capslock & x:: Send {U+2718}  ; ✘
 
 Capslock & q:: Send !`` ; Toggle IME
-Capslock & r:: Send </ruby>
 
 Capslock & e:: Send {U+00E9} ; é
