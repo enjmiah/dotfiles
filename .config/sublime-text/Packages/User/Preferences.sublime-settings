@@ -127,7 +127,7 @@
 	"highlight_gutter": false,
 	"highlight_line": false,
 	"ignored_words": [
-		"args",
+		"Args",
 		"Artifactory",
 		"bytestring",
 		"centerline",
