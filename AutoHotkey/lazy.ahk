@@ -1,3 +1,15 @@
+;
+; Author:
+;     Jerry Yin / jerryyin.info
+;
+; License:
+;     Any copyright is dedicated to the Public Domain.
+;     http://creativecommons.org/publicdomain/zero/1.0/
+;
+; Instructions:
+;   - Map LWin to ScrollLock in the Windows registry for convenience/ergonomics.
+;
+
 #SingleInstance force
 #MaxHotkeysPerInterval 200
 #NoEnv

@@ -3,8 +3,10 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias fd='fd -I'
 alias flux="xflux -l 49.263569 -g -123.138573 -k 3600"
 alias gp='git push'
+alias gdiff='git diff --no-index'
 alias h='hugo server -D'
 alias l='ls'
 alias ll='ls -Ahl --color=auto'
@@ -28,6 +30,9 @@ if [[ "$(uname)" =~ "MINGW" ]]; then
 	alias ls='ls -A --color=auto --group-directories-first -I NTUSER.DAT\* -I ntuser.dat\*'
 	alias pdf='spawn sumatrapdf'
 	alias python2='~/Anaconda3/envs/py27/python.exe'
+elif [[ "$(uname)" =~ "Darin" ]]; then
+	alias ls='ls -A --color=auto'
+	alias start='open'
 else # Linux, probably.
 	alias ls='ls -A --color=auto --group-directories-first'
 	alias start='xdg-open 2>/dev/null'

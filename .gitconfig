@@ -1,3 +1,5 @@
+[advice]
+	detachedHead = false
 [alias]
 	amend = commit --amend
 	ci = commit -m
@@ -29,6 +31,7 @@
 	line-numbers-left-format = "{nm} "
 	line-numbers-right-format = "{np} "
 	syntax-theme = gruvbox-dark
+	max-line-length = 2048
 [diff]
 	colorMoved = default
 	algorithm = histogram
@@ -48,5 +51,5 @@
 [pull]
 	rebase = false
 	ff = only
-[advice]
-	detachedHead = false
+[push]
+	autoSetupRemote = true

@@ -74,8 +74,8 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "Iosevka Helv",
-                "size": 12,
+                "face": "Incon",
+                "size": 15,
                 "weight": "medium"
             },
             "historySize": 9999,
@@ -96,11 +96,9 @@
                 "commandline": "C:\\bin\\mingw.bat",
                 "guid": "{7476211c-da9e-4450-b9ba-c5992cfbe2a5}",
                 "hidden": false,
-                "icon": "\ud83d\udd2e",
                 "name": "MINGW",
                 "startingDirectory": "%USERPROFILE%",
-                "suppressApplicationTitle": true,
-                "tabTitle": "MINGW"
+                "icon": null,
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -125,18 +123,6 @@
                 "icon": "%USERPROFILE%/dotfiles/var/git.png",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
-            },
-            {
-                "guid": "{6b5b51a7-af0f-5554-bd70-d27c7eb97e01}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{1dad2873-5228-54eb-8b21-a55ba9da46c4}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{ec7fcbd0-f43a-527f-a080-ae2b66c7d795}",
@@ -412,6 +398,6 @@
     "snapToGridOnResize": true,
     "tabSwitcherMode": "disabled",
     "tabWidthMode": "titleLength",
-    "theme": "system",
+    "theme": "dark",
     "useAcrylicInTabRow": false
 }

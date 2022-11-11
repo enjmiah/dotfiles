@@ -57,7 +57,7 @@ if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
-if [[ -x "$(command -v uname)" && "$(uname)" == "MINGW" ]]; then
+if [[ -x "$(command -v uname)" && "$(uname)" =~ "MINGW" ]]; then
   bindkey "^[[3~" delete-char
 fi
 
@@ -181,6 +181,9 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
 # Configure ls colors
 if type dircolors &> /dev/null; then
+    if [[ -z "$SHELL" && "$(uname)" =~ "MINGW" ]]; then
+        export SHELL="$(which zsh)"
+    fi
     eval "$(dircolors ~/dotfiles/.dircolors)"
 fi
 
@@ -200,10 +203,7 @@ fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$ZSH_HIGHLIGHT_STYLES[comment]
 
-#####################################
-# Switch to last directory on login #
-#####################################
-
+# Switch to last directory on login.
 if [ -f ~/.lastdir ] && [ "$(pwd)" = "$HOME" ]; then
     cd "`cat ~/.lastdir`"
 fi
@@ -211,3 +211,13 @@ function record_last_dir {
     pwd > ~/.lastdir
 }
 precmd_functions+=record_last_dir
+
+# Set the terminal title to the current directory name.
+# Kitty does this automatically.
+if test -z "$KITTY_INSTALLATION_DIR"; then
+    function set_title_to_cwd {
+        result=${PWD##*/}
+        echo -ne "\e]0;${result:-/}\a"
+    }
+    precmd_functions+=set_title_to_cwd
+fi

@@ -5,7 +5,7 @@
   "show_code_actions_bulb": true,
   "clients": {
     "pyls": {
-      "enabled": false,
+      "enabled": true,
       "settings": {
         "pyls": {
           "env": {
@@ -19,7 +19,7 @@
               ],
             },
             "jedi_completion": {
-              "fuzzy": true, // Enable fuzzy when requesting autocomplete
+              "fuzzy": false, // Enable fuzzy when requesting autocomplete
             },
             "pycodestyle": {
               "enabled": false,
@@ -38,7 +38,7 @@
             "yapf": {"enabled": false,},
             // pyls' 3rd Party Plugins, Mypy type checking for Python 3, Must be installed via pip before enabling
             "pyls_mypy": {  // Install with: pip install pyls-mypy
-              "enabled": false,
+              "enabled": true,
               "live_mode": true,
             },
           },
