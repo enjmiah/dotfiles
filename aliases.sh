@@ -30,7 +30,7 @@ if [[ "$(uname)" =~ "MINGW" ]]; then
 	alias ls='ls -A --color=auto --group-directories-first -I NTUSER.DAT\* -I ntuser.dat\*'
 	alias pdf='spawn sumatrapdf'
 	alias python2='~/Anaconda3/envs/py27/python.exe'
-elif [[ "$(uname)" =~ "Darin" ]]; then
+elif [[ "$(uname)" =~ "Darwin" ]]; then
 	alias ls='ls -A --color=auto'
 	alias start='open'
 else # Linux, probably.
