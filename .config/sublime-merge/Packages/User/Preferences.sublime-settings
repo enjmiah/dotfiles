@@ -1,0 +1,14 @@
+{
+	// "theme": "Adaptive.sublime-theme",
+	"color_scheme": "Gruvbox Medium.sublime-color-scheme",
+	"font_face": "Incon",
+	"font_size": 15,
+	"side_bar_layout": "tabs",
+	"time_format": "12h",
+	"update_check": false,
+	"font_options": ["gdi"],
+	"theme_font_options": ["gdi"],
+	"line_padding_top": -2,
+	"line_padding_bottom": -5,
+	"hardware_acceleration": "opengl",
+}
