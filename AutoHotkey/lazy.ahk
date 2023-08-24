@@ -11,6 +11,7 @@
 ;
 
 #SingleInstance force
+#InstallKeybdHook
 #MaxHotkeysPerInterval 200
 #NoEnv
 
@@ -90,6 +91,7 @@ Capslock & ,:: Send {U+30FB}  ; ・
 Capslock & 9:: Send {U+2190}  ; ←
 Capslock & 0:: Send {U+2192}  ; →
 Capslock & /:: Send {U+261E}{U+00A0} ; ☞<nbsp>
+Capslock & Space:: Send {U+00A0} ; <nbsp>
 Capslock & 1:: Send {U+26A0}  ; ⚠
 Capslock & x:: Send {U+2718}  ; ✘
 
