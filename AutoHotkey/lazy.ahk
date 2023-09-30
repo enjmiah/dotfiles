@@ -84,17 +84,12 @@ Capslock & `:: Send {U+2018}  ; ‘
 Capslock & ':: Send {U+2019}  ; ’
 Capslock & =:: Send {U+2013}  ; en dash –
 Capslock & -:: Send {U+2014}  ; em dash —
-Capslock & *:: Send {U+2606}  ; ☆
 Capslock & .:: Send {U+202F}.{U+202F}.{U+202F}.{U+2009} ; . . .
-Capslock & \:: Send {U+2026}  ; …
 Capslock & ,:: Send {U+30FB}  ; ・
 Capslock & 9:: Send {U+2190}  ; ←
 Capslock & 0:: Send {U+2192}  ; →
 Capslock & /:: Send {U+261E}{U+00A0} ; ☞<nbsp>
 Capslock & Space:: Send {U+00A0} ; <nbsp>
-Capslock & 1:: Send {U+26A0}  ; ⚠
-Capslock & x:: Send {U+2718}  ; ✘
+Capslock & e:: Send {U+00E9} ; é
 
 Capslock & q:: Send !`` ; Toggle IME
-
-Capslock & e:: Send {U+00E9} ; é
