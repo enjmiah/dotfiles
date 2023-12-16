@@ -19,10 +19,6 @@ noremap k j
 noremap j h
 noremap h ;
 
-" Visual navigation by default, unless preceded by number
-nnoremap <expr> k v:count ? 'j' : 'gj'
-nnoremap <expr> l v:count ? 'k' : 'gk'
-
 " Have x and c not modify registers
 noremap x "_x
 noremap c "_c

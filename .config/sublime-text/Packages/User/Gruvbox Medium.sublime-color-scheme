@@ -63,6 +63,10 @@
 			"scope": "storage.type,meta.method.parameters meta.group,entity.name.struct,entity.name.enum",
 			"foreground": "var(blue)"
 		},
+		{
+			"scope": "constant.character.escape.regexp",
+			"foreground": "var(green)",
+		},
 		// {
 		//   "name": "Constants",
 		//   "scope": "constant.numeric",

@@ -84,15 +84,14 @@ setopt share_history          # share command history data
 setopt autopushd pushdminus pushdsilent pushdtohome
 setopt interactive_comments
 autoload -U zmv
+autoload -U compinit && compinit
 
 #########################
 # Environment variables #
 #########################
 
 export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin/TinyTex:$PATH"
 
 if [[ -e "/d/jerry/sketching" ]]; then
 	export PYTHONPATH="/d/jerry/sketching/build-debug/python/core/:/d/jerry/sketching/python"

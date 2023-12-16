@@ -21,6 +21,7 @@
 	autocrlf = input
 	eol = lf
 	editor = vim
+	longpaths = true
 	pager = delta
 [delta]
 	features = line-numbers
@@ -34,7 +35,6 @@
 	max-line-length = 2048
 [diff]
 	colorMoved = default
-	algorithm = histogram
 [difftool]
 	prompt = false
 [filter "lfs"]
