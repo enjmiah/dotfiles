@@ -65,7 +65,7 @@
 		},
 		{
 			"scope": "constant.character.escape.regexp",
-			"foreground": "var(green)",
+			"foreground": "var(green)"
 		},
 		// {
 		//   "name": "Constants",

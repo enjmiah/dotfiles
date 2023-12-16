@@ -5,7 +5,7 @@
         "python.analysis.autoImportCompletions": false,
         "python.analysis.typeCheckingMode": "on",
         "python.analysis.diagnosticSeverityOverrides": {
-            "reportImplicitStringConcatenation": "none",
+            "reportImplicitStringConcatenation": "none"
         }
     }
 }

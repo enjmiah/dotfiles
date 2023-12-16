@@ -71,7 +71,6 @@
     "copyFormatting": "none",
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "disableAnimations": true,
-    "experimental.rendering.software": false,
     "initialCols": 90,
     "initialRows": 28,
     "profiles": 
