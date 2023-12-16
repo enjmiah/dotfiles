@@ -191,9 +191,16 @@ PLUGINS=(syntax-highlighting autosuggestions)
 for plug in $PLUGINS; do
 	entry="$HOME/dotfiles/.config/zsh/$plug/zsh-$plug.zsh"
 	if [[ -f "$entry" ]]; then
-		source $entry
+		source "$entry"
 	fi
 done
+
+if type git &> /dev/null; then
+	git_completions_file="/c/Program Files/Git/mingw64/share/git/completion/git-completion.zsh"
+	if [[ -f "${git_completions_file}" ]]; then
+		zstyle ':completion:*:*:git:*' script "${git_completions_file}"
+	fi
+fi
 
 if type fzf &> /dev/null; then
 	source "$HOME/dotfiles/.config/zsh/fzf/completion.zsh"
